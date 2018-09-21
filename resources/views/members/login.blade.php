@@ -28,6 +28,12 @@
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control form-control-alt" id="password" name="password" placeholder="Password">
+@if($errors->any())
+<div id="login-password-error" class="invalid-feedback animated fadeIn">{{$errors->first()}}</div>
+<script> 
+		setTimeout('jQuery("#login-password-error").show()',500);
+</script>
+@endif
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-block btn-hero-primary">
@@ -38,12 +44,6 @@
                         <!-- END Sign In Form -->
                     </div>
                 </div>
-
-  @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div><br />
-  @endif
 
                 <div class="col-md-6 order-md-0 bg-primary-dark-op d-flex align-items-center">
                     <div class="block-content block-content-full px-lg-5 py-md-5 py-lg-6">

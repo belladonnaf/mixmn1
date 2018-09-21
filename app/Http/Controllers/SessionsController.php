@@ -12,14 +12,11 @@ class SessionsController extends Controller
 
     public function store(Request $request)
     {   
-
-				$sql = " select user_pk as cnt from members where useremailid = '".esc_sql($request->get['email'])."' and password = '".esc_sql($request->get['password'])."' and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
+				
+				$sql = " select user_pk as cnt from members where useremailid = ".esc_sql($request->get('email'))." and password = ".esc_sql($request->get('password'))." and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
 				$user_pk = DB::select($sql)[0]['cnt'];
 
         if (!$user_pk) {
-						var_dump(DB::select($sql));
-						var_dump($sql);
-						exit;
             return back()->withErrors([
                 'message' => 'The email or password is incorrect, please try again'
             ]);
