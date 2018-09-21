@@ -14,7 +14,7 @@ class SessionsController extends Controller
     {   
 
 				$sql = " select user_pk as cnt from members where useremailid = '".esc_sql($request->input['email'])."' and password = '".esc_sql($request->input['password'])."' and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
-				$user_pk = DB::select($sql)->value('cnt');
+				$user_pk = DB::select($sql)[0]['cnt'];
 
         if (!$user_pk) {
 
@@ -27,7 +27,7 @@ class SessionsController extends Controller
 					$request->session()->put('login_id', $user_pk);
 
 					$sql = " select favor_ui from members where user_pk = ".$user_pk;
-					$favor_ui = DB::select($sql)->value('favor_ui');
+					$favor_ui = DB::select($sql)[0]['favor_ui'];
 	
 					if(!$favor_ui){
 		        return redirect()->to('/settings/ui');
