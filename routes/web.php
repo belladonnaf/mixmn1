@@ -17,12 +17,14 @@ use Illuminate\Http\Request;
 
 $site_status = DB::select('select * from site_status limit 0,1')[0];
   
-Route::view('/', 'members/login',['site_status' => $site_status]);
+Route::view('/', 'members/login',['site_status' => $site_status])->name('login');
+
 Route::post('/login', 'SessionsController@store');
-Route::view('/settings/ui', 'settings/ui')->middleware('session.has.user');
+Route::get('/logout', 'SessionsController@destory')->name('logout');
+
+Route::view('/settings/ui', 'settings.ui')->middleware('session.has.user');
 
 Route::view('/dashboard', 'dashboard');
-
 Route::view('/examples/plugin', 'examples.plugin');
 Route::view('/examples/blank', 'examples.blank');
 
