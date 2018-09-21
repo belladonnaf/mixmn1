@@ -14,7 +14,7 @@
 // Example Routes
 use Illuminate\Support\Facades\DB;
 
-$site_status = DB::select('select * from site_status limit 0,1');
+$site_status = DB::select('select * from site_status limit 0,1')[0];
   
 Route::view('/', 'members/login',['site_status' => $site_status]);
 
