@@ -12,7 +12,7 @@
 */
 
 // Example Routes
-Route::view('/', 'landing');
+Route::view('/', 'member/login');
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');
 Route::view('/examples/blank', 'examples.blank');
