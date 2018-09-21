@@ -45,7 +45,7 @@
                             </a>
                             <div class="media-body">
                                 <p class="text-white font-w600 mb-1">
-                                    Total running date {{ $site_status['total_date'] }}
+                                    Total running date {{ var_dump($site_status) }}
                                 </p>
                                 <a class="text-white-75 font-w600" href="javascript:void(0)">Jose Wagner, Web Developer</a>
                             </div>
