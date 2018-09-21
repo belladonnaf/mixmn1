@@ -15,7 +15,7 @@
 use Illuminate\Support\Facades\DB;
 
 $site_status = DB::select('select * from site_status ');
-var_dump($site_status);  
+  
 Route::view('/', 'members/login',['site_status' => $site_status]);
 
 Route::view('/dashboard', 'dashboard');
