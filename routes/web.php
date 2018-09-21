@@ -23,6 +23,9 @@ Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy')->name('logout');
 
 Route::view('/settings/ui', 'settings.ui')->middleware('session.has.user');
+Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-ui');
+
+Route::view('/archives/index', 'archives/index')->middleware('archives.index');
 
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');
