@@ -41,7 +41,7 @@
                     <div class="block-content block-content-full px-lg-5 py-md-5 py-lg-6">
                         <div class="media">
                             <a class="img-link mr-3" href="javascript:void(0)">
-                                <img class="img-avatar img-avatar-thumb" src="/media/images/music-icon.png" alt="">
+                                <img class="music-thumb" src="/media/images/music-icon.png" alt="">
                             </a>
                             <div class="media-body">
                                 <p class="text-white font-w600 mb-1">
