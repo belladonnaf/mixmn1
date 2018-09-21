@@ -251,7 +251,7 @@
                                     <!-- END Side Overlay -->
 
                                     <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="javascript:{{route('logout')}}">
                                         <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> Sign Out
                                     </a>
                                 </div>
