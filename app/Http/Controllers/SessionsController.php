@@ -13,7 +13,7 @@ class SessionsController extends Controller
     public function store()
     {   
 
-				$sql = " select user_pk as cnt from members where useremailid = '".esc_sql(request['email'])."' and password = '".esc_sql($request['password'])."' and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
+				$sql = " select user_pk as cnt from members where useremailid = '".esc_sql($request->input['email'])."' and password = '".esc_sql($request->input['password'])."' and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
 				$user_pk = DB::select($sql)->value('cnt');
 
         if (!$user_pk) {
