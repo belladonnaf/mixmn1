@@ -10,7 +10,7 @@ class SessionsController extends Controller
 {   
 
 
-    public function store()
+    public function store(Request $request)
     {   
 
 				$sql = " select user_pk as cnt from members where useremailid = '".esc_sql($request->input['email'])."' and password = '".esc_sql($request->input['password'])."' and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
@@ -44,7 +44,7 @@ class SessionsController extends Controller
 				}
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {   
 //        auth()->logout();
 				$request->session()->flush();
