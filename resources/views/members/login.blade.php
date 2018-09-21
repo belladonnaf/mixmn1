@@ -12,7 +12,7 @@
                         <!-- Header -->
                         <div class="mb-2 text-center">
                             <a class="link-fx font-w700 font-size-h1" href="index.html">
-                                <span class="text-dark">Dash</span><span class="text-primary">mix</span>
+                                <span class="text-dark">MIX</span><span class="text-primary">mn1</span>
                             </a>
                             <p class="text-uppercase font-w700 font-size-sm text-muted">Sign In</p>
                         </div>
@@ -45,7 +45,7 @@
                             </a>
                             <div class="media-body">
                                 <p class="text-white font-w600 mb-1">
-                                    Amazing framework with tons of options! It helped us build our project!
+                                    Total running date {{ $site_status->total_date }}
                                 </p>
                                 <a class="text-white-75 font-w600" href="javascript:void(0)">Jose Wagner, Web Developer</a>
                             </div>

@@ -12,7 +12,12 @@
 */
 
 // Example Routes
-Route::view('/', 'members/login');
+use Illuminate\Support\Facades\DB;
+
+$site_status = DB::select('select * from site_status ');
+  
+Route::view('/', 'members/login',['site_status' => $site_status]);
+
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');
 Route::view('/examples/blank', 'examples.blank');
