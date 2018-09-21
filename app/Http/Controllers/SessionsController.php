@@ -18,6 +18,7 @@ class SessionsController extends Controller
 
         if (!$user_pk) {
 						var_dump(DB::select($sql));
+						var_dump($sql);
 						exit;
             return back()->withErrors([
                 'message' => 'The email or password is incorrect, please try again'
