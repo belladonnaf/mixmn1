@@ -20,7 +20,7 @@ $site_status = DB::select('select * from site_status limit 0,1')[0];
 Route::view('/', 'members/login',['site_status' => $site_status])->name('login');
 
 Route::post('/login', 'SessionsController@store');
-Route::get('/logout', 'SessionsController@destory')->name('logout');
+Route::get('/logout', 'SessionsController@destroy')->name('logout');
 
 Route::view('/settings/ui', 'settings.ui')->middleware('session.has.user');
 
