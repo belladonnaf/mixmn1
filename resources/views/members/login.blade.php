@@ -38,6 +38,13 @@
                         <!-- END Sign In Form -->
                     </div>
                 </div>
+
+  @if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div><br />
+  @endif
+
                 <div class="col-md-6 order-md-0 bg-primary-dark-op d-flex align-items-center">
                     <div class="block-content block-content-full px-lg-5 py-md-5 py-lg-6">
                         <div class="media">

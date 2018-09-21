@@ -17,11 +17,11 @@ class SessionsController extends Controller
 				$user_pk = DB::select($sql)[0]['cnt'];
 
         if (!$user_pk) {
-
+						var_dump(DB::select($sql));
+						exit;
             return back()->withErrors([
                 'message' => 'The email or password is incorrect, please try again'
             ]);
-
         } else {
 
 					$request->session()->put('login_id', $user_pk);
