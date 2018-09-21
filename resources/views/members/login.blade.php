@@ -21,12 +21,13 @@
                         <!-- Sign In Form -->
                         <!-- jQuery Validation (.js-validation-signin class is initialized in js/pages/op_auth_signin.min.js which was auto compiled from _es6/pages/op_auth_signin.js) -->
                         <!-- For more info and examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                        <form class="js-validation-signin" action="be_pages_auth_all.html" method="post">
+                        <form class="js-validation-signin" method="post" action="/login">
+								        {{ csrf_field() }}
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-alt" id="login-username" name="login-username" placeholder="Username">
+                                <input type="text" class="form-control form-control-alt" id="email" name="email" placeholder="Email or UserName">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control form-control-alt" id="login-password" name="login-password" placeholder="Password">
+                                <input type="password" class="form-control form-control-alt" id="password" name="password" placeholder="Password">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-block btn-hero-primary">
