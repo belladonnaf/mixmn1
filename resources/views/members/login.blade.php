@@ -45,13 +45,13 @@
                             </a>
                             <div class="media-body">
                                 <p class="text-white font-w600 mb-1">
-                                    Running total by day {{ $site_status->total_date }}
+                                    Running total by day {{ number_format($site_status->total_date) }}
                                 </p>
                                 <p class="text-white-75 font-w600 mb-1">
-                                    Total Albums {{ $site_status->total_album }}
+                                    Total Albums {{ number_format($site_status->total_album) }}
                                 </p>
                                 <p class="text-white font-w600 mb-1">
-                                    Total Tracks {{ $site_status->total_track }}
+                                    Total Tracks {{ number_format($site_status->total_track) }}
                                 </p>
                                 <a class="text-white-75 font-w600" href="#">music is everywhere</a>
                             </div>
