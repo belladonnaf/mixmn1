@@ -20,11 +20,9 @@ $site_status = DB::select('select * from site_status limit 0,1')[0];
 Route::view('/', 'members/login',['site_status' => $site_status]);
 Route::post('/login', 'SessionsController@store');
 
-if( $request->session()->get('login_id') ){
-	Route::view('/settings/ui', 'settings/ui');
-} else {
-	Route::view('/settings/ui', 'members/login');
-}
+Route::view('/settings/ui', 'settings/ui');
+//	Route::view('/settings/ui', 'members/login');
+
 
 Route::view('/dashboard', 'dashboard');
 
