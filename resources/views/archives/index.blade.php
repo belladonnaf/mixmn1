@@ -1,117 +1,196 @@
 @extends('layouts.backend')
-
-<link rel="stylesheet" href="{{ mix('js/plugins/datatables/dataTables.bootstrap4.css') }}">
-<link rel="stylesheet" href="{{ mix('js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css') }}">
-
+<!-- Page JS Plugins CSS -->
+<?php get_css('js/plugins/datatables/dataTables.bootstrap4.css'); ?>
+<?php get_css('js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css'); ?>
 @section('content')
     <!-- Hero -->
-    <div class="bg-body-light">
-        <div class="content content-full">
-            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Settings _ UI</h1>
-                <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">Settings</li>
-                        <li class="breadcrumb-item active" aria-current="page">UI</li>
-                    </ol>
-                </nav>
-            </div>
-       </div>
-    </div>
-    <!-- END Hero -->
+<div class="bg-body-light">
+    <div class="content content-full">
+        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+            <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">DataTables</h1>
+            <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">Tables</li>
+                    <li class="breadcrumb-item active" aria-current="page">DataTables</li>
+                </ol>
+            </nav>
+        </div>
+   </div>
+</div>
+<!-- END Hero -->
 
-    <!-- Page Content -->
-    <div class="content">
-        <h2 class="content-heading">
-            <i class="si si-briefcase mr-1"></i> Choose Your First Page
-        </h2>
-
-        <div class="row justify-content-center">
-
-           <div class="col-md-6 col-xl-3">
-              <div class="block block-rounded text-center">
-                  <div class="block-content block-content-full bg-info">
-                      <div class="my-3">
-                          <i class="fa fa-2x fa-thumbs-up text-white-75"></i>
-                      </div>
-                  </div>
-                  <div class="block-content block-content-full block-content-sm bg-body-light">
-                      <div class="font-w600">Recommended</div>
-                      <div class="font-size-sm text-muted">Good to Listener</div>
-                  </div>
-                  <div class="block-content block-content-full">
-                      <a class="btn btn-sm btn-light" href="{{route('settings.set-ui')}}?fav=1">
-                          <i class="fa fa-briefcase text-muted mr-1"></i> Choose This
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-              <div class="block block-rounded text-center">
-                  <div class="block-content block-content-full bg-danger">
-                      <div class="my-3">
-                          <i class="fa fa-2x fa-server text-white-75"></i>
-                      </div>
-                  </div>
-                  <div class="block-content block-content-full block-content-sm bg-body-light">
-                      <div class="font-w600">Archive</div>
-                      <div class="font-size-sm text-muted">Good to Mania</div>
-                  </div>
-                  <div class="block-content block-content-full">
-                      <a class="btn btn-sm btn-light" href="{{route('settings.set-ui')}}?fav=2">
-                          <i class="fa fa-briefcase text-muted mr-1"></i> Choose This
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-              <div class="block block-rounded text-center">
-                  <div class="block-content block-content-full bg-warning">
-                      <div class="my-3">
-                          <i class="fa fa-2x fa-search text-white-75"></i>
-                      </div>
-                  </div>
-                  <div class="block-content block-content-full block-content-sm bg-body-light">
-                      <div class="font-w600">Searching</div>
-                      <div class="font-size-sm text-muted">Good to Expert</div>
-                  </div>
-                  <div class="block-content block-content-full">
-                      <a class="btn btn-sm btn-light" href="{{route('settings.set-ui')}}?fav=3">
-                          <i class="fa fa-briefcase text-muted mr-1"></i> Choose This
-                      </a>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-6 col-xl-3">
-              <div class="block block-rounded text-center">
-                  <div class="block-content block-content-full bg-success">
-                      <div class="my-3">
-                          <i class="fa fa-2x fa-star text-white-75"></i>
-                      </div>
-                  </div>
-                  <div class="block-content block-content-full block-content-sm bg-body-light">
-                      <div class="font-w600">Favorites</div>
-                      <div class="font-size-sm text-muted">Good to General</div>
-                  </div>
-                  <div class="block-content block-content-full">
-                      <a class="btn btn-sm btn-light" href="{{route('settings.set-ui')}}?fav=4">
-                          <i class="fa fa-briefcase text-muted mr-1"></i> Choose This
-                      </a>
-                  </div>
-              </div>
-          </div>
-
+<!-- Page Content -->
+<div class="content">
+    <!-- Dynamic Table Full -->
+    <div class="block block-rounded block-bordered">
+        <div class="block-header block-header-default">
+            <h3 class="block-title">Dynamic Table <small>Full</small></h3>
+        </div>
+        <div class="block-content block-content-full">
+            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 80px;">#</th>
+                        <th>Name</th>
+                        <th class="d-none d-sm-table-cell" style="width: 30%;">Email</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
+                        <th style="width: 15%;">Registered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for ($i = 1; $i < 21; $i++) { ?>
+                    <tr>
+                        <td class="text-center"><?php echo $i; ?></td>
+                        <td class="font-w600">
+                            <a href="be_pages_generic_blank.php">123123</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            client<?php echo $i; ?><em class="text-muted">@example.com</em>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            123123
+                        </td>
+                        <td>
+                            <em class="text-muted"><?php echo rand(2, 10); ?> days ago</em>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
-    <!-- END Page Content -->
+    <!-- END Dynamic Table Full -->
+
+    <!-- Dynamic Table with Export Buttons -->
+    <div class="block block-rounded block-bordered">
+        <div class="block-header block-header-default">
+            <h3 class="block-title">Dynamic Table <small>Export Buttons</small></h3>
+        </div>
+        <div class="block-content block-content-full">
+            <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-buttons">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 80px;">#</th>
+                        <th>Name</th>
+                        <th class="d-none d-sm-table-cell" style="width: 30%;">Email</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
+                        <th style="width: 15%;">Registered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for ($i = 1; $i < 21; $i++) { ?>
+                    <tr>
+                        <td class="text-center"><?php echo $i; ?></td>
+                        <td class="font-w600">
+                            <a href="be_pages_generic_blank.php">123123</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            client<?php echo $i; ?><em class="text-muted">@example.com</em>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            123123
+                        </td>
+                        <td>
+                            <em class="text-muted"><?php echo rand(2, 10); ?> days ago</em>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Dynamic Table with Export Buttons -->
+
+    <!-- Dynamic Table Full Pagination -->
+    <div class="block block-rounded block-bordered">
+        <div class="block-header block-header-default">
+            <h3 class="block-title">Dynamic Table <small>Full pagination</small></h3>
+        </div>
+        <div class="block-content block-content-full">
+            <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 80px;">#</th>
+                        <th>Name</th>
+                        <th class="d-none d-sm-table-cell" style="width: 30%;">Email</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
+                        <th style="width: 15%;">Registered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for ($i = 1; $i < 21; $i++) { ?>
+                    <tr>
+                        <td class="text-center"><?php echo $i; ?></td>
+                        <td class="font-w600">123123</td>
+                        <td class="d-none d-sm-table-cell">
+                            client<?php echo $i; ?><em class="text-muted">@example.com</em>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            123123
+                        </td>
+                        <td>
+                            <em class="text-muted"><?php echo rand(2, 10); ?> days ago</em>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Dynamic Table Full Pagination -->
+
+    <!-- Dynamic Table Simple -->
+    <div class="block block-rounded block-bordered">
+        <div class="block-header block-header-default">
+            <h3 class="block-title">Dynamic Table <small>With only sorting and pagination</small></h3>
+        </div>
+        <div class="block-content block-content-full">
+            <!-- DataTables init on table by adding .js-dataTable-simple class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-simple">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 80px;">#</th>
+                        <th>Name</th>
+                        <th class="d-none d-sm-table-cell" style="width: 30%;">Email</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
+                        <th style="width: 15%;">Registered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for ($i = 1; $i < 21; $i++) { ?>
+                    <tr>
+                        <td class="text-center"><?php echo $i; ?></td>
+                        <td class="font-w600">123123</td>
+                        <td class="d-none d-sm-table-cell">
+                            client<?php echo $i; ?><em class="text-muted">@example.com</em>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            123123
+                        </td>
+                        <td>
+                            <em class="text-muted"><?php echo rand(2, 10); ?> days ago</em>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- END Dynamic Table Simple -->
+</div>
+<!-- END Page Content -->
 @endsection
 <!-- Page JS Plugins -->
-<script src="{{ mix('js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ mix('js/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
-<script src="{{ mix('js/plugins/datatables/buttons/dataTables.buttons.min.js') }}"></script>
-<script src="{{ mix('js/plugins/datatables/buttons/buttons.print.min.js') }}"></script>
-<script src="{{ mix('js/plugins/datatables/buttons/buttons.html5.min.js') }}"></script>
-<script src="{{ mix('js/plugins/datatables/buttons/buttons.flash.min.js') }}"></script>
-<script src="{{ mix('js/plugins/datatables/buttons/buttons.colVis.min.js') }}"></script>
-<script src="{{ mix('js/pages/be_tables_datatables.min.js') }}"></script>
+<?php get_js('js/plugins/datatables/jquery.dataTables.min.js'); ?>
+<?php get_js('js/plugins/datatables/dataTables.bootstrap4.min.js'); ?>
+<?php get_js('js/plugins/datatables/buttons/dataTables.buttons.min.js'); ?>
+<?php get_js('js/plugins/datatables/buttons/buttons.print.min.js'); ?>
+<?php get_js('js/plugins/datatables/buttons/buttons.html5.min.js'); ?>
+<?php get_js('js/plugins/datatables/buttons/buttons.flash.min.js'); ?>
+<?php get_js('js/plugins/datatables/buttons/buttons.colVis.min.js'); ?>
 
+<!-- Page JS Code -->
+<?php get_js('js/pages/be_tables_datatables.min.js'); ?>
