@@ -34,11 +34,11 @@ class SessionsController extends Controller
 					} else if($favor_ui == 1){
 						return redirect()->to('/recommended/index');
 					} else if($favor_ui == 2){
-						return redirect()->to('/archive/index');
+						return redirect()->to('/archives/index');
 					} else if($favor_ui == 3){
 						return redirect()->to('/search/index');
 					} else if($favor_ui == 4){
-						return redirect()->to('/favorite/index');
+						return redirect()->to('/favorites/index');
 					}
 				
 				}
