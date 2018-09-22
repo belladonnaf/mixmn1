@@ -10,7 +10,9 @@
             > #page-header .content,
             > #main-container .content,
             > #page-footer .content {
-                max-width: $space-narrow;
+//                max-width: $space-narrow;
+//                max-width: 1300px;
+									margin-left:2%;
             }
         }
     }
