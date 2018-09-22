@@ -2,8 +2,6 @@
 <!-- Page JS Plugins CSS -->
 
 @section('css_after')
-<link rel="stylesheet" href="/js/plugins/datatables/dataTables.bootstrap4.css">
-<link rel="stylesheet" href="/js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css">
 @endsection
 
 @section('content')
@@ -11,7 +9,7 @@
 <div class="bg-body-light">
     <div class="content content-full">
         <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-            <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Archives _ Album Index</h1>
+            <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Archives _ Genres Index</h1>
             <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">Tables</li>
@@ -81,15 +79,5 @@ if ($is_finish == 0){ ?>
 
 @endsection
 @section('js_after')
-<!-- Page JS Plugins -->
-<script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
-<script src="/js/plugins/datatables/buttons/dataTables.buttons.min.js"></script>
-<script src="/js/plugins/datatables/buttons/buttons.print.min.js"></script>
-<script src="/js/plugins/datatables/buttons/buttons.html5.min.js"></script>
-<script src="/js/plugins/datatables/buttons/buttons.flash.min.js"></script>
-<script src="/js/plugins/datatables/buttons/buttons.colVis.min.js"></script>
 
-<!-- Page JS Code -->
-<script src="/js/pages/be_tables_datatables.min.js"></script>
 @endsection
