@@ -196,7 +196,9 @@ use Illuminate\Support\Facades\DB;
 if( request()->is('archives/index') ){
 	$sql = " call get_left_date2()";
 } else if ( request()->is('archives/index/*') ){
-	$sql = " call get_left_date3('genre')";
+	$the_path = request()->route()->getName();
+	$sel_date = str_replace('archives/index/','',$the_path);
+	$sql = " call get_left_date3('".$sel_date."')";
 }
 
 $db_value=DB::select($sql);
