@@ -43,7 +43,7 @@ for ($i=0;$i<$cnt_rt;$i++){
             <ul class="list-group push">
 
 							<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" href="javascript:void(0)">
-                                           {{ $arr_rs[$i]['group_init'] }}
+                                           {{ $arr_rs[$i]['group_name_init'] }}
               </a>
 <?php
 		}
