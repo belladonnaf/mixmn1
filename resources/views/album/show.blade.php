@@ -1,0 +1,86 @@
+@extends('layouts.backend')
+<!-- Page JS Plugins CSS -->
+
+@section('css_after')
+@endsection
+
+@section('content')
+    <!-- Hero -->
+<div class="bg-body-light">
+    <div class="content content-full">
+        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+            <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Archives _ Group Index</h1>
+            <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">Tables</li>
+                    <li class="breadcrumb-item active" aria-current="page">Group Index</li>
+                </ol>
+            </nav>
+        </div>
+   </div>
+</div>
+<!-- END Hero -->
+
+<!-- Page Content -->
+<div class="content">
+
+	<div class="row">
+		<div class="col-md-6 col-xl-4">
+	      <a class="block block-rounded block-link-pop bg-xinspire" href="javascript:void(0)">
+	          <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+	              <div class="mr-3">
+	                  <p class="text-white font-size-lg font-w600 mb-0">
+	                      {{$album_path}}
+	                  </p>
+	                  <p class="text-white-75 mb-0">
+	                      {{$arr_track[0]["uploaded_date"]}}
+	                  </p>
+	                  <p class="text-white-75 mb-0">
+	                      {{$arr_track[0]["genre"]}}
+	                  </p>
+	              </div>
+	              <div class="item">
+	                  <i class="fa fa-2x fa-globe text-xinspire-lighter"></i>
+	              </div>
+	          </div>
+	      </a>
+	  </div>
+	
+	<div class="row">
+		<div id="playlist" class="playlist">
+@foreach ( $arr_track as $k=>$row)
+    <aplayer :audio="audio-{{($k+1)}}" :lrcType="1" />
+@endforeach
+		</div>
+	</div>
+
+</div>
+<!-- END Page Content -->
+
+@endsection
+@section('js_after')
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+
+@foreach ( $arr_track as $k=>$row)
+      audio-{{($k+1)}}: {
+    		name: '{{$row["filename"]}}',
+        artist: '{{$row["artist"]}}',
+        url: '{{$row["mp3_path"]}}',
+        cover: '{{$row["img_url"]}}',
+        lrc: '[{{$row["artist"]}}]\n[00:00.00] Length {{$row["length_min"]}}:{{$row["length_sec"]}} Frequency {{$row["frequency"]}}\n',
+      },
+@endforeach
+
+    };
+  },
+};
+
+</script>
+
+@endsection
+
+                        

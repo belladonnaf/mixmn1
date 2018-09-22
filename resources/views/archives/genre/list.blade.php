@@ -36,7 +36,7 @@
                         <th class="text-center" style="width: 100px;">Genre</th>
                         <th>Release</th>
                         <th class="d-none d-sm-table-cell" style="width: 100px;">Info</th>
-                        <th class="d-none d-sm-table-cell" style="width: 100px;">Button</th>
+                        <th class="d-none d-sm-table-cell" style="width: 60px;">Button</th>
                         <th style="width: 100px;">Group</th>
                         <th style="width: 100px;">Date</th>
                     </tr>

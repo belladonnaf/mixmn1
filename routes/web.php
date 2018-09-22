@@ -32,7 +32,7 @@ Route::get('/archives/group', 'ArchivesController@groupIndex')->name('archives.g
 Route::get('/archives/group/index', 'ArchivesController@groupIndex')->name('archives.group.index');
 Route::get('/archives/group/{f_group}','ArchivesController@groupList')->name('archives.group.list');;
 
-
+Route::get('/album/{album_id}','ArchivesController@show')->name('album.show');;
 
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');

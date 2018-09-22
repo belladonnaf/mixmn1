@@ -111,8 +111,96 @@ class ArchivesController extends Controller
 				
     }
 
-    public function show($album_id)
+    public function show(Request $request, $album_id)
     {   
+
+			$album_id = $_POST['album_id'];
+
+			if(is_numeric($album_id)){
+				exit;
+			}
+
+			$sql = " call get_img_path('$album_id')";
+			$row = DB::select($sql)[0];
+
+			if($row){
+				$img_path = $row->img_path;
+			}
+
+			$sql = " select a.pic_id, a.album_id, a.pic_type, a.filename, b.album_path, date_format(b.release_date,'%Y') as release_year, date_format(b.release_date,'%m%d') as release_date from album_pic_tbl a left outer join album_info_tbl b on a.album_id = b.album_id where a.album_id = $album_id ";
+			$arr_rs = DB::select($sql);
+			$cnt_img = count($arr_rs);
+			$arr_img = array();
+			
+			if($arr_rs) {
+				foreach($arr_rs as $k=> $row) { 
+					$url = $img_path."/".$row['filename'];
+					$arr_img[] = $row;
+					$arr_img[]['image'] = $url;
+				}
+			}
+
+			$sql = " call get_album_path($album_id);";
+			
+			if(DB::select($sql)[0]){
+				$album_path = DB::select($sql)[0]->album_path;
+			}
+			
+			$sql = " call get_track_info($album_id)";
+			$arr_track = DB::select($sql);
+			$str_track = json_encode($arr_track);
+			$arr_track = json_decode($str_track,1);
+			$new_track = array();
+			
+			foreach($arr_track as $k=> $row){
+
+				$track_id = $row['track_id'];
+				$length_min = floor($row['lengths'] / 60);
+				$length_sec = $row['lengths'] % 60;
+				$mbytes = round($row['files'] *10/ (1024*1024))/10;
+				$frequency = $row['frequency'] / 1000;
+				$filename = $row['filename'];
+				
+				$sql = " select useremailid, password from members where user_pk = ".$request->session()->get("login_id")." limit 0,1";
+				$user_auth = DB::select($sql)[0];
+				$uid = $user_auth->useremailid;
+				$pwd = $user_auth->password;
+
+				$ftp_con = "http://".$uid.":".$pwd."@$ftp_ip:$port";
+
+				$sql = " select album_path, DATE_FORMAT(release_date,'%Y') as release_year, DATE_FORMAT(release_date,'%m%d') as release_mmdd, artist from album_info_tbl where album_id = $album_id ";
+				$row2 = DB::select($sql)[0];
+				$str_row2 = json_encode($row2);
+				$row2 = json_decode($row2,1);
+
+				$album_path = $row2['album_path'];
+				$release_year = $row2['release_year'];
+				$release_mmdd = $row2['release_mmdd'];
+				$artist	= $row2['artist'];
+
+				$src_path = "/MP3/$release_year/$release_mmdd/$album_path/$filename";
+			
+				$mp3_path = "$ftp_con$src_path"; 
+				
+				if( $arr_img[0]['image'] ){
+					$img_url = $arr_img[0]['image'];
+				} else {
+					$img_url = 'http://mix.mn1.net/media/images/vol.gif';
+				}
+
+				$new_track[$k] = array(
+					"track_id" => $track_id,
+					"length_min" => $length_min,
+					"length_sec" => $length_sec,
+					"mbytes" => $mbytes,
+					"frequency" => $frequency,
+					"filename" => $filename,
+					"mp3_path" => $mp3_path,
+					"artist" => $artist,
+					"img_url" => $img_url
+				);
+
+      return view('album.show',compact('album_id','arr_img','album_path','new_track'));
 				
     }
 
