@@ -176,7 +176,7 @@
 ?>
 															@foreach($arr_group as $the_group)
                                 <li class="nav-main-item">
-                                    <a class="nav-main-link" href="/archives/genre/{{rawurlencode($the_group)}}">
+                                    <a class="nav-main-link" href="/archives/group/{{rawurlencode($the_group)}}">
                                         <span class="nav-main-link-name">{{$the_group}}</span>
                                     </a>
                                 </li>
