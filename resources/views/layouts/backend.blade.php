@@ -453,6 +453,8 @@ $cnt_value = count($db_value);
         <!-- Laravel Scaffolding JS -->
         <script src="{{ mix('js/laravel.app.js') }}"></script>
 
+        <script src="{{ mix('js/app.js') }}"></script>
+
         @yield('js_after')
     </body>
 </html>

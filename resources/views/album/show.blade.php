@@ -34,6 +34,9 @@
 	      </a>
 			</div>
 			<div id="playlist" class="playlist"></div>
+			<div id="app">
+				<example-component></example-component>
+			</div>
 	  </div>
 	
 
