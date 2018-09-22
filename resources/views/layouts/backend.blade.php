@@ -127,7 +127,7 @@
                     <div class="content-header bg-white-10">
                         <!-- Logo -->
                         <a class="link-fx font-w600 font-size-lg text-white" href="/">
-                            <span class="text-white-75">Dash</span><span class="text-white">mix</span>
+                            <span class="text-white-75">MIX</span><span class="text-white">mn1</span>
                         </a>
                         <!-- END Logo -->
 
@@ -159,22 +159,27 @@
                         <li class="nav-main-item">
                             <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
                                 <i class="nav-main-link-icon si si-cursor"></i>
-                                <span class="nav-main-link-name">Dashboard</span>
-                                <span class="nav-main-link-badge badge badge-pill badge-success">5</span>
+                                <span class="nav-main-link-name">Recommended</span>
+                                <span class="nav-main-link-badge badge badge-pill badge-success">30</span>
                             </a>
                         </li>
-                        <li class="nav-main-heading">Various</li>
-                        <li class="nav-main-item{{ request()->is('examples/*') ? ' open' : '' }}">
+                        <li class="nav-main-heading">Genre <a href="{{route('archives.genre.index')}}">Show All</a></li>
+                        <li class="nav-main-item{{ request()->is('archives/genre/*') ? ' open' : '' }}">
                             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                 <i class="nav-main-link-icon si si-bulb"></i>
-                                <span class="nav-main-link-name">Examples</span>
+                                <span class="nav-main-link-name">Top 30 Genres</span>
                             </a>
                             <ul class="nav-main-submenu">
+<?php 
+	$arr_genre = array('Trance','House','Electronic','R&B','Pop','Club-House','Hardcore','Dance','Rap','Hip-Hop','Techno','Drum & Bass','Lo-Fi','Psychadelic','Classical','Soul','Jazz','Latin','Alternative','Metal','Country','Indie','Ambient','Jpop','Blues','Reggae','Goa','Ethnic','Soundtrack','Punk');
+?>
+															@foreach($arr_genre as $the_genre)
                                 <li class="nav-main-item">
-                                    <a class="nav-main-link{{ request()->is('examples/plugin') ? ' active' : '' }}" href="/examples/plugin">
-                                        <span class="nav-main-link-name">Plugin</span>
+                                    <a class="nav-main-link{{ request()->is('examples/plugin') ? ' active' : '' }}" href="/archives/genre/{{urlencode($the_genre)}}">
+                                        <span class="nav-main-link-name">{{$the_genre}}</span>
                                     </a>
                                 </li>
+															@endforeach
                                 <li class="nav-main-item">
                                     <a class="nav-main-link{{ request()->is('examples/blank') ? ' active' : '' }}" href="/examples/blank">
                                         <span class="nav-main-link-name">Blank</span>

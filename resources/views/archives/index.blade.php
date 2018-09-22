@@ -66,7 +66,7 @@
 
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <a href="/archives/group/{{urlencode($r['group'])}}">{{$r['group']}}</a>
+                            <a href="/archives/group/{{urlencode($r['group_name'])}}">{{$r['group_name']}}</a>
                         </td>
                         <td>
                             <em class="text-muted"><a href="/archives/index/{{$r['release_date']}}">{{$r['release_date']}}</a></em>

@@ -23,6 +23,9 @@ Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-
 
 Route::get('/archives/index/{f_date}', 'ArchivesController@index')->name('archives.index');
 
+Route::get('/archives/genre/index', 'ArchivesController@genreIndex')->name('archives.genre.index');
+
+
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');
 Route::view('/examples/blank', 'examples.blank');
