@@ -175,24 +175,42 @@
 ?>
 															@foreach($arr_genre as $the_genre)
                                 <li class="nav-main-item">
-                                    <a class="nav-main-link{{ request()->is('examples/plugin') ? ' active' : '' }}" href="/archives/genre/{{urlencode($the_genre)}}">
+                                    <a class="nav-main-link" href="/archives/genre/{{rawurlencode($the_genre)}}">
                                         <span class="nav-main-link-name">{{$the_genre}}</span>
                                     </a>
                                 </li>
 															@endforeach
-                                <li class="nav-main-item">
-                                    <a class="nav-main-link{{ request()->is('examples/blank') ? ' active' : '' }}" href="/examples/blank">
-                                        <span class="nav-main-link-name">Blank</span>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
-                        <li class="nav-main-heading">More</li>
-                        <li class="nav-main-item open">
-                            <a class="nav-main-link" href="/">
+                        <li class="nav-main-heading">ARCHIVES</li>
+                        <li class="nav-main-item{{ request()->is('archives/index*') ? ' open' : '' }}">
+                            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                 <i class="nav-main-link-icon si si-globe"></i>
-                                <span class="nav-main-link-name">Landing</span>
+                                <span class="nav-main-link-name">Latest 3 weeks</span>
                             </a>
+
+                            <ul class="nav-main-submenu">
+<?php
+use Illuminate\Support\Facades\DB;
+
+if( request()->is('archives/index') ){
+	$sql = " call get_left_date2()";
+} else if ( request()->is('archives/index/*') ){
+	$sql = " call get_left_date3('genre')";
+}
+
+$db_value=DB::select($sql);
+//$db_value = array_reverse($db_value);
+$cnt_value = count($db_value);
+?>
+												@foreach($db_value as $r)
+                                <li class="nav-main-item">
+                                    <a class="nav-main-link" href="/archives/index/{{substr($r->release_date,0,10)}}">
+                                        <span class="nav-main-link-name">{{substr($r->release_date,0,10)}} ({{$r->cnt_ap}})</span>
+                                    </a>
+                                </li>
+												@endforeach
+														</ul>
                         </li>
                     </ul>
                 </div>
