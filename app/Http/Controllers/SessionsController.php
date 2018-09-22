@@ -11,8 +11,35 @@ class SessionsController extends Controller
 
     public function create(Request $request)
     {   
+
 			$site_status = DB::select('select * from site_status limit 0,1')[0];
+
+			$login_id = $request->session()->get('login_id');
+
+			if($login_id){
+
+				$sql = " select favor_ui from members where user_pk = ".$login_id;
+	
+				if(DB::select($sql)[0]){
+					$favor_ui = DB::select($sql)[0]->favor_ui;
+				}
+	
+				if(!$favor_ui){
+	        return redirect()->to('/settings/ui');
+				} else if($favor_ui == 1){
+					return redirect()->to('/recommended/index');
+				} else if($favor_ui == 2){
+					return redirect()->to('/archives/index');
+				} else if($favor_ui == 3){
+					return redirect()->to('/search/index');
+				} else if($favor_ui == 4){
+					return redirect()->to('/favorites/index');
+				}
+
+			}
+
       return view('members.login',compact('site_status'));
+
 		}
 
     public function store(Request $request)

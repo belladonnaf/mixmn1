@@ -15,16 +15,11 @@
 		<div class="col-md-6 col-xl-6">
 			<div class="playlist-header">
 	      <a class="block block-rounded block-link-pop bg-xinspire" href="javascript:void(0)">
+	      	<span class="btn btn-warning add-fav"><i class="fa fa-heart"></i></span>
 	          <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 	              <div class="mr-3">
 	                  <p class="text-white font-size-lg font-w600 mb-0">
 	                      {{$album_path}}
-	                  </p>
-	                  <p class="text-white-75 mb-0">
-	                      {{$new_track[0]["uploaded_date"]}}
-	                  </p>
-	                  <p class="text-white-75 mb-0">
-	                      {{$new_track[0]["genre"]}}
 	                  </p>
 	              </div>
 	          </div>
