@@ -199,6 +199,7 @@ class ArchivesController extends Controller
 					"artist" => $artist,
 					"img_url" => $img_url
 				);
+			}
 
       return view('album.show',compact('album_id','arr_img','album_path','new_track'));
 				
