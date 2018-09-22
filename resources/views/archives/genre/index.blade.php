@@ -38,7 +38,7 @@ for ($i=0;$i<$cnt_rt;$i++){
 		$is_finish = 0;
 ?>
 
-<div class="col-xl-6">
+<div class="col-xl-2">
     <!-- Default List Groups -->
     <div class="block block-rounded block-bordered">
         <div class="block-content">
