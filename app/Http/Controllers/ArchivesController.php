@@ -43,6 +43,42 @@ class ArchivesController extends Controller
 
 		}
 
+    public function genreIndex()
+    {   
+
+			$sql = " call get_genre_index() ";
+			
+			$obj_rs = DB::select($sql);
+			$str_rs = json_encode($obj_rs);
+			$arr_rs = json_decode($str_rs,1);
+			
+      return view('archives.genre.index',compact('arr_rs'));
+				
+    }
+
+    public function genreList($f_genre = '')
+    {   
+				
+    }
+
+    public function groupIndex()
+    {   
+
+			$sql = " call get_group_index() ";
+			
+			$obj_rs = DB::select($sql);
+			$str_rs = json_encode($obj_rs);
+			$arr_rs = json_decode($str_rs,1);
+			
+      return view('archives.group.index',compact('arr_rs'));
+				
+    }
+
+    public function groupList($f_genre = '')
+    {   
+				
+    }
+
     public function show($album_id)
     {   
 				
