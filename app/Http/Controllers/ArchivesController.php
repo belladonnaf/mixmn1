@@ -114,8 +114,6 @@ class ArchivesController extends Controller
     public function show(Request $request, $album_id)
     {   
 
-			$album_id = $_POST['album_id'];
-
 			if(is_numeric($album_id)){
 				exit;
 			}
