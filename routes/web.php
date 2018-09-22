@@ -30,7 +30,7 @@ Route::get('/archives/genre/{f_genre}','ArchivesController@genreList')->name('ar
 
 Route::get('/archives/group', 'ArchivesController@groupIndex')->name('archives.group.base');
 Route::get('/archives/group/index', 'ArchivesController@groupIndex')->name('archives.group.index');
-Route::get('/archives/group/{f_genre}','ArchivesController@groupList')->name('archives.group.list');;
+Route::get('/archives/group/{f_group}','ArchivesController@groupList')->name('archives.group.list');;
 
 
 
