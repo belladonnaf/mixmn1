@@ -27,9 +27,6 @@
 	                      {{$new_track[0]["genre"]}}
 	                  </p>
 	              </div>
-	              <div class="item">
-	                  <i class="fa fa-2x fa-globe text-xinspire-lighter"></i>
-	              </div>
 	          </div>
 	      </a>
 			</div>
