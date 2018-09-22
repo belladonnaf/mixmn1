@@ -23,7 +23,7 @@
 
 <!-- Page Content -->
 <div class="content">
-	<div class="row">
+	<div class="row taxindex">
 <?php
 $k= 0 ;
 $k_dump = "";
