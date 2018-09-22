@@ -219,6 +219,8 @@ if( request()->is('archives/index') ){
 } else if ( request()->is('archives/index/*') ){
 	$sel_date = str_replace('/archives/index/','',$_SERVER['REQUEST_URI']);
 	$sql = " call get_left_date3('".$sel_date."')";
+} else {
+	$sql = " call get_left_date2()";
 }
 
 $db_value=DB::select($sql);

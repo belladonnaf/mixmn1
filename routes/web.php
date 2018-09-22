@@ -23,9 +23,16 @@ Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-
 
 Route::get('/archives/index/{f_date?}', 'ArchivesController@index')->name('archives.index');
 
-Route::get('/archives/genre', 'ArchivesController@genreIndex')->name('archives.genre.index');
+Route::get('/archives/genre', 'ArchivesController@genreIndex')->name('archives.genre.base');
 Route::get('/archives/genre/index', 'ArchivesController@genreIndex')->name('archives.genre.index');
 Route::get('/archives/genre/{f_genre}','ArchivesController@genreList')->name('archives.genre.list');;
+
+
+Route::get('/archives/group', 'ArchivesController@groupIndex')->name('archives.group.base');
+Route::get('/archives/group/index', 'ArchivesController@groupIndex')->name('archives.group.index');
+Route::get('/archives/group/{f_genre}','ArchivesController@groupList')->name('archives.group.list');;
+
+
 
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');

@@ -23,27 +23,9 @@
 </div>
 <!-- END Hero -->
 
-<div class="col-xl-4">
-                            <!-- Default List Groups -->
-                            <div class="block block-rounded block-bordered">
-                                <div class="block-header block-header-default">
-                                    <h3 class="block-title">Default Style</h3>
-                                </div>
-                                <div class="block-content">
-                                    <ul class="list-group push">
-                                        <li class="list-group-item">This is a simple</li>
-                                        <li class="list-group-item">List Group</li>
-                                        <li class="list-group-item">For showcasing</li>
-                                        <li class="list-group-item">A list of items</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- END Default List Groups -->
-                        </div>
-                        
 <!-- Page Content -->
 <div class="content">
-
+	<div class="row">
 <?php
 $k= 0 ;
 $k_dump = "";
@@ -56,21 +38,23 @@ for ($i=0;$i<$cnt_rt;$i++){
 		$is_finish = 0;
 ?>
 
-<div class="col-xl-4">
+<div class="col-xl-6">
     <!-- Default List Groups -->
     <div class="block block-rounded block-bordered">
-        <div class="block-header block-header-default">
-            <h3 class="block-title">{{ $arr_rs[$i]['genre_init'] }}</h3>
-        </div>
         <div class="block-content">
             <ul class="list-group push">
+
+							<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" href="javascript:void(0)">
+                                           {{ $arr_rs[$i]['genre_init'] }}
+              </a>
 <?php
 		}
 ?>
-							<li class="list-group-item d-flex justify-content-between align-items-center">
-								{{ $arr_rs[$i]['genre_name'] }}
-                 <span class="badge badge-pill badge-info">{{ $arr_rs[$i]['rel_cnt'] }}</span>
+
+							<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="{{route('archives.genre.base')}}/{{rawurlencode($arr_rs[$i]['genre'])}}">
+								{{ $arr_rs[$i]['genre'] }}
 	            </li>
+              </a>
 <?php
 	if ($i % 10 == 9){ 
 	$is_finish = 1;
@@ -91,6 +75,7 @@ if ($is_finish == 0){ ?>
 <?php
 }
 ?>
+	</div>
 </div>
 <!-- END Page Content -->
 
