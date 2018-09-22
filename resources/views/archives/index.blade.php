@@ -1,7 +1,11 @@
 @extends('layouts.backend')
 <!-- Page JS Plugins CSS -->
-<?php get_css('js/plugins/datatables/dataTables.bootstrap4.css'); ?>
-<?php get_css('js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css'); ?>
+
+@section('css_after')
+<link rel="stylesheet" href="/js/plugins/datatables/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="/js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css">
+@endsection
+
 @section('content')
     <!-- Hero -->
 <div class="bg-body-light">
@@ -21,112 +25,32 @@
 
 <!-- Page Content -->
 <div class="content">
-    <!-- Dynamic Table Full -->
-    <div class="block block-rounded block-bordered">
-        <div class="block-header block-header-default">
-            <h3 class="block-title">Dynamic Table <small>Full</small></h3>
-        </div>
-        <div class="block-content block-content-full">
-            <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
-                <thead>
-                    <tr>
-                        <th class="text-center" style="width: 80px;">#</th>
-                        <th>Name</th>
-                        <th class="d-none d-sm-table-cell" style="width: 30%;">Email</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
-                        <th style="width: 15%;">Registered</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php for ($i = 1; $i < 21; $i++) { ?>
-                    <tr>
-                        <td class="text-center"><?php echo $i; ?></td>
-                        <td class="font-w600">
-                            <a href="be_pages_generic_blank.php">123123</a>
-                        </td>
-                        <td class="d-none d-sm-table-cell">
-                            client<?php echo $i; ?><em class="text-muted">@example.com</em>
-                        </td>
-                        <td class="d-none d-sm-table-cell">
-                            123123
-                        </td>
-                        <td>
-                            <em class="text-muted"><?php echo rand(2, 10); ?> days ago</em>
-                        </td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!-- END Dynamic Table Full -->
-
-    <!-- Dynamic Table with Export Buttons -->
-    <div class="block block-rounded block-bordered">
-        <div class="block-header block-header-default">
-            <h3 class="block-title">Dynamic Table <small>Export Buttons</small></h3>
-        </div>
-        <div class="block-content block-content-full">
-            <!-- DataTables init on table by adding .js-dataTable-buttons class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-            <table class="table table-bordered table-striped table-vcenter js-dataTable-buttons">
-                <thead>
-                    <tr>
-                        <th class="text-center" style="width: 80px;">#</th>
-                        <th>Name</th>
-                        <th class="d-none d-sm-table-cell" style="width: 30%;">Email</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
-                        <th style="width: 15%;">Registered</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php for ($i = 1; $i < 21; $i++) { ?>
-                    <tr>
-                        <td class="text-center"><?php echo $i; ?></td>
-                        <td class="font-w600">
-                            <a href="be_pages_generic_blank.php">123123</a>
-                        </td>
-                        <td class="d-none d-sm-table-cell">
-                            client<?php echo $i; ?><em class="text-muted">@example.com</em>
-                        </td>
-                        <td class="d-none d-sm-table-cell">
-                            123123
-                        </td>
-                        <td>
-                            <em class="text-muted"><?php echo rand(2, 10); ?> days ago</em>
-                        </td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!-- END Dynamic Table with Export Buttons -->
 
     <!-- Dynamic Table Full Pagination -->
     <div class="block block-rounded block-bordered">
-        <div class="block-header block-header-default">
-            <h3 class="block-title">Dynamic Table <small>Full pagination</small></h3>
-        </div>
-        <div class="block-content block-content-full">
+        <div class="block-content block-content-full archive-margin-top">
             <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
             <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
                 <thead>
                     <tr>
-                        <th class="text-center" style="width: 80px;">#</th>
-                        <th>Name</th>
-                        <th class="d-none d-sm-table-cell" style="width: 30%;">Email</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
-                        <th style="width: 15%;">Registered</th>
+                        <th class="text-center" style="width: 100px;">Genre</th>
+                        <th>Release</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">Info</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">Button</th>
+                        <th style="width: 15%;">Group</th>
+                        <th style="width: 15%;">Date</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php for ($i = 1; $i < 21; $i++) { ?>
+                    <?php for ($i = 1; $i < 201; $i++) { ?>
                     <tr>
                         <td class="text-center"><?php echo $i; ?></td>
                         <td class="font-w600">123123</td>
                         <td class="d-none d-sm-table-cell">
                             client<?php echo $i; ?><em class="text-muted">@example.com</em>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            123123
                         </td>
                         <td class="d-none d-sm-table-cell">
                             123123
@@ -142,55 +66,20 @@
     </div>
     <!-- END Dynamic Table Full Pagination -->
 
-    <!-- Dynamic Table Simple -->
-    <div class="block block-rounded block-bordered">
-        <div class="block-header block-header-default">
-            <h3 class="block-title">Dynamic Table <small>With only sorting and pagination</small></h3>
-        </div>
-        <div class="block-content block-content-full">
-            <!-- DataTables init on table by adding .js-dataTable-simple class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-            <table class="table table-bordered table-striped table-vcenter js-dataTable-simple">
-                <thead>
-                    <tr>
-                        <th class="text-center" style="width: 80px;">#</th>
-                        <th>Name</th>
-                        <th class="d-none d-sm-table-cell" style="width: 30%;">Email</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
-                        <th style="width: 15%;">Registered</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php for ($i = 1; $i < 21; $i++) { ?>
-                    <tr>
-                        <td class="text-center"><?php echo $i; ?></td>
-                        <td class="font-w600">123123</td>
-                        <td class="d-none d-sm-table-cell">
-                            client<?php echo $i; ?><em class="text-muted">@example.com</em>
-                        </td>
-                        <td class="d-none d-sm-table-cell">
-                            123123
-                        </td>
-                        <td>
-                            <em class="text-muted"><?php echo rand(2, 10); ?> days ago</em>
-                        </td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!-- END Dynamic Table Simple -->
 </div>
 <!-- END Page Content -->
+
 @endsection
+@section('js_after')
 <!-- Page JS Plugins -->
-<?php get_js('js/plugins/datatables/jquery.dataTables.min.js'); ?>
-<?php get_js('js/plugins/datatables/dataTables.bootstrap4.min.js'); ?>
-<?php get_js('js/plugins/datatables/buttons/dataTables.buttons.min.js'); ?>
-<?php get_js('js/plugins/datatables/buttons/buttons.print.min.js'); ?>
-<?php get_js('js/plugins/datatables/buttons/buttons.html5.min.js'); ?>
-<?php get_js('js/plugins/datatables/buttons/buttons.flash.min.js'); ?>
-<?php get_js('js/plugins/datatables/buttons/buttons.colVis.min.js'); ?>
+<script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="/js/plugins/datatables/buttons/dataTables.buttons.min.js"></script>
+<script src="/js/plugins/datatables/buttons/buttons.print.min.js"></script>
+<script src="/js/plugins/datatables/buttons/buttons.html5.min.js"></script>
+<script src="/js/plugins/datatables/buttons/buttons.flash.min.js"></script>
+<script src="/js/plugins/datatables/buttons/buttons.colVis.min.js"></script>
 
 <!-- Page JS Code -->
-<?php get_js('js/pages/be_tables_datatables.min.js'); ?>
+<script src="/js/pages/be_tables_datatables.min.js"></script>
+@endsection

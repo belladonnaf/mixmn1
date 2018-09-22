@@ -977,7 +977,8 @@ __webpack_require__(46);
 __webpack_require__(47);
 __webpack_require__(48);
 __webpack_require__(49);
-module.exports = __webpack_require__(50);
+__webpack_require__(50);
+module.exports = __webpack_require__(51);
 
 
 /***/ }),
@@ -30357,7 +30358,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\laravel\\components\\ExampleComponent.vue"
+Component.options.__file = "resources/assets/js/laravel/components/ExampleComponent.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -30366,9 +30367,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3891da87", Component.options)
+    hotAPI.createRecord("data-v-0cc513d8", Component.options)
   } else {
-    hotAPI.reload("data-v-3891da87", Component.options)
+    hotAPI.reload("data-v-0cc513d8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -30555,7 +30556,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3891da87", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0cc513d8", module.exports)
   }
 }
 
@@ -30591,6 +30592,12 @@ if (false) {
 
 /***/ }),
 /* 50 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

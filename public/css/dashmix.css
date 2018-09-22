@@ -24731,3 +24731,12 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .slick-slider.slick-nav-hover:hover .slick-next {
   opacity: 1;
 }
+
+.music-thumb {
+  width: 100%;
+  height: 100%;
+}
+
+.archive-margin-top {
+  position: relative;
+}
