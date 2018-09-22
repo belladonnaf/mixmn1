@@ -21,7 +21,7 @@ Route::get('/logout', 'SessionsController@destroy')->name('logout');
 Route::view('/settings/ui', 'settings.ui')->middleware('session.has.user');
 Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-ui');
 
-Route::get('/archives/index/{f_date}', 'ArchivesController@index')->name('archives.index');
+Route::get('/archives/index/{f_date?}', 'ArchivesController@index')->name('archives.index');
 
 Route::get('/archives/genre/index', 'ArchivesController@genreIndex')->name('archives.genre.index');
 
