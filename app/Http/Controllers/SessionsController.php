@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 class SessionsController extends Controller
 {   
 
+    public function create(Request $request)
+    {   
+			$site_status = DB::select('select * from site_status limit 0,1')[0];
+      return view('members.login',compact('site_status'));
+		}
 
     public function store(Request $request)
     {   

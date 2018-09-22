@@ -12,12 +12,8 @@
 */
 
 // Example Routes
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
-
-$site_status = DB::select('select * from site_status limit 0,1')[0];
   
-Route::view('/', 'members/login',['site_status' => $site_status])->name('login');
+Route::get('/', 'SessionsController@create')->name('login');
 
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy')->name('logout');
@@ -25,7 +21,7 @@ Route::get('/logout', 'SessionsController@destroy')->name('logout');
 Route::view('/settings/ui', 'settings.ui')->middleware('session.has.user');
 Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-ui');
 
-Route::view('/archives/index', 'archives.index');
+Route::get('/archives/index/{f_date}', 'ArchivesController@index')->name('archives.index');
 
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');
