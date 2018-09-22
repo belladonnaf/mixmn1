@@ -30,7 +30,7 @@
     <div class="block block-rounded block-bordered">
         <div class="block-content block-content-full archive-margin-top">
             <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-            <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination responsive nowrap">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 100px;">Genre</th>
