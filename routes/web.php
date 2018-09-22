@@ -25,9 +25,9 @@ Route::get('/archives/index/{f_date?}', 'ArchivesController@index')->name('archi
 
 Route::get('/archives/genre/index/{f_genre?}', function($f_genre=''){
 			if(!$f_genre){
-				return Route::get('/archives/genre/index','ArchivesController@genreIndex')->name('archives.genre.index');
+				Route::get('/archives/genre/index','ArchivesController@genreIndex')->name('archives.genre.index');
 			} else {
-				return Route::get('/archives/genre/{f_genre}','ArchivesController@genreList')->name('archives.genre.list');
+				Route::get('/archives/genre/{f_genre}','ArchivesController@genreList')->name('archives.genre.list');
 			}
 		});
 
