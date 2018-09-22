@@ -33,10 +33,10 @@
 	                      {{$album_path}}
 	                  </p>
 	                  <p class="text-white-75 mb-0">
-	                      {{$arr_track[0]["uploaded_date"]}}
+	                      {{$new_track[0]["uploaded_date"]}}
 	                  </p>
 	                  <p class="text-white-75 mb-0">
-	                      {{$arr_track[0]["genre"]}}
+	                      {{$new_track[0]["genre"]}}
 	                  </p>
 	              </div>
 	              <div class="item">
@@ -48,9 +48,6 @@
 	
 	<div class="row">
 		<div id="playlist" class="playlist">
-@foreach ( $arr_track as $k=>$row)
-    <aplayer :audio="audio-{{($k+1)}}" :lrcType="1" />
-@endforeach
 		</div>
 	</div>
 
@@ -59,27 +56,6 @@
 
 @endsection
 @section('js_after')
-<script>
-export default {
-  name: 'App',
-  data() {
-    return {
-
-@foreach ( $arr_track as $k=>$row)
-      audio-{{($k+1)}}: {
-    		name: '{{$row["filename"]}}',
-        artist: '{{$row["artist"]}}',
-        url: '{{$row["mp3_path"]}}',
-        cover: '{{$row["img_url"]}}',
-        lrc: '[{{$row["artist"]}}]\n[00:00.00] Length {{$row["length_min"]}}:{{$row["length_sec"]}} Frequency {{$row["frequency"]}}\n',
-      },
-@endforeach
-
-    };
-  },
-};
-
-</script>
 
 @endsection
 
