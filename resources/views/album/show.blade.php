@@ -25,7 +25,8 @@
 <div class="content">
 
 	<div class="row">
-		<div class="col-md-6 col-xl-4">
+		<div class="col-md-6 col-xl-6">
+			<div class="playlist-header">
 	      <a class="block block-rounded block-link-pop bg-xinspire" href="javascript:void(0)">
 	          <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 	              <div class="mr-3">
@@ -44,12 +45,10 @@
 	              </div>
 	          </div>
 	      </a>
+			</div>
+			<div id="playlist" class="playlist"></div>
 	  </div>
 	
-	<div class="row">
-		<div id="playlist" class="playlist">
-		</div>
-	</div>
 
 </div>
 <!-- END Page Content -->
