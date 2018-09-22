@@ -263,7 +263,13 @@ class ArchivesController extends Controller
 				$uid = $user_auth->useremailid;
 				$pwd = $user_auth->password;
 
-				$ftp_con = "http://".$uid.":".$pwd."@$ftp_ip:$port";
+				$sql = " call get_ftp_info('$track_id')";
+				$row1 = DB::select($sql)[0];
+				
+				$ftp_ip = $row1->server_ip;
+				$port = 80;
+
+				$ftp_con = "http://".myUrlEncode($uid).":".myUrlEncode($pwd)."@$ftp_ip:$port";
 
 				$sql = " select album_path, DATE_FORMAT(release_date,'%Y') as release_year, DATE_FORMAT(release_date,'%m%d') as release_mmdd from album_info_tbl where album_id = $album_id ";
 				$row2 = DB::select($sql)[0];
@@ -288,8 +294,8 @@ class ArchivesController extends Controller
 					"track_id" => $track_id,
 					"length_min" => $length_min,
 					"length_sec" => $length_sec,
-					"mbytes" => $mbytes,
-					"frequency" => $frequency,
+					"mbytes" => (round($mbytes*100)/100).'',
+					"frequency" => (round($frequency*100)/100).'',
 					"filename" => $filename,
 					"mp3_path" => $mp3_path,
 					"artist" => $artist,
@@ -298,7 +304,7 @@ class ArchivesController extends Controller
 
 			}
 
-			return response()->json($article,200);
+			return response()->json($new_track,200);
 
 		}
 

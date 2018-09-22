@@ -10,7 +10,7 @@
 
 <!-- Page Content -->
 <div class="content">
-
+<input type="hidden" name="album_id" class="album_id" value="{{$album_id}}">
 	<div class="row">
 		<div class="col-md-6 col-xl-6">
 			<div class="playlist-header">
@@ -33,9 +33,7 @@
 	          </div>
 	      </a>
 			</div>
-			<div id="playlist" class="playlist"></div>
-			<div id="app">
-				<example-component></example-component>
+			<div id="app" class="playlist">
 			</div>
 	  </div>
 	
@@ -45,5 +43,4 @@
 
 @endsection
 @section('js_after')
-
 @endsection

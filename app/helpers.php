@@ -21,3 +21,11 @@ if ( ! function_exists('get_js'))
         echo "<script src=\"$asset_js\"></script>\n";
     }
 }
+
+if ( ! function_exists('myUrlEncode')){
+		function myUrlEncode($string) {
+    	$entities = array('!', '*', "'", "(", ")", ";", ":", "@", "&", "=", "+", "$", ",", "/", "?", "%", "#", "[", "]");
+    	$replacements = array('%21', '%2A', '%27', '%28', '%29', '%3B', '%3A', '%40', '%26', '%3D', '%2B', '%24', '%2C', '%2F', '%3F', '%25', '%23', '%5B', '%5D');
+	    return str_replace($entities, $replacements, $string);
+		}
+}
