@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ArchivesController extends Controller
 {   
 
-    public function index($f_date,Request $request)
+    public function index($f_date='',Request $request)
     {   
 
 			if(!$f_date){

@@ -196,8 +196,7 @@ use Illuminate\Support\Facades\DB;
 if( request()->is('archives/index') ){
 	$sql = " call get_left_date2()";
 } else if ( request()->is('archives/index/*') ){
-	$the_path = request()->route()->getName();
-	$sel_date = str_replace('archives/index/','',$the_path);
+	$sel_date = str_replace('/archives/index/','',$_SERVER['REQUEST_URI']);
 	$sql = " call get_left_date3('".$sel_date."')";
 }
 
@@ -207,7 +206,7 @@ $cnt_value = count($db_value);
 ?>
 												@foreach($db_value as $r)
                                 <li class="nav-main-item">
-                                    <a class="nav-main-link" href="/archives/index/{{substr($r->release_date,0,10)}}">
+                                    <a class="nav-main-link {{ $sel_date == $r->release_date ? ' active' : '' }}" href="/archives/index/{{substr($r->release_date,0,10)}}">
                                         <span class="nav-main-link-name">{{substr($r->release_date,0,10)}} ({{$r->cnt_ap}})</span>
                                     </a>
                                 </li>
