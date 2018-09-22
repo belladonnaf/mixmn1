@@ -49,8 +49,8 @@ for ($i=0;$i<$cnt_rt;$i++){
 		}
 ?>
 
-							<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="{{route('archives.group.base')}}/{{rawurlencode($arr_rs[$i]['group'])}}">
-								{{ $arr_rs[$i]['group'] }}
+							<a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="{{route('archives.group.base')}}/{{rawurlencode($arr_rs[$i]['group_name'])}}">
+								{{ $arr_rs[$i]['group_name'] }}
 	            </li>
               </a>
 <?php
