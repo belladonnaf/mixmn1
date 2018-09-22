@@ -42,16 +42,7 @@
                     </tr>
                 </thead>
 
-			<td height="20" style="text-align:center"><a href="/genre.list/<?=urlencode($genre)?>"><?=$genre?></a></td>
-			<td><a href="/show.album/<?=urlencode($album_path)?>"><?=$album_path?></a></td>
-			<td align="center"><?=$file_cnt?>F <?=$file_size?>M</td>
-			<td align="left" style="padding-left:4px;"><? if ($_SESSION[mem]){ ?><a href="#" id="btn_download" data-id="<?=$row['album_id']?>"><span class="fa fa-floppy-o"></span></a><img src="/img/spacer.gif" width="1"/><a href="#" id="btn_phone" data-description="<?=htmlspecialchars($album_path)?>" data-toggle="modal" data-target="#music_player" data-id="<?=$row['album_id']?>"><span class="fa fa-volume-up"></span></a><? } ?><img src="/img/spacer.gif" width="1"/><a href="#" id="btn_bookmark" data-description="<?=htmlspecialchars($album_path)?>" data-field="album" data-id="<?=$row['album_id']?>"><span class="fa fa-bookmark"></span></a><? if (0) { ?><img src="/img/spacer.gif" width="3"/><? if ($check_pic) { ?><a href="#" id="btn_pic" data-toggle="modal" data-target="#responsive" data-description="<?=htmlspecialchars($album_path)?>" data-id="<?=$row['album_id']?>"><span class="fa fa-camera"></span></a><? } } ?></td>
-			<td style="text-align:center"><a href="/group.list/<?=$group_name?>"><?=$group_name?></a></td>
-			<td style="text-align:center"><a href="/today.list/<?=$release_date?>"><?=$release_date?></a></td>
-
                 <tbody>
-
-<?=$file_cnt?>F <?=$file_size?>M
 
                     @foreach($arr_rs as $r)
                     <tr class="is_online_{{$r['is_online']}}">
@@ -62,7 +53,7 @@
                         </td>
                         <td class="d-none d-sm-table-cell">
 
-<a href="#" id="btn_download" data-id="{{$r['album_id']}}"><span class="fa fa-floppy-o"></span></a> <a href="#" id="btn_phone" data-description="{{ htmlspecialchars($r['album_path']) }}" data-toggle="modal" data-target="#music_player" data-id="{{$r['album_id']}}"><span class="fa fa-volume-up"></span></a> <a href="#" id="btn_bookmark" data-description="{{ htmlspecialchars($r['album_path'] }}" data-field="album" data-id="{{$r['album_id']}}"><span class="fa fa-bookmark"></span></a>
+<a href="#" id="btn_download" data-id="{{$r['album_id']}}"><span class="fa fa-floppy-o"></span></a> <a href="#" id="btn_phone" data-description="{{ htmlspecialchars($r['album_path']) }}" data-toggle="modal" data-target="#music_player" data-id="{{$r['album_id']}}"><span class="fa fa-volume-up"></span></a> <a href="#" id="btn_bookmark" data-description="{{ htmlspecialchars($r['album_path']) }}" data-field="album" data-id="{{$r['album_id']}}"><span class="fa fa-bookmark"></span></a>
 
                         </td>
                         <td class="d-none d-sm-table-cell">
