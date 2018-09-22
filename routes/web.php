@@ -25,11 +25,11 @@ Route::get('/archives/index/{f_date?}', 'ArchivesController@index')->name('archi
 
 Route::get('/archives/genre/index/{f_genre?}', function($f_genre=''){
 			if(!$f_genre){
-				return 'ArchivesController@genreIndex';
+				return Route::get('/archives/genre/index','ArchivesController@genreIndex')->name('archives.genre.index');
 			} else {
-				return 'ArchivesController@genreList';
+				return Route::get('/archives/genre/{f_genre}','ArchivesController@genreList')->name('archives.genre.list');
 			}
-		})->name('archives.genre.index');
+		});
 
 Route::get('/archives/group/index/{f_group?}', function($f_group=''){
 			if(!$f_group){
