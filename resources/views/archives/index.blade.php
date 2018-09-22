@@ -47,7 +47,7 @@
                     @foreach($arr_rs as $r)
                     <tr class="is_online_{{$r['is_online']}}">
                         <td class="text-center"><a href="/archives/genre/{{urlencode($r['genre'])}}">{{ $r['genre'] }}</a></td>
-                        <td class="font-w600"><a href="/archives/album/{{$r['album_id']}}">{{ $r['album_path'] }}</a></td>
+                        <td class="font-w600"><a href="/album/{{$r['album_id']}}">{{ $r['album_path'] }}</a></td>
                         <td class="d-none d-sm-table-cell">
                            {{$r['file_cnt']}}F {{$r['file_size']}}M
                         </td>
