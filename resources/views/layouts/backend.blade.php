@@ -163,6 +163,27 @@
                                 <span class="nav-main-link-badge badge badge-pill badge-success">30</span>
                             </a>
                         </li>
+
+                        <li class="nav-main-heading">Groups <a href="{{route('archives.group.index')}}">Show All</a></li>
+                        <li class="nav-main-item{{ request()->is('archives/group/*') ? ' open' : '' }}">
+                            <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
+                                <i class="nav-main-link-icon si si-bulb"></i>
+                                <span class="nav-main-link-name">Top 7 Groups</span>
+                            </a>
+                            <ul class="nav-main-submenu">
+<?php 
+	$arr_group = array('TALiON','ZzZz','ENTiTLED','ENRAGED','ENSLAVE','JUSTiFY','MMS');
+?>
+															@foreach($arr_group as $the_group)
+                                <li class="nav-main-item">
+                                    <a class="nav-main-link" href="/archives/genre/{{rawurlencode($the_group)}}">
+                                        <span class="nav-main-link-name">{{$the_group}}</span>
+                                    </a>
+                                </li>
+															@endforeach
+                            </ul>
+                        </li>
+
                         <li class="nav-main-heading">Genre <a href="{{route('archives.genre.index')}}">Show All</a></li>
                         <li class="nav-main-item{{ request()->is('archives/genre/*') ? ' open' : '' }}">
                             <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
