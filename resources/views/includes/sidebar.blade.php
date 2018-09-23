@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 $sql = " select useremailid, service_enddate from members where  user_pk = ? ";
-$row_user=DB::select($sql,[Request()->session()->get("login_id"))[0]];
+$row_user=DB::select($sql,[Request()->session()->get("login_id"))])[0];
 ?>
 					
                 <!-- User Info -->
