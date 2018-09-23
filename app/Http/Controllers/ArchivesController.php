@@ -339,7 +339,7 @@ class ArchivesController extends Controller
 			$sql = " insert into mp3_favorite ( user_id, track_id, album_id, order_num, reg_date ) values ( ".$request->session()->get("login_id").", ".$track_id.",".$album_id.",".$max_num.", NOW() )";
 			DB::insert($sql);
 
-			$sql = " select * from album_info where album_id = ? ";
+			$sql = " select * from album_info_tbl where album_id = ? ";
 			$album_info = DB::select($sql,[$album_id])[0];
 
 			return response()->json($album_info,200);
