@@ -8,11 +8,18 @@
                     <img class="img-avatar img-avatar48" src="/media/avatars/avatar10.jpg" alt="">
                 </a>
                 <!-- END User Avatar -->
+<?php
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
+$sql = " select useremailid, service_enddate from members where  ".Request()->session()->get("login_id");
+$row_user=DB::select($sql)[0];
+?>
+					
                 <!-- User Info -->
                 <div class="ml-2">
-                    <a class="text-white font-w600" href="be_pages_generic_profile.html">George Taylor</a>
-                    <div class="text-white-75 font-size-sm font-italic">Full Stack Developer</div>
+                    <a class="text-white font-w600" href="be_pages_generic_profile.html">{{$row_user->useremailid}}</a>
+                    <div class="text-white-75 font-size-sm font-italic">{{$row_user->service_enddate}}</div>
                 </div>
                 <!-- END User Info -->
 
