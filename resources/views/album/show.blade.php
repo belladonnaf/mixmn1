@@ -44,5 +44,18 @@
 
 <!-- Page JS Code -->
 <script src="/js/pages/be_comp_dialogs.min.js"></script>
+<script>
+jQuery(document).ready(function(){
 
+	jQuery(".add-fav").click(function(){
+		
+		var api_url = 'http://mix.mn1.net/api/favorites/set/' + jQuery(".album_id").val();
+    axios.get(api_url).then(response => {
+			console.log(response.data);
+		});
+
+	});
+
+});
+</script>
 @endsection

@@ -34,6 +34,7 @@ Route::get('/archives/group/{f_group}','ArchivesController@groupList')->name('ar
 
 Route::get('/album/{album_id}','ArchivesController@show')->name('album.show');;
 Route::get('/api/album/{album_id}','ArchivesController@getJson');
+Route::get('/api/favorites/set/{album_id}','ArchivesController@setFavorite');
 
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');

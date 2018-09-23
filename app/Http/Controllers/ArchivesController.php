@@ -214,6 +214,10 @@ class ArchivesController extends Controller
 				exit;
 			}
 
+			if(!$request->session()->get("login_id")){
+				exit;
+			}
+			
 			$sql = " call get_img_path('$album_id')";
 			$row = DB::select($sql)[0];
 
@@ -305,6 +309,40 @@ class ArchivesController extends Controller
 			}
 
 			return response()->json($new_track,200);
+
+		}
+
+    public function setFavorite(Request $request,$album_id)
+    {       
+
+			if(!is_numeric($album_id)){
+				exit;
+			}
+
+			if(!$request->session()->get("login_id")){
+				exit;
+			}
+
+			if(!$album_id){
+				$album_id = 0;
+			}
+			
+			if(!$track_id){
+				$track_id = 0;
+			}
+			
+			$i=0;
+			
+			$sql = " select ifnull(max(order_num)+1,1) as max_num from mp3_favorite where user_id = ".$request->session()->get("login_id");
+			$max_num = DB::select($sql)[0]->max_num;
+			
+			$sql = " insert into mp3_favorite ( user_id, track_id, album_id, order_num, reg_date ) values ( ".$request->session()->get("login_id").", ".$track_id.",".$album_id.",".$max_num.", NOW() )";
+			DB::insert($sql);
+
+			$sql = " select * from album_info where album_id = ? ";
+			$album_info = DB::select($sql,[$album_id])[0];
+
+			return response()->json($album_info,200);
 
 		}
 
