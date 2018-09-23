@@ -2,6 +2,8 @@
 <!-- Page JS Plugins CSS -->
 
 @section('css_after')
+<!-- Page JS Plugins CSS -->
+<link rel="stylesheet" href="assets/js/plugins/sweetalert2/sweetalert2.min.css">
 @endsection
 
 @section('content')
@@ -15,7 +17,7 @@
 		<div class="col-md-6 col-xl-6">
 			<div class="playlist-header">
 	      <a class="block block-rounded block-link-pop bg-xinspire" href="javascript:void(0)">
-	      	<span class="btn btn-warning add-fav"><i class="fa fa-heart"></i></span>
+	      	<span class="btn btn-warning add-fav js-swal-success push"><i class="fa fa-heart"></i></span>
 	          <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 	              <div class="mr-3">
 	                  <p class="text-white font-size-lg font-w600 mb-0">
@@ -35,4 +37,12 @@
 
 @endsection
 @section('js_after')
+
+<!-- Page JS Plugins -->
+<script src="/js/plugins/es6-promise/es6-promise.auto.min.js"></script>
+<script src="/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<!-- Page JS Code -->
+<script src="/js/pages/be_comp_dialogs.min.js"></script>
+
 @endsection
