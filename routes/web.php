@@ -19,20 +19,20 @@ Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy')->name('logout');
 
 Route::view('/settings/ui', 'settings.ui')->middleware('session.has.user');
-Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-ui');
+Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-ui')->middleware('session.has.user');
 
-Route::get('/archives/index/{f_date?}', 'ArchivesController@index')->name('archives.index');
+Route::get('/archives/index/{f_date?}', 'ArchivesController@index')->name('archives.index')->middleware('session.has.user');
 
-Route::get('/archives/genre', 'ArchivesController@genreIndex')->name('archives.genre.base');
-Route::get('/archives/genre/index', 'ArchivesController@genreIndex')->name('archives.genre.index');
-Route::get('/archives/genre/{f_genre}','ArchivesController@genreList')->name('archives.genre.list');;
+Route::get('/archives/genre', 'ArchivesController@genreIndex')->name('archives.genre.base')->middleware('session.has.user');
+Route::get('/archives/genre/index', 'ArchivesController@genreIndex')->name('archives.genre.index')->middleware('session.has.user');
+Route::get('/archives/genre/{f_genre}','ArchivesController@genreList')->name('archives.genre.list')->middleware('session.has.user');
 
 
-Route::get('/archives/group', 'ArchivesController@groupIndex')->name('archives.group.base');
-Route::get('/archives/group/index', 'ArchivesController@groupIndex')->name('archives.group.index');
-Route::get('/archives/group/{f_group}','ArchivesController@groupList')->name('archives.group.list');;
+Route::get('/archives/group', 'ArchivesController@groupIndex')->name('archives.group.base')->middleware('session.has.user');
+Route::get('/archives/group/index', 'ArchivesController@groupIndex')->name('archives.group.index')->middleware('session.has.user');
+Route::get('/archives/group/{f_group}','ArchivesController@groupList')->name('archives.group.list')->middleware('session.has.user');
 
-Route::get('/album/{album_id}','ArchivesController@show')->name('album.show');;
+Route::get('/album/{album_id}','ArchivesController@show')->name('album.show')->middleware('session.has.user');
 Route::get('/api/album/{album_id}','ArchivesController@getJson');
 Route::get('/api/favorites/set/{album_id}','ArchivesController@setFavorite');
 
