@@ -127,25 +127,6 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
 
                     </div>
                 </div>
-@section('js_after')
-<script>
-	jQuery(document).ready(function(){
-		jQuery(".sel-ui,.sel-genre").onclick(function(){
-			if(jQuery(this).hasClass("sel-genre")){
-				jQuery(".sel-genre").removeClass("active");
-				jQuery(this).addClass("active");
-				var api_url = 'http://mix.mn1.net/api/settings/mygenre/set/' + jQuery(this).attr("data-value");
-		    axios.get(api_url).then(response => {console.log(response.data);});
-			} else if(jQuery(this).hasClass("sel-ui")) {
-				jQuery(".sel-ui").removeClass("active");
-				jQuery(this).addClass("active");
-				var api_url = 'http://mix.mn1.net/api/settings/myui/set/' + jQuery(this).attr("data-value");
-		    axios.get(api_url).then(response => {console.log(response.data);});
-			}			
-		});
-	});
-</script>
-@endsection
                 <!-- END Settings Tab -->
 
                 <!-- People -->
