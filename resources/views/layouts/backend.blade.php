@@ -243,11 +243,11 @@ $cnt_value = count($db_value);
                                 </div>
                                 <div class="p-2">
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-heart mr-1"></i> Favorite Album
+                                        <i class="far fa-fw fa-heart mr-1"></i>Favorites
                                         <span class="badge badge-primary">23</span>
                                     </a>
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span><i class="far fa-fw fa-compact-disk mr-1"></i>Stream Set</span>
+                                        <i class="far fa-fw fa-gem mr-1"></i>Stream Set
                                         <span class="badge badge-primary">3</span>
                                     </a>
                                     <div role="separator" class="dropdown-divider"></div>
