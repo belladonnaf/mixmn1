@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\DB;
 
-if ( !Request()->hasSession() ){
-	if( !Request()->session()->get("login_id") ){
-		return redirect('/');		
-	}
+if ( @(!Request()->session()->get("login_id")) ){
+	return redirect('/');		
 }
 
 class ArchivesController extends Controller
