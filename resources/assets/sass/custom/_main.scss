@@ -40,3 +40,7 @@ span.add-fav {
     color: white;
     z-index:999;
 }
+
+.sel-ui.active, .sel-group.active {
+    box-shadow: black 2px 2px 2px;
+}
