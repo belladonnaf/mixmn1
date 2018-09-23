@@ -1,11 +1,11 @@
 <aside id="side-overlay">
     <!-- Side Header -->
-    <div class="bg-image" style="background-image: url('assets/media/various/bg_side_overlay_header.jpg');">
+    <div class="bg-image" style="background-image: url('/media/various/bg_side_overlay_header.jpg');">
         <div class="bg-primary-op">
             <div class="content-header">
                 <!-- User Avatar -->
                 <a class="img-link mr-1" href="be_pages_generic_profile.html">
-                    <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar10.jpg" alt="">
+                    <img class="img-avatar img-avatar48" src="/media/avatars/avatar10.jpg" alt="">
                 </a>
                 <!-- END User Avatar -->
 
@@ -65,27 +65,27 @@
                                     </a>
                                 </div>
                                 <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xwork" data-toggle="theme" data-theme="assets/css/themes/xwork.min.css" href="#">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xwork" data-toggle="theme" data-theme="/css/themes/xwork.min.css" href="#">
                                         xWork
                                     </a>
                                 </div>
                                 <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xmodern" data-toggle="theme" data-theme="assets/css/themes/xmodern.min.css" href="#">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xmodern" data-toggle="theme" data-theme="/css/themes/xmodern.min.css" href="#">
                                         xModern
                                     </a>
                                 </div>
                                 <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco" data-toggle="theme" data-theme="assets/css/themes/xeco.min.css" href="#">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco" data-toggle="theme" data-theme="/css/themes/xeco.min.css" href="#">
                                         xEco
                                     </a>
                                 </div>
                                 <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth" data-toggle="theme" data-theme="assets/css/themes/xsmooth.min.css" href="#">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth" data-toggle="theme" data-theme="/css/themes/xsmooth.min.css" href="#">
                                         xSmooth
                                     </a>
                                 </div>
                                 <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire" data-toggle="theme" data-theme="assets/css/themes/xinspire.min.css" href="#">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire" data-toggle="theme" data-theme="/css/themes/xinspire.min.css" href="#">
                                         xInspire
                                     </a>
                                 </div>
@@ -178,7 +178,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar3.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar3.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-success"></span>
                                         </div>
                                         <div class="media-body">
@@ -190,7 +190,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar10.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar10.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-success"></span>
                                         </div>
                                         <div class="media-body">
@@ -202,7 +202,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar7.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar7.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-success"></span>
                                         </div>
                                         <div class="media-body">
@@ -224,7 +224,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar2.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar2.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-danger"></span>
                                         </div>
                                         <div class="media-body">
@@ -246,7 +246,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar12.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar12.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-warning"></span>
                                         </div>
                                         <div class="media-body">
@@ -258,7 +258,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar4.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar4.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-warning"></span>
                                         </div>
                                         <div class="media-body">
@@ -280,7 +280,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar12.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar12.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-muted"></span>
                                         </div>
                                         <div class="media-body">
@@ -292,7 +292,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar3.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar3.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-muted"></span>
                                         </div>
                                         <div class="media-body">
@@ -304,7 +304,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar2.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar2.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-muted"></span>
                                         </div>
                                         <div class="media-body">
@@ -316,7 +316,7 @@
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="assets/media/avatars/avatar12.jpg" alt="">
+                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar12.jpg" alt="">
                                             <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-muted"></span>
                                         </div>
                                         <div class="media-body">
