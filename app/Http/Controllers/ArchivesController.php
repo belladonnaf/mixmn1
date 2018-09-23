@@ -125,25 +125,20 @@ class ArchivesController extends Controller
 				$img_path = $row->img_path;
 			}
 
-			$sql = " select a.pic_id, a.album_id, a.pic_type, a.filename, b.album_path, date_format(b.release_date,'%Y') as release_year, date_format(b.release_date,'%m%d') as release_date from album_pic_tbl a left outer join album_info_tbl b on a.album_id = b.album_id where a.album_id = ? ";
+			$sql = " call get_album_pic(".$album_id.") ";
 			$arr_rs = DB::select($sql,[$album_id]);
 			$str_rs = json_encode($arr_rs);
 			$arr_rs = json_decode($str_rs,1);
 			$cnt_img = count($arr_rs);
 			$arr_img = array();
 			
-			var_dump($arr_rs);
-
 			if($arr_rs) {
 				foreach($arr_rs as $k=> $row) { 
 					$url = $img_path."/".$row['filename'];
+					$row['image'] = $url;
 					$arr_img[] = $row;
-					$arr_img[]['image'] = $url;
 				}
 			}
-
-			var_dump($arr_img);
-			exit;
 
 			$sql = " call get_album_path($album_id);";
 			
@@ -230,7 +225,7 @@ class ArchivesController extends Controller
 				$img_path = $row->img_path;
 			}
 
-			$sql = " select a.pic_id, a.album_id, a.pic_type, a.filename, b.album_path, date_format(b.release_date,'%Y') as release_year, date_format(b.release_date,'%m%d') as release_date from album_pic_tbl a left outer join album_info_tbl b on a.album_id = b.album_id where a.album_id = $album_id ";
+			$sql = " call get_album_pic(".$album_id.") ";
 			$arr_rs = DB::select($sql);
 			$str_rs = json_encode($arr_rs);
 			$arr_rs = json_decode($str_rs,1);
@@ -240,11 +235,11 @@ class ArchivesController extends Controller
 			if($arr_rs) {
 				foreach($arr_rs as $k=> $row) { 
 					$url = $img_path."/".$row['filename'];
+					$row['image'] = $url;
 					$arr_img[] = $row;
-					$arr_img[]['image'] = $url;
 				}
 			}
-
+			
 			$sql = " call get_album_path($album_id);";
 			
 			if(DB::select($sql)[0]){
