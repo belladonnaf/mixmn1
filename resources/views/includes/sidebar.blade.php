@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 $sql = " select useremailid, service_enddate, favor_ui, favor_genre from members where  user_pk = ? ";
-$row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
+$row_user = DB::select($sql,[Request()->session()->get("login_id")])[0];
 
+$sql = " select a.album_id, album_path, release_date, genre, file_size, file_cnt from mp3_album_log a inner join album_info_tbl b on a.album_id = b.album_id order by a.no desc limit 0,20 "
+$arr_log = DB::select($sql,[Request()->session()->get("login_id")])[0];
 ?>
 					
                 <!-- User Info -->
@@ -139,18 +141,16 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
                         </div>
                         <div class="block-content">
                             <ul class="nav-items">
+@foreach($arr_log as $r)
                                 <li>
-                                    <a class="media py-2" href="be_pages_generic_profile.html">
-                                        <div class="mx-3 overlay-container">
-                                            <img class="img-avatar img-avatar48" src="/media/avatars/avatar3.jpg" alt="">
-                                            <span class="overlay-item item item-tiny item-circle border border-2x border-white bg-success"></span>
-                                        </div>
+                                    <a class="media py-2" href="/album/{{$r->album_id}}">
                                         <div class="media-body">
-                                            <div class="font-w600">Carol White</div>
-                                            <div class="font-size-sm text-muted">Photographer</div>
+                                            <div class="font-w600">{{$r->album_path}}</div>
+                                            <div class="font-size-sm text-muted">{{$r->genre}} / {{$r->release_date}} ({{$r->file_size}}/{{$r->file_cnt}})</div>
                                         </div>
                                     </a>
                                 </li>
+@endforeach
                                 <li>
                                     <a class="media py-2" href="be_pages_generic_profile.html">
                                         <div class="mx-3 overlay-container">
