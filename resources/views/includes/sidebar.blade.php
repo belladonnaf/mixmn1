@@ -35,7 +35,7 @@ $row_user=DB::select($sql)[0];
     <!-- END Side Header -->
 
     <!-- Side Content -->
-    <div class="content-side">
+    <div class="content-side" id="right-sidebar">
         <!-- Side Overlay Tabs -->
         <div class="block block-transparent pull-x pull-t">
             <ul class="nav nav-tabs nav-tabs-block nav-justified" data-toggle="tabs" role="tablist">
@@ -68,22 +68,22 @@ $row_user=DB::select($sql)[0];
                             <div class="row gutters-tiny text-center">
 
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default" data-toggle="theme" data-theme="default" href="/settings/set-ui?fav=1">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default" href="#" @click="set-ui-fav(1)">
                                         Recommended
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco" data-toggle="theme" data-theme="/css/themes/xeco.min.css" href="/settings/set-ui?fav=2">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco" href="#" @click="set-ui-fav(2)">
                                         Archives
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth" data-toggle="theme" data-theme="/css/themes/xsmooth.min.css" href="/settings/set-ui?fav=3">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth" href="#" @click="set-ui-fav(3)">
                                         Search
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire" data-toggle="theme" data-theme="/css/themes/xinspire.min.css" href="/settings/set-ui?fav=4">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire" href="#" @click="set-ui-fav(4)">
                                         Favorites
                                     </a>
                                 </div>
@@ -98,28 +98,28 @@ $row_user=DB::select($sql)[0];
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="sidebar_style_dark" href="javascript:void(0)">EDM Music</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(1)">EDM Music</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="sidebar_style_light" href="javascript:void(0)">Hip Hop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(2)">Hip Hop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_style_dark" href="javascript:void(0)">Easy Listening</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(3)">Easy Listening</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_style_light" href="javascript:void(0)">Classical</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(4)">Classical</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_fixed" href="javascript:void(0)">Pop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(5)">Pop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_static" href="javascript:void(0)">Kpop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(6)">Kpop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_fixed" href="javascript:void(0)">Chanson</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(7)">Chanson</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_static" href="javascript:void(0)">Hardcore</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(8)">Hardcore</a>
                                 </div>
                             </div>
                         </div>

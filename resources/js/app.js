@@ -10,6 +10,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import App from './App.vue';
+import RightSidebar from './RightSidebar.vue';
 import APlayer from '@moefe/vue-aplayer';
 
 Vue.use(APlayer);
@@ -23,7 +24,14 @@ Vue.config.productionTip = false;
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const vm1 = new Vue({
-    el: '#app',
+    el: '#playlist',
+		components:{ App },
+		template: '<App/>',
+});
+
+
+const vm2 = new Vue({
+    el: '#right-sidebar',
 		components:{ App },
 		template: '<App/>',
 });

@@ -27,7 +27,7 @@
           </div>
 	      </a>
 			</div>
-			<div id="app" class="playlist"></div>
+			<div id="playlist" class="playlist"></div>
 	  </div>
 
 @if (!$agent->isMobile())
