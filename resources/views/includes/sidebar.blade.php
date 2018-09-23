@@ -62,42 +62,30 @@ $row_user=DB::select($sql)[0];
                         <!-- Color Themes -->
                         <!-- Toggle Themes functionality initialized in Template._uiHandleTheme() -->
                         <div class="block-content block-content-sm block-content-full bg-body">
-                            <span class="text-uppercase font-size-sm font-w700">Color Themes</span>
+                            <span class="text-uppercase font-size-sm font-w700">Set Intro Page</span>
                         </div>
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
-                                <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default" data-toggle="theme" data-theme="default" href="#">
-                                        Default
+
+                                <div class="col-6 mb-1">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default" data-toggle="theme" data-theme="default" href="/settings/set-ui?fav=1">
+                                        Recommended
                                     </a>
                                 </div>
-                                <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xwork" data-toggle="theme" data-theme="/css/themes/xwork.min.css" href="#">
-                                        xWork
+                                <div class="col-6 mb-1">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco" data-toggle="theme" data-theme="/css/themes/xeco.min.css" href="/settings/set-ui?fav=2">
+                                        Archives
                                     </a>
                                 </div>
-                                <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xmodern" data-toggle="theme" data-theme="/css/themes/xmodern.min.css" href="#">
-                                        xModern
+                                <div class="col-6 mb-1">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth" data-toggle="theme" data-theme="/css/themes/xsmooth.min.css" href="/settings/set-ui?fav=3">
+                                        Search
                                     </a>
                                 </div>
-                                <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco" data-toggle="theme" data-theme="/css/themes/xeco.min.css" href="#">
-                                        xEco
+                                <div class="col-6 mb-1">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire" data-toggle="theme" data-theme="/css/themes/xinspire.min.css" href="/settings/set-ui?fav=4">
+                                        Favorites
                                     </a>
-                                </div>
-                                <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth" data-toggle="theme" data-theme="/css/themes/xsmooth.min.css" href="#">
-                                        xSmooth
-                                    </a>
-                                </div>
-                                <div class="col-4 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire" data-toggle="theme" data-theme="/css/themes/xinspire.min.css" href="#">
-                                        xInspire
-                                    </a>
-                                </div>
-                                <div class="col-12">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="be_ui_color_themes.html">All Color Themes</a>
                                 </div>
                             </div>
                         </div>

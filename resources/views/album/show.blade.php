@@ -18,20 +18,25 @@
 			<div class="playlist-header">
 				<span class="btn btn-warning add-fav js-swal-add-fav push"><i class="fa fa-heart"></i></span>
 	      <a class="block block-rounded block-link-pop bg-xinspire" href="javascript:void(0)">
-	          <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-	              <div class="mr-3">
-	                  <p class="text-white font-size-lg font-w600 mb-0">
-	                      {{$album_path}}
-	                  </p>
-	              </div>
-	          </div>
+          <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+              <div class="mr-3">
+                  <p class="text-white font-size-lg font-w600 mb-0">
+                      {{$album_path}}
+                  </p>
+              </div>
+          </div>
 	      </a>
 			</div>
-			<div id="app" class="playlist">
-			</div>
+			<div id="app" class="playlist"></div>
 	  </div>
-	
 
+@if (!$agent->isMobile())
+		<div class="col-md-6 col-xl-6">
+    Show desktop stuff...
+		</div>
+@endif
+	
+	</div>
 </div>
 <!-- END Page Content -->
 
