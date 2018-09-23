@@ -68,22 +68,22 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
                             <div class="row gutters-tiny text-center">
 
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default" href="#" @click="set-ui-fav(1)">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default" href="#" @click="set:ui:fav(1)">
                                         Recommended
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco" href="#" @click="set-ui-fav(2)">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco" href="#" @click="set:ui:fav(2)">
                                         Archives
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth" href="#" @click="set-ui-fav(3)">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth" href="#" @click="set:ui:fav(3)">
                                         Search
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire" href="#" @click="set-ui-fav(4)">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire" href="#" @click="set:ui:fav(4)">
                                         Favorites
                                     </a>
                                 </div>
@@ -98,28 +98,28 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(1)">EDM Music</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set:genre:fav(1)">EDM Music</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(2)">Hip Hop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set:genre:fav(2)">Hip Hop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(3)">Easy Listening</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set:genre:fav(3)">Easy Listening</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(4)">Classical</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set:genre:fav(4)">Classical</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(5)">Pop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set:genre:fav(5)">Pop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(6)">Kpop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set:genre:fav(6)">Kpop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(7)">Chanson</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set:genre:fav(7)">Chanson</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set-genre-fav(8)">Hardcore</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" href="#" @click="set:genre:fav(8)">Hardcore</a>
                                 </div>
                             </div>
                         </div>
