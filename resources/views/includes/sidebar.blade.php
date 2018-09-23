@@ -99,28 +99,28 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="1">EDM Music</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre <?php if($row_user->favor_genre == 1){ echo 'active'; } ?>" href="#" data-value="1">EDM Music</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="2">Hip Hop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre <?php if($row_user->favor_genre == 2){ echo 'active'; } ?>" href="#" data-value="2">Hip Hop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="3">Easy Listening</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre <?php if($row_user->favor_genre == 3){ echo 'active'; } ?>" href="#" data-value="3">Easy Listening</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="4">Classical</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre <?php if($row_user->favor_genre == 4){ echo 'active'; } ?>" href="#" data-value="4">Classical</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="5">Pop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre <?php if($row_user->favor_genre == 5){ echo 'active'; } ?>" href="#" data-value="5">Pop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="6">Kpop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre <?php if($row_user->favor_genre == 6){ echo 'active'; } ?>" href="#" data-value="6">Kpop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="7">Chanson</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre <?php if($row_user->favor_genre == 7){ echo 'active'; } ?>" href="#" data-value="7">Chanson</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="8">Hardcore</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre <?php if($row_user->favor_genre == 8){ echo 'active'; } ?>" href="#" data-value="8">Hardcore</a>
                                 </div>
                             </div>
                         </div>
