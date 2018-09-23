@@ -16,7 +16,7 @@ $sql = " select useremailid, service_enddate, favor_ui, favor_genre from members
 $row_user = DB::select($sql,[Request()->session()->get("login_id")])[0];
 
 $sql = " call get_user_log(?) ";
-$arr_log = DB::select($sql,[Request()->session()->get("login_id")])[0];
+$arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
 ?>
 				
                 <!-- User Info -->
