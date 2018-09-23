@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 $sql = " select useremailid, service_enddate, favor_ui, favor_genre from members where  user_pk = ? ";
 $row_user = DB::select($sql,[Request()->session()->get("login_id")])[0];
 
-$sql = " select a.album_id, album_path, release_date, genre, file_size, file_cnt from mp3_album_log a inner join album_info_tbl b on a.album_id = b.album_id order by a.no desc limit 0,20 "
+$sql = " select a.album_id, album_path, release_date, genre, file_size, file_cnt from mp3_album_log a inner join album_info_tbl b on a.album_id = b.album_id where login = ? order by a.no desc limit 0,20 ";
 $arr_log = DB::select($sql,[Request()->session()->get("login_id")])[0];
 ?>
 					
