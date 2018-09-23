@@ -336,7 +336,7 @@ class ArchivesController extends Controller
 			$sql = " select ifnull(max(order_num)+1,1) as max_num from mp3_favorite where user_id = ".$request->session()->get("login_id");
 			$max_num = DB::select($sql)[0]->max_num;
 			
-			$sql = " select count(*) cnt from album_info_tbl where album_id = ? and user_id = ? ";			
+			$sql = " select count(*) cnt from mp3_favorite where album_id = ? and user_id = ? ";			
 			$check_dupe = DB::select($sql,[$album_id,$request->session()->get("login_id")])[0]->cnt;
 			
 			if($check_dupe){
