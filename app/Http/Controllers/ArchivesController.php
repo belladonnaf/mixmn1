@@ -308,7 +308,7 @@ class ArchivesController extends Controller
 
 			}
 
-			$sql = " INSERT INTO mp3_album_log (login, album_id, server_ip, reg_date, ip) VALUES (?, ?, ?, NOW(), ?); ";
+			$sql = " INSERT INTO mp3_album_log (login, album_id, server_ip, reg_date, ip) VALUES (?, ?, '?', NOW(), '?'); ";
 			DB::insert($sql,[$request->session()->get("login_id"),$album_id,$ftp_ip,$_SERVER['REMOTE_ADDR']]);
 
 			return response()->json($new_track,200);
