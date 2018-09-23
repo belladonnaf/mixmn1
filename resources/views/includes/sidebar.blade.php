@@ -12,7 +12,7 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-$sql = " select useremailid, service_enddate from members where  user_pk = ? ";
+$sql = " select useremailid, service_enddate, favor_ui, favor_genre from members where  user_pk = ? ";
 $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
 ?>
 					
@@ -68,22 +68,22 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
                             <div class="row gutters-tiny text-center">
 
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default sel-ui" href="#" @click="setUIFav(1,jQuery(this))">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default sel-ui" href="#" data-value="1">
                                         Recommended
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco sel-ui" href="#" @click="setUIFav(2,jQuery(this))">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco sel-ui" href="#" data-value="2">
                                         Archives
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth sel-ui" href="#" @click="setUIFav(3,jQuery(this))">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth sel-ui" href="#" data-value="3">
                                         Search
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire sel-ui" href="#" @click="setUIFav(4,jQuery(this))">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire sel-ui" href="#" data-value="4">
                                         Favorites
                                     </a>
                                 </div>
@@ -98,28 +98,28 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" @click="setGenreFav(1)">EDM Music</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="1">EDM Music</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" @click="setGenreFav(2)">Hip Hop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="2">Hip Hop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" @click="setGenreFav(3)">Easy Listening</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="3">Easy Listening</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" @click="setGenreFav(4)">Classical</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="4">Classical</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" @click="setGenreFav(5)">Pop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="5">Pop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" @click="setGenreFav(6)">Kpop</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="6">Kpop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" @click="setGenreFav(7)">Chanson</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="7">Chanson</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" @click="setGenreFav(8)">Hardcore</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark sel-genre" href="#" data-value="8">Hardcore</a>
                                 </div>
                             </div>
                         </div>
@@ -127,6 +127,25 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
 
                     </div>
                 </div>
+@section('js_after')
+<script>
+	jQuery(document).ready(function(){
+		jQuery(".sel-ui,.sel-genre").onclick(function(){
+			if(jQuery(this).hasClass("sel-genre")){
+				jQuery(".sel-genre").removeClass("active");
+				jQuery(this).addClass("active");
+				var api_url = 'http://mix.mn1.net/api/settings/mygenre/set/' + jQuery(this).attr("data-value");
+		    axios.get(api_url).then(response => {console.log(response.data);});
+			} else if(jQuery(this).hasClass("sel-ui")) {
+				jQuery(".sel-ui").removeClass("active");
+				jQuery(this).addClass("active");
+				var api_url = 'http://mix.mn1.net/api/settings/myui/set/' + jQuery(this).attr("data-value");
+		    axios.get(api_url).then(response => {console.log(response.data);});
+			}			
+		});
+	});
+</script>
+@endsection
                 <!-- END Settings Tab -->
 
                 <!-- People -->
