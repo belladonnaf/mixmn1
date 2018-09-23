@@ -34,7 +34,7 @@ class SettingsController extends Controller
 				$login_id = $request->session()->get('login_id');
 				DB::update($sql,array($ui_id,$login_id));
 				$ret = array("result"=>"ok");
-				return response()->json($album_info,200);
+				return response()->json($ret,200);
     }
 
     public function setMyGenre($genre_group_id, Request $request){
