@@ -336,8 +336,16 @@ class ArchivesController extends Controller
 			$sql = " select ifnull(max(order_num)+1,1) as max_num from mp3_favorite where user_id = ".$request->session()->get("login_id");
 			$max_num = DB::select($sql)[0]->max_num;
 			
-			$sql = " insert into mp3_favorite ( user_id, track_id, album_id, order_num, reg_date ) values ( ".$request->session()->get("login_id").", ".$track_id.",".$album_id.",".$max_num.", NOW() )";
-			DB::insert($sql);
+			$sql = " select count(*) cnt from album_info_tbl where album_id = ? and user_id = ? ";			
+			$check_dupe = DB::select($sql,[$album_id,$request->session()->get("login_id")])[0]->cnt;
+			
+			if($check_dupe){
+				$sql = " update mp3_favorite set order_num = ? where album_id = ? and user_id = ? ";
+				DB::update($sql,[$max_num,$album_id,$request->session()->get("login_id")]);
+			} else {
+				$sql = " insert into mp3_favorite ( user_id, track_id, album_id, order_num, reg_date ) values ( ".$request->session()->get("login_id").", ".$track_id.",".$album_id.",".$max_num.", NOW() )";
+				DB::insert($sql);
+			}
 
 			$sql = " select * from album_info_tbl where album_id = ? ";
 			$album_info = DB::select($sql,[$album_id])[0];
