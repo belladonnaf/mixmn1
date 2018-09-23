@@ -203,6 +203,7 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                             <div class="block-content">
                                 <div class="custom-control custom-checkbox custom-control-primary mb-1">
                                     <input type="checkbox" class="custom-control-input" id="req-del-account" name="req-del-account" value="1">
+                                    <input type="checkbox" class="custom-control-input" id="so-settings-updates" name="so-settings-updates" value="1">
                                     <label class="custom-control-label" for="so-settings-status">Request Delete Account</label>
                                 </div>
                                 <p class="text-muted font-size-sm">
