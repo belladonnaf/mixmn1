@@ -3,7 +3,7 @@
 
 @section('css_after')
 <!-- Page JS Plugins CSS -->
-<link rel="stylesheet" href="assets/js/plugins/sweetalert2/sweetalert2.min.css">
+<link rel="stylesheet" href="/js/plugins/sweetalert2/sweetalert2.min.css">
 @endsection
 
 @section('content')
