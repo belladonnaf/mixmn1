@@ -1,13 +1,3 @@
-<aside id="side-overlay">
-    <!-- Side Header -->
-    <div class="bg-image" style="background-image: url('/media/various/bg_side_overlay_header.jpg');">
-        <div class="bg-primary-op">
-            <div class="content-header">
-                <!-- User Avatar -->
-                <a class="img-link mr-1" href="be_pages_generic_profile.html">
-                    <img class="img-avatar img-avatar48" src="/media/avatars/avatar10.jpg" alt="">
-                </a>
-                <!-- END User Avatar -->
 <?php
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -19,6 +9,17 @@ $sql = " call get_user_log(?) ";
 $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
 ?>
 				
+<aside id="side-overlay">
+    <!-- Side Header -->
+    <div class="bg-image" style="background-image: url('/media/various/bg_side_overlay_header.jpg');">
+        <div class="bg-primary-op">
+            <div class="content-header">
+                <!-- User Avatar -->
+                <a class="img-link mr-1" href="be_pages_generic_profile.html">
+                    <img class="img-avatar img-avatar48" src="/media/avatars/avatar10.jpg" alt="">
+                </a>
+                <!-- END User Avatar -->
+
                 <!-- User Info -->
                 <div class="ml-2">
                     <a class="text-white font-w600" href="be_pages_generic_profile.html">{{$row_user->useremailid}}</a>
@@ -59,6 +60,7 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                 </li>
             </ul>
             <div class="block-content tab-content overflow-hidden">
+
                 <!-- Settings Tab -->
                 <div class="tab-pane pull-x fade fade-up show active" id="so-settings" role="tabpanel">
                     <div class="block mb-0">
@@ -66,6 +68,33 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                         <!-- Toggle Themes functionality initialized in Template._uiHandleTheme() -->
                         <div class="block-content block-content-sm block-content-full bg-body">
                             <span class="text-uppercase font-size-sm font-w700">Choose Intro Page</span>
+                        </div>
+                        <div class="block-content block-content-full">
+
+                            <ul class="nav-items">
+@foreach($arr_log as $r)
+                                <li>
+                                    <a class="media py-2" href="/album/{{$r->album_id}}">
+                                        <div class="media-body">
+                                            <div class="font-w600">{{$r->album_path}}</div>
+                                            <div class="font-size-sm text-muted"><b>{{$r->genre}}</b> / {{$r->release_date}} ({{$r->file_size}}M/{{$r->file_cnt}}F)</div>
+                                        </div>
+                                    </a>
+                                </li>
+@endforeach
+                            </ul>
+												</div>
+
+                    </div>
+                </div>
+                <!-- END Settings Tab -->
+
+                <!-- People -->
+                <div class="tab-pane pull-x fade fade-up" id="so-people" role="tabpanel">
+                    <div class="block mb-0">
+                        <!-- Online -->
+                        <div class="block-content block-content-sm block-content-full bg-body">
+                            <span class="text-uppercase font-size-sm font-w700">Listen History</span>
                         </div>
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
@@ -126,44 +155,7 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                                 </div>
                             </div>
                         </div>
-                        <!-- END Header -->
 
-                    </div>
-                </div>
-                <!-- END Settings Tab -->
-
-                <!-- People -->
-                <div class="tab-pane pull-x fade fade-up" id="so-people" role="tabpanel">
-                    <div class="block mb-0">
-                        <!-- Online -->
-                        <div class="block-content block-content-sm block-content-full bg-body">
-                            <span class="text-uppercase font-size-sm font-w700">Online</span>
-                        </div>
-                        <div class="block-content">
-                            <ul class="nav-items">
-@foreach($arr_log as $r)
-                                <li>
-                                    <a class="media py-2" href="/album/{{$r->album_id}}">
-                                        <div class="media-body">
-                                            <div class="font-w600">{{$r->album_path}}</div>
-                                            <div class="font-size-sm text-muted"><b>{{$r->genre}}</b> / {{$r->release_date}} ({{$r->file_size}}M/{{$r->file_cnt}}F)</div>
-                                        </div>
-                                    </a>
-                                </li>
-@endforeach
-                            </ul>
-                        </div>
-                        <!-- END Offline -->
-
-                        <!-- Add People -->
-                        <div class="block-content row justify-content-center border-top">
-                            <div class="col-9">
-                                <a class="btn btn-block btn-hero-primary" href="javascript:void(0)">
-                                    <i class="fa fa-fw fa-plus mr-1"></i> Add People
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END Add People -->
                     </div>
                 </div>
                 <!-- END People -->
