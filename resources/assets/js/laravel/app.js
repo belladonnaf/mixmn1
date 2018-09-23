@@ -10,7 +10,6 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import App from './App.vue';
-import RightSidebar from './RightSidebar.vue';
 
 import APlayer from '@moefe/vue-aplayer';
 
@@ -32,6 +31,17 @@ const vm1 = new Vue({
 
 const vm2 = new Vue({
     el: '#right-sidebar',
-		components:{ RightSidebar }
+	  name: 'RightSidebar',
+		methods:{
+			setUIFav(val){
+				console.log(this);
+				console.log(val);
+			},
+			setGenreFav(val){
+				console.log(this);
+				console.log(val);
+			}
+			
+		}
 });
 
