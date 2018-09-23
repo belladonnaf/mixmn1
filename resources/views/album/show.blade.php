@@ -16,8 +16,8 @@
 	<div class="row">
 		<div class="col-md-6 col-xl-6">
 			<div class="playlist-header">
+				<span class="btn btn-warning add-fav js-swal-add-fav push"><i class="fa fa-heart"></i></span>
 	      <a class="block block-rounded block-link-pop bg-xinspire" href="javascript:void(0)">
-	      	<span class="btn btn-warning add-fav js-swal-success push"><i class="fa fa-heart"></i></span>
 	          <div class="block-content block-content-full d-flex align-items-center justify-content-between">
 	              <div class="mr-3">
 	                  <p class="text-white font-size-lg font-w600 mb-0">
