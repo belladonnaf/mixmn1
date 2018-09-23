@@ -200,17 +200,6 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                             <div class="block-content block-content-sm block-content-full bg-body">
                                 <span class="text-uppercase font-size-sm font-w700">Options</span>
                             </div>
-                            <div class="block-content">
-                                <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="req-del-account" name="req-del-account" value="1">
-                                    <input type="checkbox" class="custom-control-input" id="so-settings-updates" name="so-settings-updates" value="1">
-                                    <label class="custom-control-label" for="so-settings-status">Request Delete Account</label>
-                                </div>
-                                <p class="text-muted font-size-sm">
-                                    If you want to remove your own account, check this
-                                </p>
-                            </div>
-                            <!-- END Options -->
 
                             <!-- Submit -->
                             <div class="block-content row justify-content-center border-top">
