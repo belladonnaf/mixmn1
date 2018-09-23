@@ -32,6 +32,6 @@ const vm1 = new Vue({
 
 const vm2 = new Vue({
     el: '#right-sidebar',
-		components:{ App }
+		components:{ RightSidebar }
 });
 
