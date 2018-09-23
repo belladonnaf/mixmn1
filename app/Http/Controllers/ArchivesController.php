@@ -142,7 +142,7 @@ class ArchivesController extends Controller
 				}
 			}
 
-			$arr_img;
+			var_dump($arr_img);
 			exit;
 
 			$sql = " call get_album_path($album_id);";
