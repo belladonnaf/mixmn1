@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 52);
+/******/ 	return __webpack_require__(__webpack_require__.s = 53);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,7 +93,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 12:
+/***/ 13:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2635,7 +2635,7 @@ Popper.Defaults = Defaults;
 
 /***/ }),
 
-/***/ 13:
+/***/ 14:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3795,16 +3795,16 @@ var Helpers = function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_simplebar__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_simplebar__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_simplebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_simplebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_js_cookie__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_js_cookie__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_js_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_js_cookie__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bootstrap__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bootstrap__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_bootstrap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_popper_js__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery_appear__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_popper_js__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery_appear__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery_appear___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery_appear__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery_scroll_lock__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery_scroll_lock__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery_scroll_lock___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jquery_scroll_lock__);
 /*
  *  Document   : bootstrap.js
@@ -14267,23 +14267,23 @@ var Tools = function () {
 
 /***/ }),
 
-/***/ 52:
+/***/ 53:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(53);
+module.exports = __webpack_require__(54);
 
 
 /***/ }),
 
-/***/ 53:
+/***/ 54:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_tools__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_helpers__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_template__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_helpers__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_template__ = __webpack_require__(60);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -14308,62 +14308,62 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // App extends Template
 
 var App = function (_Template) {
-    _inherits(App, _Template);
+  _inherits(App, _Template);
 
-    /*
-     * Auto called when creating a new instance
-     *
-     */
-    function App() {
-        _classCallCheck(this, App);
+  /*
+   * Auto called when creating a new instance
+   *
+   */
+  function App() {
+    _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
-    }
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+  }
 
-    /*
-     *  Here you can override or extend any function you want from Template class
-     *  if you would like to change/extend/remove the default functionality.
-     *
-     *  This way it will be easier for you to update the module files if a new update
-     *  is released since all your changes will be in here overriding the original ones.
-     *
-     *  Let's have a look at the _uiInit() function, the one that runs the first time
-     *  we create an instance of Template class or App class which extends it. This function
-     *  inits all vital functionality but you can change it to fit your own needs.
-     *
-     */
+  /*
+   *  Here you can override or extend any function you want from Template class
+   *  if you would like to change/extend/remove the default functionality.
+   *
+   *  This way it will be easier for you to update the module files if a new update
+   *  is released since all your changes will be in here overriding the original ones.
+   *
+   *  Let's have a look at the _uiInit() function, the one that runs the first time
+   *  we create an instance of Template class or App class which extends it. This function
+   *  inits all vital functionality but you can change it to fit your own needs.
+   *
+   */
 
-    /*
-     * EXAMPLE #1 - Removing default functionality by making it empty
-     *
-     */
+  /*
+   * EXAMPLE #1 - Removing default functionality by making it empty
+   *
+   */
 
-    //  _uiInit() {}
-
-
-    /*
-     * EXAMPLE #2 - Extending default functionality with additional code
-     *
-     */
-
-    //  _uiInit() {
-    //      // Call original function
-    //      super._uiInit();
-    //
-    //      // Your extra JS code afterwards
-    //  }
-
-    /*
-     * EXAMPLE #3 - Replacing default functionality by writing your own code
-     *
-     */
-
-    //  _uiInit() {
-    //      // Your own JS code without ever calling the original function's code
-    //  }
+  //  _uiInit() {}
 
 
-    return App;
+  /*
+   * EXAMPLE #2 - Extending default functionality with additional code
+   *
+   */
+
+  //  _uiInit() {
+  //      // Call original function
+  //      super._uiInit();
+  //
+  //      // Your extra JS code afterwards
+  //  }
+
+  /*
+   * EXAMPLE #3 - Replacing default functionality by writing your own code
+   *
+   */
+
+  //  _uiInit() {
+  //      // Your own JS code without ever calling the original function's code
+  //  }
+
+
+  return App;
 }(__WEBPACK_IMPORTED_MODULE_3__modules_template__["a" /* default */]);
 
 // Once everything is loaded
@@ -14371,13 +14371,13 @@ var App = function (_Template) {
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
 jQuery(function () {
-    // Create a new instance of App
-    window.Dashmix = new App();
+  // Create a new instance of App
+  window.Dashmix = new App();
 });
 
 /***/ }),
 
-/***/ 54:
+/***/ 55:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -14400,7 +14400,7 @@ var i=Object.getOwnPropertySymbols,o=Object.prototype.hasOwnProperty,s=Object.pr
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -14576,7 +14576,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ 56:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -14585,7 +14585,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(3), __webpack_require__(12)) :
+   true ? factory(exports, __webpack_require__(3), __webpack_require__(13)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -18527,7 +18527,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ 57:
+/***/ 58:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -18695,7 +18695,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ 58:
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -18901,13 +18901,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ 59:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bootstrap_js__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tools__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers__ = __webpack_require__(14);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }

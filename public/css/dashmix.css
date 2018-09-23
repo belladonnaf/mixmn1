@@ -11586,7 +11586,8 @@ small,
   #page-container.main-content-narrow > #page-header .content,
   #page-container.main-content-narrow > #main-container .content,
   #page-container.main-content-narrow > #page-footer .content {
-    max-width: 96%;
+    max-width: 1360px;
+    margin-left: 2%;
   }
 }
 
@@ -24739,4 +24740,25 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 
 .archive-margin-top {
   position: relative;
+}
+
+.row.taxindex > .col-xl-2 {
+  padding: 5px;
+}
+
+ol.aplayer-list {
+  height: 100% !important;
+}
+
+.aplayer {
+  margin: 0px !important;
+}
+
+span.add-fav {
+  position: absolute;
+  right: 16px;
+  top: 3px;
+  font-size: 24px;
+  color: white;
+  z-index: 999;
 }
