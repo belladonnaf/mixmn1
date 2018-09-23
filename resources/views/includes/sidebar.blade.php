@@ -68,22 +68,22 @@ $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
                             <div class="row gutters-tiny text-center">
 
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default sel-ui {{$row_user->favor_ui == 1 ? 'active'}}" href="#" data-value="1">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-default sel-ui {{$row_user->favor_ui == '1' ? 'active'}}" href="#" data-value="1">
                                         Recommended
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco sel-ui {{$row_user->favor_ui == 2 ? 'active'}}" href="#" data-value="2">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xeco sel-ui {{$row_user->favor_ui == '2' ? 'active'}}" href="#" data-value="2">
                                         Archives
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth sel-ui {{$row_user->favor_ui == 3 ? 'active'}}" href="#" data-value="3">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xsmooth sel-ui {{$row_user->favor_ui == '3' ? 'active'}}" href="#" data-value="3">
                                         Search
                                     </a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire sel-ui {{$row_user->favor_ui == 4 ? 'active'}}" href="#" data-value="4">
+                                    <a class="d-block py-3 text-white font-size-sm font-w600 bg-xinspire sel-ui {{$row_user->favor_ui == '4' ? 'active'}}" href="#" data-value="4">
                                         Favorites
                                     </a>
                                 </div>
