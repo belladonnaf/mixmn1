@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 
 $sql = " select useremailid, service_enddate, favor_ui, favor_genre from members where  user_pk = ? ";
 $row_user=DB::select($sql,[Request()->session()->get("login_id")])[0];
+
+var_dump($row_user->favor_ui);
 ?>
 					
                 <!-- User Info -->
