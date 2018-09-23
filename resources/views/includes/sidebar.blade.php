@@ -67,10 +67,10 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                         <!-- Color Themes -->
                         <!-- Toggle Themes functionality initialized in Template._uiHandleTheme() -->
                         <div class="block-content block-content-sm block-content-full bg-body">
-                            <span class="text-uppercase font-size-sm font-w700">Choose Intro Page</span>
+                            <span class="text-uppercase font-size-sm font-w700">Listen History</span>
                         </div>
-                        <div class="block-content block-content-full">
 
+                        <div class="block-content block-content-full">
                             <ul class="nav-items">
 @foreach($arr_log as $r)
                                 <li>
@@ -94,7 +94,7 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                     <div class="block mb-0">
                         <!-- Online -->
                         <div class="block-content block-content-sm block-content-full bg-body">
-                            <span class="text-uppercase font-size-sm font-w700">Listen History</span>
+                            <span class="text-uppercase font-size-sm font-w700">Choose Intro Page</span>
                         </div>
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
@@ -170,16 +170,8 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                             </div>
                             <div class="block-content block-content-full">
                                 <div class="form-group">
-                                    <label>Username</label>
-                                    <input type="text" readonly class="form-control" id="staticEmail" value="Admin">
-                                </div>
-                                <div class="form-group">
-                                    <label for="so-profile-name">Name</label>
-                                    <input type="text" class="form-control" id="so-profile-name" name="so-profile-name" value="George Taylor">
-                                </div>
-                                <div class="form-group">
                                     <label for="so-profile-email">Email</label>
-                                    <input type="email" class="form-control" id="so-profile-email" name="so-profile-email" value="g.taylor@example.com">
+                                    <input type="email" readonly class="form-control" id="staticEmail" name="staticEmail" value="{{$row_user->useremailid}}">
                                 </div>
                             </div>
                             <!-- END Personal -->
@@ -210,25 +202,11 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                             </div>
                             <div class="block-content">
                                 <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="so-settings-status" name="so-settings-status" value="1">
-                                    <label class="custom-control-label" for="so-settings-status">Online Status</label>
+                                    <input type="checkbox" class="custom-control-input" id="req-del-account" name="req-del-account" value="1">
+                                    <label class="custom-control-label" for="so-settings-status">Request Delete Account</label>
                                 </div>
                                 <p class="text-muted font-size-sm">
-                                    Make your online status visible to other users of your app
-                                </p>
-                                <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="so-settings-notifications" name="so-settings-notifications" value="1" checked>
-                                    <label class="custom-control-label" for="so-settings-notifications">Notifications</label>
-                                </div>
-                                <p class="text-muted font-size-sm">
-                                    Receive desktop notifications regarding your projects and sales
-                                </p>
-                                <div class="custom-control custom-checkbox custom-control-primary mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="so-settings-updates" name="so-settings-updates" value="1" checked>
-                                    <label class="custom-control-label" for="so-settings-updates">Auto Updates</label>
-                                </div>
-                                <p class="text-muted font-size-sm">
-                                    If enabled, we will keep all your applications and servers up to date with the most recent features automatically
+                                    If you want to remove your own account, check this
                                 </p>
                             </div>
                             <!-- END Options -->
