@@ -417,9 +417,10 @@ $cnt_value = count($db_value);
         <!-- Laravel Scaffolding JS -->
         <script src="{{ mix('js/laravel.app.js') }}"></script>
 
-        @yield('js_after')
+@section('js_after')
 
 <!-- Rightsidebar JS -->
+
 <script>
 	jQuery(document).ready(function(){
 		jQuery(".sel-ui,.sel-genre").onclick(function(){
@@ -438,6 +439,9 @@ $cnt_value = count($db_value);
 	});
 </script>
 <!-- END Rightsidebar JS -->
+@endsection
+
+        @yield('js_after')
         
     </body>
 </html>
