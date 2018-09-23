@@ -33,13 +33,25 @@ const vm2 = new Vue({
     el: '#right-sidebar',
 	  name: 'RightSidebar',
 		methods:{
-			setUIFav(val){
-				console.log(this);
-				console.log(val);
+			setUIFav(val,sel_obj){
+				var api_url = 'http://mix.mn1.net/api/settings/myui/set/' + val;
+		    axios.get(api_url).then(response => {
+					console.log(response.data);
+					if(response.data.result == 'ok'){
+						jQuery(".sel-ui").removeClass("active");
+						sel_obj.addClass("active");						
+					}
+		    });
 			},
-			setGenreFav(val){
-				console.log(this);
-				console.log(val);
+			setGenreFav(val,sel_obj){
+				var api_url = 'http://mix.mn1.net/api/settings/mygenre/set/' + val;
+		    axios.get(api_url).then(response => {
+					console.log(response.data);
+					if(response.data.result == 'ok'){
+						jQuery(".sel-genre").removeClass("active");
+						sel_obj.addClass("active");						
+					}
+		    });
 			}
 			
 		}
