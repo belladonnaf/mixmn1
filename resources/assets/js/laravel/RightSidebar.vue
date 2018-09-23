@@ -3,11 +3,11 @@
 export default {
   name: 'RightSidebar',
 	methods:{
-		"set:ui:fav": function(val){
+		"setUIFav": function(val){
 			console.log(this);
 			console.log(val);
 		},
-		"set:genre:fav": function(val){
+		"setGenreFav": function(val){
 			console.log(this);
 			console.log(val);
 		}
