@@ -417,13 +417,12 @@ $cnt_value = count($db_value);
         <!-- Laravel Scaffolding JS -->
         <script src="{{ mix('js/laravel.app.js') }}"></script>
 
-@section('js_after')
+        @yield('js_after')
 
 <!-- Rightsidebar JS -->
-
 <script>
 	jQuery(document).ready(function(){
-		jQuery(".sel-ui,.sel-genre").onclick(function(){
+		jQuery(".sel-ui,.sel-genre").click(function(){
 			if(jQuery(this).hasClass("sel-genre")){
 				jQuery(".sel-genre").removeClass("active");
 				jQuery(this).addClass("active");
@@ -439,9 +438,6 @@ $cnt_value = count($db_value);
 	});
 </script>
 <!-- END Rightsidebar JS -->
-@endsection
-
-        @yield('js_after')
         
     </body>
 </html>
