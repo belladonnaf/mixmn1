@@ -62,7 +62,7 @@ $row_user=DB::select($sql)[0];
                         <!-- Color Themes -->
                         <!-- Toggle Themes functionality initialized in Template._uiHandleTheme() -->
                         <div class="block-content block-content-sm block-content-full bg-body">
-                            <span class="text-uppercase font-size-sm font-w700">Set Intro Page</span>
+                            <span class="text-uppercase font-size-sm font-w700">Choose Intro Page</span>
                         </div>
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
@@ -93,70 +93,38 @@ $row_user=DB::select($sql)[0];
 
                         <!-- Sidebar -->
                         <div class="block-content block-content-sm block-content-full bg-body">
-                            <span class="text-uppercase font-size-sm font-w700">Sidebar</span>
+                            <span class="text-uppercase font-size-sm font-w700">Choose Genre For Recommend</span>
                         </div>
                         <div class="block-content block-content-full">
                             <div class="row gutters-tiny text-center">
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="sidebar_style_dark" href="javascript:void(0)">Dark</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="sidebar_style_dark" href="javascript:void(0)">EDM Music</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="sidebar_style_light" href="javascript:void(0)">Light</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END Sidebar -->
-
-                        <!-- Header -->
-                        <div class="block-content block-content-sm block-content-full bg-body">
-                            <span class="text-uppercase font-size-sm font-w700">Header</span>
-                        </div>
-                        <div class="block-content block-content-full">
-                            <div class="row gutters-tiny text-center mb-2">
-                                <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_style_dark" href="javascript:void(0)">Dark</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="sidebar_style_light" href="javascript:void(0)">Hip Hop</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_style_light" href="javascript:void(0)">Light</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_style_dark" href="javascript:void(0)">Easy Listening</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_fixed" href="javascript:void(0)">Fixed</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_style_light" href="javascript:void(0)">Classical</a>
                                 </div>
                                 <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_static" href="javascript:void(0)">Static</a>
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_fixed" href="javascript:void(0)">Pop</a>
+                                </div>
+                                <div class="col-6 mb-1">
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_static" href="javascript:void(0)">Kpop</a>
+                                </div>
+                                <div class="col-6 mb-1">
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_fixed" href="javascript:void(0)">Chanson</a>
+                                </div>
+                                <div class="col-6 mb-1">
+                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="header_mode_static" href="javascript:void(0)">Hardcore</a>
                                 </div>
                             </div>
                         </div>
                         <!-- END Header -->
 
-                        <!-- Content -->
-                        <div class="block-content block-content-sm block-content-full bg-body">
-                            <span class="text-uppercase font-size-sm font-w700">Content</span>
-                        </div>
-                        <div class="block-content block-content-full">
-                            <div class="row gutters-tiny text-center">
-                                <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="content_layout_boxed" href="javascript:void(0)">Boxed</a>
-                                </div>
-                                <div class="col-6 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="content_layout_narrow" href="javascript:void(0)">Narrow</a>
-                                </div>
-                                <div class="col-12 mb-1">
-                                    <a class="d-block py-3 bg-body-dark font-w600 text-dark" data-toggle="layout" data-action="content_layout_full_width" href="javascript:void(0)">Full Width</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END Content -->
-
-                        <!-- Layout API -->
-                        <div class="block-content row justify-content-center border-top">
-                            <div class="col-9">
-                                <a class="btn btn-block btn-hero-primary" href="be_layout_api.html">
-                                    <i class="fa fa-fw fa-flask mr-1"></i> Layout API
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END Layout API -->
                     </div>
                 </div>
                 <!-- END Settings Tab -->
