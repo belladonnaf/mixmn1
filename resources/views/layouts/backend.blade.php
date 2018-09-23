@@ -242,7 +242,7 @@ $cnt_value = count($db_value);
                                    Favorites
                                 </div>
                                 <div class="p-2">
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
                                         <i class="far fa-fw fa-heart mr-1"></i>Favorites
                                         <span class="badge badge-primary">23</span>
                                     </a>
