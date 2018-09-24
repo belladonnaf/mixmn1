@@ -32,7 +32,42 @@
 
 @if (!$agent->isMobile())
 		<div class="col-md-6 col-xl-6">
-    Show desktop stuff...
+				<div class="row">
+
+@foreach($arr_rel as $k=>$r)
+
+@if($k%6 == 0)
+	$the_css = 'bg-gd-lake-op';
+@elseif ($k%6 == 1)
+	$the_css = 'bg-gd-aqua';
+@elseif ($k%6 == 2)
+	$the_css = 'bg-gd-sublime-op';
+@elseif ($k%6 == 3)
+	$the_css = 'bg-gd-sea';
+@elseif ($k%6 == 4)
+	$the_css = 'bg-gd-dusk';
+@elseif ($k%6 == 5)
+	$the_css = 'bg-gd-primary';
+@endif
+					<div class="col-md-12">
+					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="be_pages_education_course.html" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
+					        <div class="block-content block-content-full {{$the_css}}">
+					            <span class="d-inline-block py-1 px-2 rounded bg-black-75 font-size-sm font-w700 text-uppercase text-white">
+					                {{$r->genre}}
+					            </span>
+					            <div>
+					                
+					                <h3 class="font-w700 text-white mb-1">{{$r->album_path}}</h3>
+					            </div>
+					            <span class="font-size-sm font-w700 text-uppercase text-white-75">
+					                {{$r->file_cnt}} Files | {{$r->file_size}}
+					            </span>
+					        </div>
+					    </a>
+					</div>
+@endforeach
+					
+				</div>
 		</div>
 @endif
 	

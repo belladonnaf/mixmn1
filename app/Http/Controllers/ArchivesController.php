@@ -199,10 +199,19 @@ class ArchivesController extends Controller
 					"artist" => $artist,
 					"img_url" => $img_url
 				);
+				
+				list($artist) = explode('-',$album_path);
+				$artist = str_replace('_',' ',$artist);
+				$artist = trim($artist);
+				$artist = str_replace(' ','_',$artist);
+
+				$sql = " select * from album_info_tbl where album_path like '?%' order by release_date desc limit 0,10"
+				$arr_rel = DB::select($sql,[$artist]);
+				
 
 			}
 
-      return view('album.show',compact('album_id','arr_img','album_path','new_track'));
+      return view('album.show',compact('album_id','arr_img','album_path','new_track','arr_rel'));
 				
     }
     
