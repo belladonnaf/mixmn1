@@ -218,6 +218,8 @@ class ArchivesController extends Controller
     public function search(Request $request,$keyword)
     {       
 
+			var_dump($keyword);
+
 			if(!($keyword)){
 
 	      return view('album.search');
