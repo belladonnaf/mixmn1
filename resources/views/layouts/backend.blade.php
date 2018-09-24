@@ -283,23 +283,20 @@ $cnt_value = count($db_value);
                 <div id="page-header-search" class="overlay-header bg-primary">
                     <div class="content-header">
                         <form class="w-100" action="/album/search" method="get" onsubmit="javascript:window.location.href=window.location.href.split('?')[0]+jQuery('#keyword').val();">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                    <button type="button" class="btn btn-primary" data-toggle="layout" data-action="header_search_off">
-                                        <i class="fa fa-fw fa-times-circle"></i>
-                                    </button>
-                                </div>
 
-													    <div class="input-group">
-													        <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="keyword" name="keyword">
-													        <div class="input-group-append">
-													            <button type="submit" class="btn btn-primary">Search</button>
-													        </div>
-													    </div>
-
+											    <div class="input-group">
+                              <div class="input-group-prepend">
+                                  <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                                  <button type="button" class="btn btn-primary" data-toggle="layout" data-action="header_search_off">
+                                      <i class="fa fa-fw fa-times-circle"></i>
+                                  </button>
+                              </div>
+											        <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="keyword" name="keyword">
+											        <div class="input-group-append">
+											            <button type="submit" class="btn btn-primary">Search</button>
+											        </div>
+											    </div>
                                 
-                            </div>
                         </form>
                    </div>
                 </div>
