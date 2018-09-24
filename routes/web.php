@@ -34,7 +34,10 @@ Route::get('/archives/group/index', 'ArchivesController@groupIndex')->name('arch
 Route::get('/archives/group/{f_group}','ArchivesController@groupList')->name('archives.group.list')->middleware('session.has.user');
 
 Route::get('/search','ArchivesController@getSearch')->name('album.search')->middleware('session.has.user');
+
 Route::get('/album/{album_id}','ArchivesController@show')->name('album.show')->middleware('session.has.user');
+
+
 
 /* Settings Related */
 
@@ -48,6 +51,8 @@ Route::get('/api/favorites/set/{album_id}','ArchivesController@setFavorite');
 
 Route::get('/api/settings/myui/set/{ui_id}','SettingsController@setMyUI');
 Route::get('/api/settings/mygenre/set/{genre_group_id}','SettingsController@setMyGenre');
+
+Route::get('/api/search/{keyword}/{page?}','ArchivesController@searchJson');
 
 
 Route::view('/dashboard', 'dashboard');

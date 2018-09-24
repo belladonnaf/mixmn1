@@ -264,6 +264,34 @@ class ArchivesController extends Controller
 
 		}
 
+    public function searchJson(Request $request,$keyword,$page)
+		{
+
+			$keyword = $request->get('keyword');
+			$page = $request->get('page');
+//			$keyword = $request->input("keyword");
+
+			if(!$keyword){
+				exit;
+			}
+
+			$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit ?,20";
+
+			$search_result = DB::select($sql,['%'.$keyword.'%',$start_num]);
+			$cnt_result = count($search_result);
+			$total_page = floor(($cnt_result-1)/20)+1;
+
+			if($page<6){
+				$start_page = 1;
+			} else {
+				$start_page = $page-5;
+			}
+			
+			return response()->json($search_result,200);
+			
+		}
+
+
     public function getJson(Request $request,$album_id)
     {       
 

@@ -79,8 +79,9 @@
 jQuery(document).ready(function(){
 	jQuery(".load-more button").click(function(){
 
+		var next_page = jQuery(this).attr("data-value");
 		var search_keyword = '{{$keyword}}';
-		var api_url = 'http://mix.mn1.net/api/search/' + search_keyword;
+		var api_url = 'http://mix.mn1.net/api/search/' + search_keyword + '/' + next_page;
 		var str_res = '';
 
 //{{$arr_css[($k%6)]}}
@@ -108,6 +109,7 @@ jQuery(document).ready(function(){
 					str_res = str_res + '</div>';
 					
 					jQuery(".search-result-wrapper").append(str_res);
+					jQuery(".load-more button").attr("data-value",parseInt(next_page)+1);
 									
 				}				 
       }
