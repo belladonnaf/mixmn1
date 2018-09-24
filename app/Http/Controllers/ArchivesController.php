@@ -219,6 +219,7 @@ class ArchivesController extends Controller
     {       
 			
 			$keyword = $request->get('keyword');
+			$page = $request->get('page');
 //			$keyword = $request->input("keyword");
 
 			if(!$keyword){
@@ -227,14 +228,37 @@ class ArchivesController extends Controller
 
 			} else {
 
-				$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit 0,20";
-				$search_result = DB::select($sql,['%'.$keyword.'%']);
+				if(!$page){
+					$page = 1;
+				}
+				
+				$start_num = ($page-1)*20;
+				
+				$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit ?,20";
+
+				$search_result = DB::select($sql,['%'.$keyword.'%',$start_num]);
 				$cnt_result = count($search_result);
 				$total_page = floor(($cnt_result-1)/20)+1;
+
+				if($page<6){
+					$start_page = 1;
+				} else {
+					$start_page = $page-5;
+				}
+
+				if($start_page + 10 < $total_page){
+					$end_page = $start_page + 10;
+				} else {
+					$end_page = $total_page;
+				}
+
+				$next_page = $page + 1;
+				$prev_page = $page - 1;
+
 				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
 				$arr_css = randomize_css($arr_css,6);
 
-	      return view('album.search',compact('keyword','search_result','cnt_result','total_page','arr_rel','arr_css'));
+	      return view('album.search',compact('keyword','search_result','cnt_result','total_page','start_page','end_page','arr_rel','arr_css','next_page','prev_page'));
 
 			}
 
