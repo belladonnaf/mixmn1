@@ -29,3 +29,12 @@ if ( ! function_exists('myUrlEncode')){
 	    return str_replace($entities, $replacements, $string);
 		}
 }
+
+if ( !function_exists('randomize_css')){
+		function randomize_css($arr_css,$chunk_size) {
+				shuffle($arr_css);
+				$arr_css = array_splice($arr_cs,$chunk_size);
+	    return $arr_css;
+		}
+	
+}

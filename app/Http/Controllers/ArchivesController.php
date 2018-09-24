@@ -205,15 +205,13 @@ class ArchivesController extends Controller
 				$artist = trim($artist);
 				$artist = str_replace(' ','_',$artist);
 
-				var_dump($artist);
 				$sql = " select * from album_info_tbl where album_path like '".$artist."%' order by release_date desc limit 0,10";
-				var_dump($sql);
 				$arr_rel = DB::select($sql,[$artist]);
-				var_dump($arr_rel);
-
+				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
+				$arr_css = randomize_css($arr_css,6);
 			}
 
-      return view('album.show',compact('album_id','arr_img','album_path','new_track','arr_rel'));
+      return view('album.show',compact('album_id','arr_img','album_path','new_track','arr_rel','arr_css'));
 				
     }
     
