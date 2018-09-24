@@ -227,13 +227,14 @@ class ArchivesController extends Controller
 
 			} else {
 
-				$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit 0,100";
+				$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit 0,20";
 				$arr_rs = DB::select($sql,['%'.$keyword.'%']);
 				$str_rs = json_encode($arr_rs);
 				$search_result = json_decode($str_rs,1);
 				$cnt_result = count($search_result);
+				$total_page = floor(($cnt_result-1)/20)+1;
 
-	      return view('album.search',compact('keyword','search_result','cnt_result'));
+	      return view('album.search',compact('keyword','search_result','cnt_result','total_page','arr_rel','arr_css'));
 
 			}
 
