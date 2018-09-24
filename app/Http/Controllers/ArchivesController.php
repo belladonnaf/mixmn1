@@ -249,7 +249,7 @@ class ArchivesController extends Controller
 				}
 
 				if($start_page + 10 < $total_page){
-					$end_page = $start_page + 10;
+					$end_page = $start_page + 9;
 				} else {
 					$end_page = $total_page;
 				}
