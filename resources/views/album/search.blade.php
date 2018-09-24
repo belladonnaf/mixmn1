@@ -19,7 +19,7 @@
 
 				<div class="form-group">
 				    <div class="input-group">
-				        <input type="text" class="form-control form-control-alt bg-light" id="example-group3-input2-alt" name="example-group3-input2-alt" placeholder="Album name">
+				        <input type="text" class="form-control form-control-alt bg-light" id="example-group3-input2-alt" name="example-group3-input2-alt" placeholder="{{$keyword}}">
 				        <div class="input-group-append">
 				            <button type="button" class="btn btn-hero-danger">Search</button>
 				        </div>

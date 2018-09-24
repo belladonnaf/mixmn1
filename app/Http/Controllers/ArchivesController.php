@@ -221,9 +221,9 @@ class ArchivesController extends Controller
 			$keyword = $request->all()['keyword'];
 //			$keyword = $request->input("keyword");
 
-			if(!($keyword)){
+			if(!$keyword){
 
-	      return view('album.search');
+	      return view('album.search',compact('keyword'));
 
 			} else {
 
@@ -234,7 +234,7 @@ class ArchivesController extends Controller
 
 				$cnt_rs = count($arr_rs);
 
-	      return view('album.search',compact('arr_rs','cnt_rs'));
+	      return view('album.search',compact('keyword','arr_rs','cnt_rs'));
 
 			}
 
