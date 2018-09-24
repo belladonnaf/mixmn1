@@ -282,7 +282,7 @@ $cnt_value = count($db_value);
                 <!-- Header Search -->
                 <div id="page-header-search" class="overlay-header bg-primary">
                     <div class="content-header">
-                        <form class="w-100" action="/album/search" method="get"">
+                        <form class="w-100" action="/search" method="get"">
 
 											    <div class="input-group col-sm-6">
 	                              <div class="input-group-prepend">
@@ -296,7 +296,6 @@ $cnt_value = count($db_value);
 											            <button type="submit" class="btn btn-primary">Search</button>
 											        </div>
 											    </div>
-                                
                         </form>
                    </div>
                 </div>

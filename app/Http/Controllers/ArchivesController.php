@@ -215,8 +215,10 @@ class ArchivesController extends Controller
 				
     }
     
-    public function getSearch(Request $request,$keyword='')
+    public function getSearch(Request $request)
     {       
+			
+			$keyword = $request->get("keyword");
 
 			if(!($keyword)){
 
@@ -231,7 +233,7 @@ class ArchivesController extends Controller
 
 				$cnt_rs = count($arr_rs);
 
-	      return view('album.show',compact('arr_rs','cnt_rs'));
+	      return view('album.search',compact('arr_rs','cnt_rs'));
 
 			}
 
