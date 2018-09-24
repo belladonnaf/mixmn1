@@ -282,10 +282,10 @@ $cnt_value = count($db_value);
                 <!-- Header Search -->
                 <div id="page-header-search" class="overlay-header bg-primary">
                     <div class="content-header">
-                        <form class="w-100" action="/album/search" method="get" onsubmit="javascript:window.location.href=window.location.href.split('?')[0]+jQuery('#keyword').val();">
+                        <form class="w-100" action="/album/search" method="get"">
 
-											    <div class="input-group">
-                              <div class="input-group-prepend">
+											    <div class="input-group col-sm-6">
+	                              <div class="input-group-prepend">
                                   <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                                   <button type="button" class="btn btn-primary" data-toggle="layout" data-action="header_search_off">
                                       <i class="fa fa-fw fa-times-circle"></i>
