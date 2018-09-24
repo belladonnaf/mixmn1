@@ -218,7 +218,7 @@ class ArchivesController extends Controller
     public function getSearch(Request $request)
     {       
 			
-			$keyword = $request->all()['keyword'];
+			$keyword = $request->get('keyword');
 //			$keyword = $request->input("keyword");
 
 			if(!$keyword){
@@ -230,9 +230,8 @@ class ArchivesController extends Controller
 				$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit 0,100";
 				$arr_rs = DB::select($sql,['%'.$keyword.'%']);
 				$str_rs = json_encode($arr_rs);
-				$arr_rs = json_decode($str_rs,1);
-
-				$cnt_rs = count($arr_rs);
+				$search_result = json_decode($str_rs,1);
+				$cnt_result = count($search_result);
 
 	      return view('album.search',compact('keyword','arr_rs','cnt_rs'));
 
