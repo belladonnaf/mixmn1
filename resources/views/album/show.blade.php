@@ -42,11 +42,10 @@
 					                {{$r->genre}}
 					            </span>
 					            <div>
-					                
-					                <h3 class="font-w700 text-white mb-1">{{$r->album_path}}</h3>
+					                <h6 class="font-w700 text-white mb-1">{{$r->album_path}}</h3>
 					            </div>
 					            <span class="font-size-sm font-w700 text-uppercase text-white-75">
-					                {{$r->file_cnt}} Files | {{$r->file_size}}
+					                {{$r->file_cnt}} Files | {{$r->file_size}} Mbyte
 					            </span>
 					        </div>
 					    </a>
