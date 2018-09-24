@@ -98,6 +98,24 @@
 		<button class="btn btn-hero-lg btn-hero-primary w-100" data-value="{{$next_page}}">LOAD MORE</button>
 	</div>
 
+@endif
+	
+@else
+
+	<div class="alert alert-warning" role="alert">
+	    <h3 class="alert-heading font-size-h4 my-2">Warning</h3>
+	    <p class="mb-0">There is no results</p>
+	</div>
+
+@endif
+
+</div>
+<!-- END Page Content -->
+
+@endsection
+@section('js_after')
+
+@if ($agent->isMobile())
 <script>
 jQuery(document).ready(function(){
 	jQuery(".load-more button").click(function(){
@@ -141,23 +159,7 @@ jQuery(document).ready(function(){
 	});
 });
 </script>
-
 @endif
-	
-@else
-
-	<div class="alert alert-warning" role="alert">
-	    <h3 class="alert-heading font-size-h4 my-2">Warning</h3>
-	    <p class="mb-0">There is no results</p>
-	</div>
-
-@endif
-
-</div>
-<!-- END Page Content -->
-
-@endsection
-@section('js_after')
 
 <!-- Page JS Plugins -->
 <script src="/js/plugins/es6-promise/es6-promise.auto.min.js"></script>
