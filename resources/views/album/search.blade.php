@@ -37,7 +37,7 @@
 @foreach($search_result as $k=>$r)
 					<div class="col-md-6 col-xl-6">
 					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/album/{{$r->album_id}}" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
-					        <div class="block-content block-content-full {{$arr_css[$k]}}">
+					        <div class="block-content block-content-full {{$arr_css[($k%6)]}}">
 					            <span class="d-inline-block py-1 px-2 rounded bg-black-75 font-size-sm font-w700 text-uppercase text-white">
 					                {{$r->genre}}
 					            </span>
