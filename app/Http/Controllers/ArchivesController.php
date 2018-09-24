@@ -218,7 +218,7 @@ class ArchivesController extends Controller
     public function getSearch(Request $request)
     {       
 			
-			$keyword = $request->get("keyword");
+			$keyword = $request->input("keyword");
 
 			if(!($keyword)){
 
