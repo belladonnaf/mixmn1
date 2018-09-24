@@ -28,8 +28,9 @@
 					
 			</div>
 	  </div>
-
+	</div>
 @if($search_result)
+	<div class="row">
 		<div class="col-md-6 col-xl-6">
 				<div class="row">
 
@@ -53,9 +54,9 @@
 					
 				</div>
 		</div>
+	</div>
 @endif
 	
-	</div>
 </div>
 <!-- END Page Content -->
 
