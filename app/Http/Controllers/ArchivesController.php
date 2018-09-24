@@ -205,8 +205,8 @@ class ArchivesController extends Controller
 				$artist = trim($artist);
 				$artist = str_replace(' ','_',$artist);
 
-				$sql = " select * from album_info_tbl where album_path like '".$artist."%' order by release_date desc limit 0,10";
-				$arr_rel = DB::select($sql,[$artist]);
+				$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit 0,10";
+				$arr_rel = DB::select($sql,[$artist.'%']);
 				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
 				$arr_css = randomize_css($arr_css,6);
 			}
@@ -215,6 +215,27 @@ class ArchivesController extends Controller
 				
     }
     
+    public function search(Request $request,$keyword)
+    {       
+
+			if(!($keyword)){
+
+	      return view('album.search');
+
+			} else {
+
+				$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit 0,100";
+				$arr_rs = DB::select($sql,['%'.$keyword.'%']);
+				$str_rs = json_encode($arr_rs);
+				$arr_rs = json_decode($str_rs,1);
+
+				$cnt_rs = count($arr_rs);
+
+	      return view('album.show',compact('arr_rs','cnt_rs'));
+
+			}
+
+		}
 
     public function getJson(Request $request,$album_id)
     {       

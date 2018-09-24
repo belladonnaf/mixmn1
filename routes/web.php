@@ -34,6 +34,7 @@ Route::get('/archives/group/index', 'ArchivesController@groupIndex')->name('arch
 Route::get('/archives/group/{f_group}','ArchivesController@groupList')->name('archives.group.list')->middleware('session.has.user');
 
 Route::get('/album/{album_id}','ArchivesController@show')->name('album.show')->middleware('session.has.user');
+Route::get('/album/search/{keyword?}','ArchivesController@search')->name('album.search')->middleware('session.has.user');
 
 /* Settings Related */
 

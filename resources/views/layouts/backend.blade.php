@@ -282,7 +282,7 @@ $cnt_value = count($db_value);
                 <!-- Header Search -->
                 <div id="page-header-search" class="overlay-header bg-primary">
                     <div class="content-header">
-                        <form class="w-100" action="/dashboard" method="post">
+                        <form class="w-100" action="/album/search" method="get">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
