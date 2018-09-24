@@ -129,6 +129,8 @@ jQuery(document).ready(function(){
 
     axios.get(api_url).then(response => {
 
+			console.log(response.data);
+
       for ( var k in response.data){
 
 	      if(response.data[k]){
@@ -149,9 +151,10 @@ jQuery(document).ready(function(){
 					str_res = str_res + '</a>';
 					str_res = str_res + '</div>';
 					
-					jQuery(".search-result-wrapper").append(str_res);
+					jQuery("#search-result-wrapper").append(str_res);
+					console.log(next_page);
 					jQuery(".load-more button").attr("data-value",parseInt(next_page)+1);
-									
+					console.log(jQuery(".load-more button").attr("data-value"));
 				}				 
       }
 
