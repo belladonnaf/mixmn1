@@ -61,14 +61,37 @@
 
 @if (!$agent->isMobile())
 
-			<div class="btn-group mr-2 mb-2" role="group" aria-label="desktop pagination">
+				<nav aria-label="Page navigation">
+	        <ul class="pagination">
+
+	            <li class="page-item">
+	                <a class="page-link" href="/search?keyword={{$keyword}}&page={{$start_page}}" tabindex="-1" aria-label="Previous">
+	                    <span aria-hidden="true">
+	                        <i class="fa fa-angle-double-left"></i>
+	                    </span>
+	                    <span class="sr-only">Previous</span>
+	                </a>
+	            </li>
+
 		@for ($i=$start_page;$i<$end_page+1;$i++)
-			    <a href="/search?keyword={{$keyword}}&page={{$i}}"><button type="button" class="btn btn-outline-primary">{{$i}}</button></a>
+	            <li class="page-item <?php if($cur_page == $i) { echo 'active'; } ?>">
+	                <a class="page-link" href="/search?keyword={{$keyword}}&page={{$i}}">{{$i}}</a>
+	            </li>
 		@endfor			    
-			</div>
+	            <li class="page-item">
+	                <a class="page-link" href="/search?keyword={{$keyword}}&page={{$end_page}}" aria-label="Next">
+	                    <span aria-hidden="true">
+	                        <i class="fa fa-angle-double-right"></i>
+	                    </span>
+	                    <span class="sr-only">Next</span>
+	                </a>
+	            </li>
+	        </ul>
+	    </nav>
 			
 		</div>
 	</div>
+
 @else
 	
 	<div class="load-more">
@@ -121,6 +144,15 @@ jQuery(document).ready(function(){
 
 @endif
 	
+@else
+
+	<div class="alert alert-warning" role="alert">
+	    <h3 class="alert-heading font-size-h4 my-2">Warning</h3>
+	    <p class="mb-0">There is no results</p>
+	</div>
+
+@endif
+
 </div>
 <!-- END Page Content -->
 
