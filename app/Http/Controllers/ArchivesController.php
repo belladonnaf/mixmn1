@@ -233,7 +233,7 @@ class ArchivesController extends Controller
 				$search_result = json_decode($str_rs,1);
 				$cnt_result = count($search_result);
 
-	      return view('album.search',compact('keyword','arr_rs','cnt_rs'));
+	      return view('album.search',compact('keyword','search_result','cnt_result'));
 
 			}
 
