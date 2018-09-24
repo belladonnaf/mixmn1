@@ -73,7 +73,7 @@
 	                </a>
 	            </li>
 
-		@for ($i=$start_page;$i<$end_page+1;$i++)
+		@for ($i=$start_page;$i<$end_page;$i++)
 	            <li class="page-item <?php if($cur_page == $i) { echo 'active'; } ?>">
 	                <a class="page-link" href="/search?keyword={{$keyword}}&page={{$i}}">{{$i}}</a>
 	            </li>
