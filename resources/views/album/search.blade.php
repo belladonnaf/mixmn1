@@ -95,7 +95,7 @@
 @else
 	
 	<div class="load-more">
-		<button class="btn btn-hero-lg btn-hero-primary" data-value="{{$next_page}}">LOAD MORE</button>
+		<button class="btn btn-hero-lg btn-hero-primary w-100" data-value="{{$next_page}}">LOAD MORE</button>
 	</div>
 
 <script>
@@ -116,7 +116,7 @@ jQuery(document).ready(function(){
 	      if(response.data[k]){
 					var r = response.data[k];
 
-					str_res = '<div class="col-md-6 col-xl-6"><a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/album/' + r.album_id ' data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">';
+					str_res = '<div class="col-md-6 col-xl-6"><a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/album/' + r.album_id + ' data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">';
 					str_res = str_res + '<div class="block-content block-content-full ' + r.css + '">';
 					str_res = str_res + '<span class="d-inline-block py-1 px-2 rounded bg-black-75 font-size-sm font-w700 text-uppercase text-white">';
 					str_res = str_res + r.genre;
