@@ -290,7 +290,7 @@ $cnt_value = count($db_value);
                                         <i class="fa fa-fw fa-times-circle"></i>
                                     </button>
                                 </div>
-                                <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
+                                <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="keyword" name="keyword">
                             </div>
                         </form>
                    </div>
