@@ -233,11 +233,13 @@ class ArchivesController extends Controller
 				}
 				
 				$start_num = ($page-1)*20;
+
+				$sql = " select count(*) cnt from album_info_tbl where album_path like ? ";
+				$cnt_result = DB::select($sql,['%'.$keyword.'%'])[0]->cnt;
 				
 				$sql = " select * from album_info_tbl where album_path like ? order by release_date desc limit ?,20";
-
 				$search_result = DB::select($sql,['%'.$keyword.'%',$start_num]);
-				$cnt_result = count($search_result);
+
 				$total_page = floor(($cnt_result-1)/20)+1;
 				$cur_page = $page;
 				if($page<6){
