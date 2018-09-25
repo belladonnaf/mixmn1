@@ -295,7 +295,7 @@ $stream_set_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
                                                 <i class="fa fa-fw fa-check-circle text-success"></i>
                                             </div>
                                             <div class="media-body font-size-sm pr-2">
-                                                <div class="font-w600"><a href="/pages/howtofix">How to fix when player stop ?</a></div>
+                                                <a href="/pages/howtofix"><div class="font-w600">How to fix when player stop ?</div></a>
                                                 <div class="text-muted font-italic">2018-09-26</div>
                                             </div>
                                         </a>
