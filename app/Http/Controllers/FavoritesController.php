@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\DB;
 
-class ArchivesController extends Controller
+class FavoritesController extends Controller
 {   
 
     public function index(Request $request)
@@ -15,7 +15,7 @@ class ArchivesController extends Controller
 			$sql = " select a.order_num, b.* from mp3_favorite a inner join album_info_tbl b on a.album_id = b.album_id where user_id = ? order by order_num asc ";
 			$arr_rs = DB::select($sql,[$request->session()->get("login_id")]);
 
-      return view('archives.index',compact('arr_rs'));
+      return view('favorites.index',compact('arr_rs'));
 
 		}
 
