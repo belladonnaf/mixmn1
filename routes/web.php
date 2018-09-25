@@ -60,7 +60,7 @@ Route::get('/api/settings/mygenre/set/{genre_group_id}','SettingsController@setM
 
 Route::get('/api/search/{keyword}/{page?}','ArchivesController@searchJson');
 Route::post('/api/favorites/reorder','FavoritesController@reorder');
-Route::post('/api/favorites/create-stream-set','FavoritesController@createStreamset)
+Route::post('/api/favorites/create-stream-set','FavoritesController@createStreamset');
 
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');
