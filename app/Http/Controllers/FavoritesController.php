@@ -88,7 +88,7 @@ class FavoritesController extends Controller
 			$login_id = $request->session()->get("login_id");
 
 			$sql = " select ifnull(max(seq)+1,1) max_seq from mp3_stream_set where user_id = ? ";
-			$max_seq = DB::select($sql)[0]->max_seq;
+			$max_seq = DB::select($sql,[$login_id])[0]->max_seq;
 			$j=0;
 
 			foreach($arr_ids as $k=>$v){
