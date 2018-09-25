@@ -71,8 +71,7 @@ ul.target {
 			      <h3 class="block-title">Favorites List</h3>
 			  </div>
 			  <div class="block-content">
-			      <p>You can arrange the order.</p>
-			      <p>To create a streaming set, drag from the left panel to the right panel</p>
+			      <p>You can arrange the order. Drag from the left panel to the right panel.</p>
 			  </div>
 			</div>
                             
