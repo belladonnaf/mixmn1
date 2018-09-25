@@ -29,6 +29,9 @@
     <!-- Dynamic Table Full Pagination -->
     <div class="block block-rounded block-bordered">
         <div class="block-content block-content-full archive-margin-top">
+
+@if (!$agent->isMobile())
+
             <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
             <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
                 <thead>
@@ -66,6 +69,39 @@
                     @endforeach
                 </tbody>
             </table>
+@else
+
+<?php
+				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
+				$arr_css = randomize_css($arr_css,6);
+
+				$arr_page = range(0,count($arr_rs),20);
+
+          @foreach($arr_rs as $k=>$r)
+						$page = floor(($arr_page-1)/20)+1;
+?>
+					<div class="col-md-6 col-xl-6 page-{{$page}} <?php if($page == 1){ echo 'visible'; } else { echo 'invisible'; } ?>">
+					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/album/{{$r['album_id']}}" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
+					        <div class="block-content block-content-full {{$arr_css[($k%6)]}}">
+					            <span class="d-inline-block py-1 px-2 rounded bg-black-75 font-size-sm font-w700 text-uppercase text-white">
+					                {{$r['genre']}}
+					            </span>
+					            <div>
+					                <h6 class="font-w700 text-white mb-1">{{$r['album_path']}}</h3>
+					            </div>
+					            <span class="font-size-sm font-w700 text-uppercase text-white-75">
+					                {{$r['file_cnt']}} Files | {{$r['file_size']}} Mbyte
+					            </span>
+					        </div>
+					    </a>
+					</div>
+				  @endfor
+
+					<div class="load-more">
+						<button class="btn btn-hero-lg btn-hero-primary w-100" data-value="1">LOAD MORE</button>
+					</div>
+
+@endif
         </div>
     </div>
     <!-- END Dynamic Table Full Pagination -->
@@ -76,6 +112,9 @@
 @endsection
 @section('js_after')
 <!-- Page JS Plugins -->
+
+@if (!$agent->isMobile())
+
 <script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="/js/plugins/datatables/buttons/dataTables.buttons.min.js"></script>
@@ -83,6 +122,18 @@
 <script src="/js/plugins/datatables/buttons/buttons.html5.min.js"></script>
 <script src="/js/plugins/datatables/buttons/buttons.flash.min.js"></script>
 <script src="/js/plugins/datatables/buttons/buttons.colVis.min.js"></script>
+@else
+<script>
+jQuery(document).ready(function(){
+	jQuery(".load-more button").click(function(){
+			var cur_page = jQuery(this).attr("data-value");
+			var next_page = parseInt(cur_page)+1);
+			jQuery(".page-"+next_page).removeClass('invisible').addClass('invisible');
+			jQuery(".load-more button").attr("data-value",next_page);
+	});
+});
+</script>
+@endif
 
 <!-- Page JS Code -->
 <script src="/js/pages/be_tables_datatables.min.js"></script>
