@@ -72,12 +72,12 @@
 @else
 @section('css_after')
         <!-- Page JS Plugins CSS -->
-        <link rel="stylesheet" href="assets/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
-        <link rel="stylesheet" href="assets/js/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
-        <link rel="stylesheet" href="assets/js/plugins/select2/css/select2.min.css">
-        <link rel="stylesheet" href="assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.css">
-        <link rel="stylesheet" href="assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.skinHTML5.css">
-        <link rel="stylesheet" href="assets/js/plugins/dropzone/dist/min/dropzone.min.css">
+        <link rel="stylesheet" href="/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+        <link rel="stylesheet" href="/js/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+        <link rel="stylesheet" href="/js/plugins/select2/css/select2.min.css">
+        <link rel="stylesheet" href="/js/plugins/ion-rangeslider/css/ion.rangeSlider.css">
+        <link rel="stylesheet" href="/js/plugins/ion-rangeslider/css/ion.rangeSlider.skinHTML5.css">
+        <link rel="stylesheet" href="/js/plugins/dropzone/dist/min/dropzone.min.css">
 @endsection
 
         <form action="/archives/" method="get" onsubmit="return false;">
@@ -144,13 +144,13 @@
 <script src="/js/plugins/datatables/buttons/buttons.flash.min.js"></script>
 <script src="/js/plugins/datatables/buttons/buttons.colVis.min.js"></script>
 @else
-<script src="assets/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script src="assets/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<script src="assets/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
-<script src="assets/js/plugins/select2/js/select2.full.min.js"></script>
-<script src="assets/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
-<script src="assets/js/plugins/jquery.maskedinput/jquery.maskedinput.min.js"></script>
-<script src="assets/js/plugins/dropzone/dropzone.min.js"></script>
+<script src="/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<script src="/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+<script src="/js/plugins/select2/js/select2.full.min.js"></script>
+<script src="/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="/js/plugins/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+<script src="/js/plugins/dropzone/dropzone.min.js"></script>
 
 <script>
 jQuery(document).ready(function(){
