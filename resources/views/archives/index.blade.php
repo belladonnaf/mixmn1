@@ -150,7 +150,7 @@ jQuery(document).ready(function(){
 			jQuery(".load-more button").attr("data-value",next_page);
 	});
 	jQuery(".btn-go").click(function(){
-		window.location.href='/album/archives/index/' + jQuery("#sel_date").val();
+		window.location.href='/archives/index/' + jQuery("#sel_date").val();
 	});
 });
 </script>
