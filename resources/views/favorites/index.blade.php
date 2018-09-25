@@ -68,7 +68,7 @@ ul.target {
 			<div class="album-list-wrapper">
 		    <ul class="source connected">
 @foreach($arr_rs as $r)
-		      <li>{{$album_path}}</li>
+		      <li>{{$r->album_path}}</li>
 @endforeach
 		    </ul>
 			</div>
