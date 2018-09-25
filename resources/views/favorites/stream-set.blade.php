@@ -32,7 +32,7 @@ endsection
                   <tbody><tr>
                       <td class="text-center pr-0" style="width: 38px;">
                           <div class="js-task-status custom-control custom-checkbox custom-checkbox-rounded-circle custom-control-primary custom-control-lg">
-                              <input type="checkbox" class="custom-control-input" id="tasks-cb-id9" name="tasks-cb-id9" data-value="{{ json_encode($r['details']) }}">
+                              <input type="checkbox" class="custom-control-input open-detail" id="set-id-{{$r['id']}}" name="set-id-{{$r['id']}}" data-value="{{ json_encode($r['details']) }}">
                               <label class="custom-control-label" for="tasks-cb-id9"></label>
                           </div>
                       </td>
@@ -112,8 +112,11 @@ endsection
 		
 	});
 	
-	jQuery(".btn-open-detail").click(function(){
-			
+	jQuery(".open-detail").click(function(){
+
+		jQuery(".open-detail").removeAttr("checked");
+		jQuery(this).attr("checked","checked");
+
 		var details = jQuery(this).attr("data-value");
 		var obj_details = JSON.parse(details);
 		console.log(obj_details);
