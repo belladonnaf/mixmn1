@@ -75,7 +75,7 @@ ul.target {
 			  </div>
 			</div>
                             
-			<div class="album-list-wrapper">
+			<div class="album-list-wrapper bg-white">
 		    <ul class="source connected">
 @foreach($arr_rs as $r)
 		      <li>{{$r->album_path}}</li>
@@ -94,7 +94,7 @@ ul.target {
 			  </div>
 			</div>
 
-			<div class="play-list-wrapper">
+			<div class="play-list-wrapper bg-white">
 		    <ul class="target connected">
 		    </ul>
 			</div>
