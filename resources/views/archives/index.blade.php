@@ -72,8 +72,6 @@
 @section('css_after')
         <!-- Page JS Plugins CSS -->
         <link rel="stylesheet" href="/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
-			  <script>jQuery(function(){ Dashmix.helpers(['datepicker']); });</script>
-
 @endsection
 
         <form action="/archives/" method="get" onsubmit="return false;">
@@ -139,6 +137,7 @@
 
 <script>
 jQuery(document).ready(function(){
+	jQuery(function(){ Dashmix.helpers(['datepicker']); });
 	jQuery(".load-more button").click(function(){
 			var cur_page = jQuery(this).attr("data-value");
 			var next_page = parseInt(cur_page)+1;
