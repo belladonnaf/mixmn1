@@ -145,7 +145,11 @@ ul.target {
 		var api_url = 'http://mix.mn1.net/api/favorites/reorder';
 		var str_fav_album = JSON.stringify(arr_fav_album); 
 	  axios.post(api_url,{ ids: str_fav_album }).then(response => {
-			console.log(response.data);
+
+			if( response.data == 'ok' ){
+				Dashmix.helpers('notify', {type: 'success', icon: 'fa fa-check mr-1', message: 'Favorites list has been reordered.'});
+			}
+
 		});
 
 	});
@@ -157,13 +161,17 @@ ul.target {
 		});
 
 		if(arr_stream_set.length < 1){
-			Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'At least one of albums is required'});
+			Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'At least one of albums is required.'});
 		}
 
 		var api_url = 'http://mix.mn1.net/api/favorites/create-stream-set';
 		var str_stream_set = JSON.stringify(arr_stream_set); 
 	  axios.post(api_url,{ ids: str_stream_set }).then(response => {
-			console.log(response.data);
+	
+			if( response.data == 'ok' ){
+				Dashmix.helpers('notify', {type: 'success', icon: 'fa fa-check mr-1', message: 'New stream set created.'});
+			}
+
 		});
 
 	});
