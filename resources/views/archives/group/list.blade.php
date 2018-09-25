@@ -82,6 +82,9 @@
 											    <div class="input-group col-sm-6">
 
                             <select class="js-select2 form-control" id="sel_taxonomy" name="sel_taxonomy" style="width: 100%;" data-placeholder="Choose one..">
+																@foreach($arr_taxonomy as $taxonomy)
+                                <option value="{{$taxonomy}}" <?php if($taxonomy == $f_group){ echo 'selected'; }?>>{{$taxonomy}}</option>
+																@endforeach
                             </select>
 
 										        <div class="input-group-append">
@@ -97,6 +100,7 @@
 				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
 				$arr_css = randomize_css($arr_css,6);
 
+var_dump($arr_rs);
 ?>
 
           @foreach($arr_rs as $k=>$r)
