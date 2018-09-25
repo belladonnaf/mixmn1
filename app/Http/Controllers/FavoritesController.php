@@ -94,7 +94,7 @@ class FavoritesController extends Controller
 			foreach($arr_ids as $k=>$v){
 
 				$sql = " select track_id from track_tbl where album_id = ? ";
-				$arr_track = DB::select($sql);
+				$arr_track = DB::select($sql,[$v]);
 				$arr_track_id = array();
 
 				foreach($arr_track as $t){
