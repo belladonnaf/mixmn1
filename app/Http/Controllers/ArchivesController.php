@@ -269,10 +269,6 @@ class ArchivesController extends Controller
     public function searchJson(Request $request,$keyword,$page)
 		{
 
-			$keyword = $request->get('keyword');
-			$page = $request->get('page');
-//			$keyword = $request->input("keyword");
-
 			if(!$keyword){
 				exit;
 			}
