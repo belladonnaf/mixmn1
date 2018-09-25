@@ -117,6 +117,7 @@ ul.target {
 <script type="text/javascript">
 	
 	var arr_fav_album = [];
+	var arr_stream_set = [];
 
   jQuery(function () {
     jQuery(".source, .target").sortable({
@@ -141,7 +142,24 @@ ul.target {
 		});
 
 	});
-			
+
+	jQuery("#btn-create-stream-set").click(function(){
+		
+		jQuery("ul.target li").each(function(){
+			arr_stream_set.push( jQuery(this).attr("data-album-id") );
+		});
+
+		if(arr_stream_set.length < 1){
+			Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'At least one of albums is required'});
+		}
+
+		var api_url = 'http://mix.mn1.net/api/favorites/create-stream-set';
+		var str_stream_set = JSON.stringify(arr_stream_set); 
+	  axios.post(api_url,{ ids: str_stream_set }).then(response => {
+			console.log(response.data);
+		});
+
+	});
 
 </script>
 @endsection

@@ -68,8 +68,46 @@ class FavoritesController extends Controller
 		
 			$str_ids = $request->get('ids');
 			$arr_ids = json_decode($str_ids);
-			var_dump($arr_ids);
+			$login_id = $request->session()->get("login_id");
+
+			foreach($arr_ids as $k=>$v){
+				$sql = " update mp3_favorite set order_num = ? where user_id = ? and album_id = ? ";
+				DB::update($sql,[($k+1),$login_id,$v]);
+			}
+
+			$msg = "ok";
+			return response()->json($msg,200);
 	
+		}
+
+		public function createStreamset(Request $request)
+		{
+
+			$str_ids = $request->get('ids');
+			$arr_ids = json_decode($str_ids);
+			$login_id = $request->session()->get("login_id");
+
+			$sql = " select ifnull(max(seq)+1,1) max_seq from mp3_stream_set where user_id = ? ";
+			$max_seq = DB::select($sql)[0]->max_seq;
+			$j=0;
+
+			foreach($arr_ids as $k=>$v){
+
+				$sql = " select track_id from track_tbl where album_id = ? ";
+				$arr_track = DB::select($sql);
+				$arr_track_id = array();
+
+				foreach($arr_track as $t){
+					$j=$j+1;
+					$sql = " INSERT INTO mp3_stream_set (user_id, seq, album_id, track_id, is_hide, reg_date) VALUES ( ?, ?, ?, ?, 0, NOW() );";
+					DB::insert($sql,[$login_id,$j,$v,$t->track_id]);
+				}
+
+			}						
+
+			$msg = "ok";
+			return response()->json($msg,200);
+
 		}
 
 }
