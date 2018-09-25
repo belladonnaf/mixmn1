@@ -80,20 +80,17 @@
         <link rel="stylesheet" href="assets/js/plugins/dropzone/dist/min/dropzone.min.css">
 @endsection
 
-        <div class="block-content">
-            <form action="/archives/" method="get" onsubmit="return false;">
-                <h2 class="content-heading pt-0">Date Formats</h2>
-                <div class="row">
-                    <div class="col-lg-8 col-xl-6">
-                        <div class="form-row">
-                            <div class="form-group col-xl-4">
-                                <input type="text" class="js-datepicker form-control" id="example-datepicker3" name="example-datepicker3" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
-                            </div>
+        <form action="/archives/" method="get" onsubmit="return false;">
+            <div class="row">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="form-row">
+                        <div class="form-group col-xl-4">
+                            <input type="text" class="js-datepicker form-control" id="example-datepicker3" name="example-datepicker3" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
                         </div>
                     </div>
                 </div>
-						</form>
-				</div>
+            </div>
+				</form>
 <?php
 				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
 				$arr_css = randomize_css($arr_css,6);
