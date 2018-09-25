@@ -97,6 +97,15 @@ ul.target {
 			  </div>
 			</div>
 
+			<div class="input-group">
+			    <div class="input-group-prepend">
+			        <span class="input-group-text">
+			            Name
+			        </span>
+			    </div>
+			    <input type="text" class="form-control" id="set_alias" name="set_alias">
+			</div>
+                                            
 			<div class="play-list-wrapper bg-white">
 		    <ul class="target connected">
 		    </ul>

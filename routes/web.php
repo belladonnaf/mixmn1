@@ -44,6 +44,7 @@ Route::get('/album/{album_id}','ArchivesController@show')->name('album.show')->m
 /* Favorite Related */
 
 Route::get('/favorites/index','FavoritesController@index')->name('favorites.index')->middleware('session.has.user');
+Route::get('/favorites/stream-set','FavoritesController@streamSet')->name('favorites.stream-set')->middleware('session.has.user');
 
 /* Settings Related */
 
