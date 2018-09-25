@@ -1,4 +1,4 @@
-<script>if(location.port || location.port != '80'){ location.href= window.location.protocol + '//' + window.location.hostname + window.location.pathname + window.location.hash; }</script>
+<script>if(location.port && location.port != '80'){ location.href= window.location.protocol + '//' + window.location.hostname + window.location.pathname + window.location.hash; }</script>
 @extends('layouts.backend')
 <!-- Page JS Plugins CSS -->
 
