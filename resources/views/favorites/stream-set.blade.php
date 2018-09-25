@@ -112,8 +112,8 @@ endsection
 	
 	jQuery(".open-detail").click(function(){
 
-		jQuery(".open-detail").removeAttr("checked");
-		jQuery(this).attr("checked","checked");
+		jQuery(".open-detail").prop("checked",false);
+		jQuery(this).prop("checked",true);
 
 		var details = jQuery(this).attr("data-value");
 		var obj_details = JSON.parse(details);
