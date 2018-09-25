@@ -111,7 +111,7 @@ class ArchivesController extends Controller
 			$str_rs = json_encode($obj_rs);
 			$arr_rs = json_decode($str_rs,1);
 
-      return view('archives.group.list',compact('f_group','RecordCount','arr_taxonomy'));
+      return view('archives.group.list',compact('f_group','RecordCount','arr_rs','arr_taxonomy'));
 				
     }
 
