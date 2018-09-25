@@ -87,8 +87,8 @@ class FavoritesController extends Controller
 			$arr_ids = json_decode($str_ids);
 			$login_id = $request->session()->get("login_id");
 
-			$sql = " select ifnull(max(seq)+1,1) max_seq from mp3_stream_set where user_id = ? ";
-			$max_seq = DB::select($sql,[$login_id])[0]->max_seq;
+			$sql = " select ifnull(max(set_id)+1,1) max_set_id from mp3_stream_set where user_id = ? ";
+			$max_set_id = DB::select($sql,[$login_id])[0]->max_set_id;
 			$j=0;
 
 			foreach($arr_ids as $k=>$v){
@@ -99,8 +99,8 @@ class FavoritesController extends Controller
 
 				foreach($arr_track as $t){
 					$j=$j+1;
-					$sql = " INSERT INTO mp3_stream_set (user_id, seq, album_id, track_id, is_hide, reg_date) VALUES ( ?, ?, ?, ?, 0, NOW() );";
-					DB::insert($sql,[$login_id,$j,$v,$t->track_id]);
+					$sql = " INSERT INTO mp3_stream_set (user_id, set_id, list_order, album_id, track_id, is_hide, reg_date) VALUES ( ?, ?, ?, ?, ?, 0, NOW() );";
+					DB::insert($sql,[$login_id,$max_set_id,$j,$v,$t->track_id]);
 				}
 
 			}						

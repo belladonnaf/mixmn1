@@ -252,12 +252,11 @@ $fav_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
                                         <span class="badge badge-primary">{{$fav_cnt}}</span>
                                     </a>
 <?php 
-$sql = " select count(*) cnt from mp3_stream_set where user_id = ?  ";
+$sql = " select count(distinct set_id) cnt from mp3_stream_set where user_id = ? ";
 $login_id = request()->session()->get('login_id');
 $stream_set_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
 ?>
-
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="/stream-sets/index">
                                         <i class="far fa-fw fa-gem mr-1"></i>Stream Set
                                         <span class="badge badge-primary">{{$stream_set_cnt}}</span>
                                     </a>
