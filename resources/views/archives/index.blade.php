@@ -78,8 +78,13 @@
             <div class="row">
                 <div class="col-lg-8 col-xl-6">
                     <div class="form-row">
-                        <div class="form-group col-xl-4">
+                       <div class="form-group col-xl-4">
+											    <div class="input-group col-sm-6">
                             <input type="text" class="js-datepicker form-control" id="example-datepicker3" name="example-datepicker3" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+										        <div class="input-group-append">
+										            <button type="submit" class="btn btn-primary">Go</button>
+										        </div>
+													</div>
                         </div>
                     </div>
                 </div>
