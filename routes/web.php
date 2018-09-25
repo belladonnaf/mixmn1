@@ -56,6 +56,8 @@ Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-
 Route::get('/api/album/{album_id}','ArchivesController@getJson');
 Route::get('/api/favorites/set/{album_id}','FavoritesController@setFavorite');
 
+Route::get('/api/stream-set/{set_id}','FavoritesController@getStreamSetJson');
+
 Route::get('/api/settings/myui/set/{ui_id}','SettingsController@setMyUI');
 Route::get('/api/settings/mygenre/set/{genre_group_id}','SettingsController@setMyGenre');
 

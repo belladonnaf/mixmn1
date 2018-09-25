@@ -106,8 +106,16 @@ endsection
 	jQuery(".btn-play-music").click(function(){
 			
 		var set_id = jQuery(this).attr("data-id");
-		window.location.href = '/stream-set/' + set_id;
-		
+		var api_url = 'http://mix.mn1.net/api/stream-set/' + set_id;
+
+	  axios.get(api_url).then(response => {
+	
+			if( response.data == 'ok' ){
+				vm1.addPlaylist(data);
+			}
+
+		});
+
 	});
 	
 	jQuery(".open-detail").click(function(){
