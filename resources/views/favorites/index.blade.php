@@ -126,22 +126,22 @@ ul.target {
 
 	jQuery("#btn-save-order").click(function(){
 		
-	jQuery("ul.source li").each(function(){
+		jQuery("ul.source li").each(function(){
+			arr_fav_album.push( jQuery(this).attr("data-album-id") );
+		});
 
-		arr_fav_album.push( jQuery(this).attr("data-album-id") );
-		
 		if(arr_fav_album.length < {{$cnt_rs}}){
 			Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'For reorder, you should not move item to stream set.'});
 		}
-		
-		var api_url = 'http://mix.mn1.net/api/favorites/reorder';
 
-    axios.post(api_url,param:{ ids: JSON.stringify(arr_fav_album) }).then(response => {
+		var api_url = 'http://mix.mn1.net/api/favorites/reorder';
+		var str_fav_album = JSON.stringify(arr_fav_album); 
+	  axios.post(api_url,{ ids: str_fav_album }).then(response => {
 			console.log(response.data);
 		});
 
 	});
 			
-});
+
 </script>
 @endsection
