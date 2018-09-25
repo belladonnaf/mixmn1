@@ -95,7 +95,7 @@
 					        </div>
 					    </a>
 					</div>
-				  @endfor
+				  @endforeach
 
 					<div class="load-more">
 						<button class="btn btn-hero-lg btn-hero-primary w-100" data-value="1">LOAD MORE</button>
