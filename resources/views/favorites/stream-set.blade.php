@@ -33,7 +33,7 @@ endsection
                       <td class="text-center pr-0" style="width: 38px;">
                           <div class="js-task-status custom-control custom-checkbox custom-checkbox-rounded-circle custom-control-primary custom-control-lg">
                               <input type="checkbox" class="custom-control-input open-detail" id="set-id-{{$r['id']}}" name="set-id-{{$r['id']}}" data-value="{{ json_encode($r['details']) }}">
-                              <label class="custom-control-label" for="tasks-cb-id9"></label>
+                              <label class="custom-control-label" for="set-id-{{$r['id']}}"></label>
                           </div>
                       </td>
                       <td class="js-task-content font-w600 pl-0">
