@@ -53,6 +53,7 @@ endsection
                   </tr>
               </tbody></table>
           </div>
+@endforeach
           <!-- END Task -->
 
       </div>
