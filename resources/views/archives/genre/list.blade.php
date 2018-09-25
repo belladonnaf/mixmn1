@@ -1,11 +1,6 @@
 @extends('layouts.backend')
 <!-- Page JS Plugins CSS -->
 
-@section('css_after')
-<link rel="stylesheet" href="/js/plugins/datatables/dataTables.bootstrap4.css">
-<link rel="stylesheet" href="/js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css">
-@endsection
-
 @section('content')
     <!-- Hero -->
 <div class="bg-body-light">
@@ -76,7 +71,7 @@
 @else
 @section('css_after')
         <!-- Page JS Plugins CSS -->
-        <link rel="stylesheet" href="/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+        <link rel="stylesheet" href="assets/js/plugins/select2/css/select2.min.css">
 @endsection
 
         <form action="/archives/" method="get" onsubmit="return false;">
@@ -85,7 +80,13 @@
                     <div class="form-row">
                        <div class="form-group col-xl-4">
 											    <div class="input-group col-sm-6">
-                            <input type="text" class="js-datepicker form-control" id="sel_date" name="sel_date" data-week-start="0" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+
+                            <select class="js-select2 form-control" id="sel_taxonomy" name="sel_taxonomy" style="width: 100%;" data-placeholder="Choose one..">
+																@foreach($arr_taxonomy as $taxonomy)
+                                <option value="{{$taxonomy}}" <?php if($taxonomy == $f_genre){ echo 'selected'; }?>>{{$taxonomy}}</option>
+																@endforeach
+                            </select>
+
 										        <div class="input-group-append">
 										            <button type="submit" class="btn btn-primary btn-go">Go</button>
 										        </div>
@@ -143,7 +144,7 @@
 <script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 @else
-<script src="/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/plugins/select2/js/select2.full.min.js"></script>
 
 <script>
 jQuery(document).ready(function(){
@@ -155,7 +156,7 @@ jQuery(document).ready(function(){
 			jQuery(".load-more button").attr("data-value",next_page);
 	});
 	jQuery(".btn-go").click(function(){
-		window.location.href='/archives/index/' + jQuery("#sel_date").val();
+		window.location.href='/archives/genre/' + jQuery("#sel_taxonomy").val();
 	});
 });
 </script>
