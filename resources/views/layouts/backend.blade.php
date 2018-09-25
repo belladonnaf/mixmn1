@@ -244,7 +244,7 @@ $cnt_value = count($db_value);
                                 <div class="p-2">
 <?php 
 $sql = " select count(*) cnt from mp3_favorite where user_id = ? and album_id > 0 ";
-$login_id = request()->session()->get('login_id')
+$login_id = request()->session()->get('login_id');
 $fav_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
 ?>
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
