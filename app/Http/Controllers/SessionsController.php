@@ -31,7 +31,7 @@ class SessionsController extends Controller
 				} else if($favor_ui == 2){
 					return redirect()->to('/archives/index');
 				} else if($favor_ui == 3){
-					return redirect()->to('/search/index');
+					return redirect()->to('/search');
 				} else if($favor_ui == 4){
 					return redirect()->to('/favorites/index');
 				}
@@ -72,7 +72,7 @@ class SessionsController extends Controller
 					} else if($favor_ui == 2){
 						return redirect()->to('/archives/index');
 					} else if($favor_ui == 3){
-						return redirect()->to('/search/index');
+						return redirect()->to('/search');
 					} else if($favor_ui == 4){
 						return redirect()->to('/favorites/index');
 					}
