@@ -78,16 +78,19 @@ ul.target {
 			<div class="album-list-wrapper bg-white">
 		    <ul class="source connected">
 @foreach($arr_rs as $r)
-		      <li>{{$r->album_path}} <button type="button" class="btn btn-primary btn-sm" data-toggle="click-ripple">Listen</button></li>
+		      <li data-album-id="{{$r->album_id}}">{{$r->album_path}} <button type="button" class="btn btn-primary btn-sm" data-toggle="click-ripple" onclick="javascript:window.location.href='/album/{{$r->album_id}}';">Listen</button></li>
 @endforeach
 		    </ul>
+			</div>
+			<div class="button-wrapper">
+				<button type="button" class="btn btn-lg btn-warning w-100">Save List Order</button>
 			</div>
 		</div>
 		<div class="col-md-6 col-xl-6">
 
 			<div class="block block-bordered">
 			  <div class="block-header block-header-default">
-			      <h3 class="block-title">Streaming Set</h3>
+			      <h3 class="block-title">Stream Set</h3>
 			  </div>
 			  <div class="block-content">
 			      <p>You can queue multiple albums and listen in series.</p>
@@ -98,6 +101,11 @@ ul.target {
 		    <ul class="target connected">
 		    </ul>
 			</div>
+
+			<div class="button-wrapper">
+				<button type="button" class="btn btn-lg btn-success w-100">Create New Stream Set</button>
+			</div>
+
 		</div>
 </div>
 
