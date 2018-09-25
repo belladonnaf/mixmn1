@@ -103,7 +103,8 @@ class FavoritesController extends Controller
 
 				foreach($arr_track as $t){
 					$j=$j+1;
-					$sql = " INSERT INTO mp3_stream_set (user_id, set_id, list_order, album_id, track_id, is_hide ) VALUES ( ?, ?, ?, ?, ?, 0 );";
+					$sql = " INSERT INTO mp3_stream_set_detail (user_id, set_id, list_order, album_id, track_id, is_hide ) VALUES ( ?, ?, ?, ?, ?, 0 );";
+
 					DB::insert($sql,[$login_id,$set_id,$j,$v,$t->track_id]);
 				}
 
