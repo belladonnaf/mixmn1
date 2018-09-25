@@ -190,7 +190,7 @@ class FavoritesController extends Controller
 				}
 			
 				$sql = " select * from track_tbl where track_id = ? ";
-				$row = DB::select($sql,[$track_id]);
+				$row = DB::select($sql,[$track_id])[0];
 
 				$track_id = $row->track_id;
 				$length_min = floor($row->lengths / 60);
