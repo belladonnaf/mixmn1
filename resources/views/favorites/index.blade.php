@@ -134,7 +134,7 @@ ul.target {
 			Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'For reorder, you should not move item to stream set.'});
 		}
 		
-		var api_url = 'http://mix.mn1.net/api/favorites/reorder;
+		var api_url = 'http://mix.mn1.net/api/favorites/reorder';
 
     axios.post(api_url,param:{ ids: JSON.stringify(arr_fav_album) }).then(response => {
 			console.log(response.data);
