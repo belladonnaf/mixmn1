@@ -29,6 +29,13 @@
     <!-- Dynamic Table Full Pagination -->
     <div class="block block-rounded block-bordered">
         <div class="block-content block-content-full archive-margin-top">
+
+@if (!$agent->isMobile())
+
+@section('css_after')
+<link rel="stylesheet" href="/js/plugins/datatables/dataTables.bootstrap4.css">
+@endsection
+
             <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
             <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
                 <thead>
@@ -66,6 +73,60 @@
                     @endforeach
                 </tbody>
             </table>
+@else
+@section('css_after')
+        <!-- Page JS Plugins CSS -->
+        <link rel="stylesheet" href="/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+@endsection
+
+        <form action="/archives/" method="get" onsubmit="return false;">
+            <div class="row">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="form-row">
+                       <div class="form-group col-xl-4">
+											    <div class="input-group col-sm-6">
+                            <input type="text" class="js-datepicker form-control" id="sel_date" name="sel_date" data-week-start="0" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+										        <div class="input-group-append">
+										            <button type="submit" class="btn btn-primary btn-go">Go</button>
+										        </div>
+													</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+				</form>
+<?php
+				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
+				$arr_css = randomize_css($arr_css,6);
+
+?>
+
+          @foreach($arr_rs as $k=>$r)
+
+<?php			$page = floor(($k-1)/20)+1; ?>
+
+					<div class="col-md-6 col-xl-6 page-{{$page}} <?php if($page == 1){ echo 'd-block'; } else { echo 'd-none'; } ?>">
+					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/album/{{$r['album_id']}}" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
+					        <div class="block-content block-content-full {{$arr_css[($k%6)]}}">
+					            <span class="d-inline-block py-1 px-2 rounded bg-black-75 font-size-sm font-w700 text-uppercase text-white">
+					                {{$r['genre']}}
+					            </span>
+					            <div>
+					                <h6 class="font-w700 text-white mb-1">{{$r['album_path']}}</h3>
+					            </div>
+					            <span class="font-size-sm font-w700 text-uppercase text-white-75">
+					                {{$r['file_cnt']}} Files | {{$r['file_size']}} Mbyte
+					            </span>
+					        </div>
+					    </a>
+					</div>
+				  @endforeach
+
+					<div class="load-more">
+						<button class="btn btn-hero-lg btn-hero-primary w-100" data-value="1">LOAD MORE</button>
+					</div>
+
+@endif
         </div>
     </div>
     <!-- END Dynamic Table Full Pagination -->
@@ -76,13 +137,29 @@
 @endsection
 @section('js_after')
 <!-- Page JS Plugins -->
+
+@if (!$agent->isMobile())
+
 <script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
-<script src="/js/plugins/datatables/buttons/dataTables.buttons.min.js"></script>
-<script src="/js/plugins/datatables/buttons/buttons.print.min.js"></script>
-<script src="/js/plugins/datatables/buttons/buttons.html5.min.js"></script>
-<script src="/js/plugins/datatables/buttons/buttons.flash.min.js"></script>
-<script src="/js/plugins/datatables/buttons/buttons.colVis.min.js"></script>
+@else
+<script src="/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+<script>
+jQuery(document).ready(function(){
+	jQuery(function(){ Dashmix.helpers(['datepicker']); });
+	jQuery(".load-more button").click(function(){
+			var cur_page = jQuery(this).attr("data-value");
+			var next_page = parseInt(cur_page)+1;
+			jQuery(".page-"+next_page).removeClass('d-none').addClass('d-block');
+			jQuery(".load-more button").attr("data-value",next_page);
+	});
+	jQuery(".btn-go").click(function(){
+		window.location.href='/archives/index/' + jQuery("#sel_date").val();
+	});
+});
+</script>
+@endif
 
 <!-- Page JS Code -->
 <script src="/js/pages/be_tables_datatables.min.js"></script>
