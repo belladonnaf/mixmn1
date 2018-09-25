@@ -1,11 +1,6 @@
 @extends('layouts.backend')
 <!-- Page JS Plugins CSS -->
 
-@section('css_after')
-<link rel="stylesheet" href="/js/plugins/datatables/dataTables.bootstrap4.css">
-<link rel="stylesheet" href="/js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css">
-@endsection
-
 @section('content')
     <!-- Hero -->
 <div class="bg-body-light">
@@ -31,6 +26,11 @@
         <div class="block-content block-content-full archive-margin-top">
 
 @if (!$agent->isMobile())
+
+@section('css_after')
+<link rel="stylesheet" href="/js/plugins/datatables/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="/js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css">
+@endsection
 
             <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
             <table class="table table-bordered table-striped table-vcenter js-dataTable-full-pagination">
@@ -70,7 +70,30 @@
                 </tbody>
             </table>
 @else
+@section('css_after')
+        <!-- Page JS Plugins CSS -->
+        <link rel="stylesheet" href="assets/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+        <link rel="stylesheet" href="assets/js/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+        <link rel="stylesheet" href="assets/js/plugins/select2/css/select2.min.css">
+        <link rel="stylesheet" href="assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.css">
+        <link rel="stylesheet" href="assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.skinHTML5.css">
+        <link rel="stylesheet" href="assets/js/plugins/dropzone/dist/min/dropzone.min.css">
+@endsection
 
+        <div class="block-content">
+            <form action="/archives/" method="get" onsubmit="return false;">
+                <h2 class="content-heading pt-0">Date Formats</h2>
+                <div class="row">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="form-row">
+                            <div class="form-group col-xl-4">
+                                <input type="text" class="js-datepicker form-control" id="example-datepicker3" name="example-datepicker3" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+						</form>
+				</div>
 <?php
 				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
 				$arr_css = randomize_css($arr_css,6);
