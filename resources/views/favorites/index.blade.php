@@ -82,7 +82,7 @@ ul.target {
 @endforeach
 		    </ul>
 			</div>
-			<div class="button-wrapper">
+			<div class="button-wrapper mt-5">
 				<button type="button" class="btn btn-lg btn-warning w-100" id="btn-save-order">Save List Order</button>
 			</div>
 		</div>
@@ -102,7 +102,7 @@ ul.target {
 		    </ul>
 			</div>
 
-			<div class="button-wrapper">
+			<div class="button-wrapper mt-5">
 				<button type="button" class="btn btn-lg btn-success w-100" id="btn-create-stream-set">Create New Stream Set</button>
 			</div>
 
