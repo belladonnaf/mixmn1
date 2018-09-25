@@ -63,7 +63,7 @@ class FavoritesController extends Controller
 
 		}
 
-		public function reorder(Reqest $request)
+		public function reorder(Request $request)
 		{
 		
 			$str_ids = $request->get('ids');
