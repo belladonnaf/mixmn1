@@ -65,6 +65,17 @@ ul.target {
 
 	<div class="row">
 		<div class="col-md-6 col-xl-6">
+
+			<div class="block block-bordered">
+			  <div class="block-header block-header-default">
+			      <h3 class="block-title">Favorites List</h3>
+			  </div>
+			  <div class="block-content">
+			      <p>You can arrange the order.</p>
+			      <p>To create a streaming set, drag from the left panel to the right panel</p>
+			  </div>
+			</div>
+                            
 			<div class="album-list-wrapper">
 		    <ul class="source connected">
 @foreach($arr_rs as $r)
@@ -74,6 +85,16 @@ ul.target {
 			</div>
 		</div>
 		<div class="col-md-6 col-xl-6">
+
+			<div class="block block-bordered">
+			  <div class="block-header block-header-default">
+			      <h3 class="block-title">Streaming Set</h3>
+			  </div>
+			  <div class="block-content">
+			      <p>You can queue multiple albums and listen in series.</p>
+			  </div>
+			</div>
+
 			<div class="play-list-wrapper">
 		    <ul class="target connected">
 		    </ul>
