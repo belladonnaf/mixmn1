@@ -5,7 +5,7 @@
 <style>
 ul.source, ul.target {
   min-height: 50px;
-  margin: 0px 25px 10px 0px;
+  margin: 0px;
   padding: 2px;
   border-width: 1px;
   border-style: solid;
