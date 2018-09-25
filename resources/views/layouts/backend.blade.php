@@ -243,15 +243,12 @@ $cnt_value = count($db_value);
                                 </div>
                                 <div class="p-2">
 <?php 
-$sql = " select count(*) cnt from mp3_favorite where user_id = ? and album_id > 0 ";
-var_dump(request()->session()->get('login_id'));
-exit;
-$fav_cnt=DB::select($sql,request()->session()->get('login_id'))[0]->cnt;
-
+//$sql = " select count(*) cnt from mp3_favorite where user_id = ? and album_id > 0 ";
+$login_id = request()->session()->get('login_id');
 ?>
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
                                         <i class="far fa-fw fa-heart mr-1"></i>Favorites
-                                        <span class="badge badge-primary">{{$fav_cnt}}</span>
+                                        <span class="badge badge-primary">{{$login_id}}</span>
                                     </a>
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
                                         <i class="far fa-fw fa-gem mr-1"></i>Stream Set
