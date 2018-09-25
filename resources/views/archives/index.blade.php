@@ -79,9 +79,9 @@
 
           @foreach($arr_rs as $k=>$r)
 
-<?php			$page = floor((count($arr_rs)-1)/20)+1; ?>
+<?php			$page = floor(($k-1)/20)+1; ?>
 
-					<div class="col-md-6 col-xl-6 page-{{$page}} <?php if($page == 1){ echo 'visible'; } else { echo 'invisible'; } ?>">
+					<div class="col-md-6 col-xl-6 page-{{$page}} <?php if($page == 1){ echo 'd-block'; } else { echo 'd-none'; } ?>">
 					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/album/{{$r['album_id']}}" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
 					        <div class="block-content block-content-full {{$arr_css[($k%6)]}}">
 					            <span class="d-inline-block py-1 px-2 rounded bg-black-75 font-size-sm font-w700 text-uppercase text-white">
@@ -129,7 +129,7 @@ jQuery(document).ready(function(){
 	jQuery(".load-more button").click(function(){
 			var cur_page = jQuery(this).attr("data-value");
 			var next_page = parseInt(cur_page)+1);
-			jQuery(".page-"+next_page).removeClass('invisible').addClass('invisible');
+			jQuery(".page-"+next_page).removeClass('d-none').addClass('d-block');
 			jQuery(".load-more button").attr("data-value",next_page);
 	});
 });
