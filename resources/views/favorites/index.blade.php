@@ -114,7 +114,7 @@ ul.target {
 @endsection
 @section('js_after')
 <!-- Page JS Plugins -->
-<script src="assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
 
 <!-- Page JS Helpers (BS Notify Plugin) -->
 <script>jQuery(function(){ Dashmix.helpers('notify'); });</script>
