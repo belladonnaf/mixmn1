@@ -66,7 +66,7 @@ class FavoritesController extends Controller
 		public function reorder(Reqest $request)
 		{
 		
-			$str_ids = $request->post('ids');
+			$str_ids = $request->get('ids');
 			$arr_ids = json_decode($str_ids);
 			var_dump($arr_ids);
 	
