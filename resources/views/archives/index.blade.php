@@ -137,6 +137,7 @@
 
 <script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="/js/pages/be_tables_datatables.min.js"></script>
 @else
 <script src="/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
@@ -156,6 +157,4 @@ jQuery(document).ready(function(){
 </script>
 @endif
 
-<!-- Page JS Code -->
-<script src="/js/pages/be_tables_datatables.min.js"></script>
 @endsection

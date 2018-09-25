@@ -247,7 +247,7 @@ $sql = " select count(*) cnt from mp3_favorite where user_id = ? and album_id > 
 $login_id = request()->session()->get('login_id');
 $fav_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
 ?>
-                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="/favorites/index">
                                         <i class="far fa-fw fa-heart mr-1"></i>Favorites
                                         <span class="badge badge-primary">{{$fav_cnt}}</span>
                                     </a>
