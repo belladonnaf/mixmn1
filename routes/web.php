@@ -53,12 +53,13 @@ Route::get('/settings/set-ui','SettingsController@storeUI')->name('settings.set-
 /* API Related */
 
 Route::get('/api/album/{album_id}','ArchivesController@getJson');
-Route::get('/api/favorites/set/{album_id}','ArchivesController@setFavorite');
+Route::get('/api/favorites/set/{album_id}','FavoritesController@setFavorite');
 
 Route::get('/api/settings/myui/set/{ui_id}','SettingsController@setMyUI');
 Route::get('/api/settings/mygenre/set/{genre_group_id}','SettingsController@setMyGenre');
 
 Route::get('/api/search/{keyword}/{page?}','ArchivesController@searchJson');
+Route::get('/api/favorites/reorder','FavoritesController@reorder');
 
 
 Route::view('/dashboard', 'dashboard');

@@ -83,7 +83,7 @@ ul.target {
 		    </ul>
 			</div>
 			<div class="button-wrapper">
-				<button type="button" class="btn btn-lg btn-warning w-100">Save List Order</button>
+				<button type="button" class="btn btn-lg btn-warning w-100" id="btn-save-order">Save List Order</button>
 			</div>
 		</div>
 		<div class="col-md-6 col-xl-6">
@@ -103,7 +103,7 @@ ul.target {
 			</div>
 
 			<div class="button-wrapper">
-				<button type="button" class="btn btn-lg btn-success w-100">Create New Stream Set</button>
+				<button type="button" class="btn btn-lg btn-success w-100" id="btn-create-stream-set">Create New Stream Set</button>
 			</div>
 
 		</div>
@@ -115,10 +115,33 @@ ul.target {
 @section('js_after')
 <script src="/js/plugins/html5sortable/jquery.sortable.min.js"></script>
 <script type="text/javascript">
+	
+	var arr_fav_album = [];
+
   jQuery(function () {
     jQuery(".source, .target").sortable({
       connectWith: ".connected"
     });
   });
+
+	jQuery("#btn-save-order").click(function(){
+		
+	jQuery("ul.source li").each(function(){
+
+		arr_fav_album.push( jQuery(this).attr("data-album-id") );
+		
+		if(arr_fav_album.length < {{$cnt_rs}}){
+			Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'For reorder, you should not move item to stream set.'});
+		}
+		
+		var api_url = 'http://mix.mn1.net/api/favorites/reorder;
+
+    axios.post(api_url,param:{ ids: JSON.stringify(arr_fav_album) }).then(response => {
+			console.log(response.data);
+		});
+
+	});
+			
+});
 </script>
 @endsection
