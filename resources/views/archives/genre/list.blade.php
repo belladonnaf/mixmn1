@@ -81,7 +81,7 @@
                        <div class="form-group col-xl-4">
 											    <div class="input-group col-sm-6">
 
-                            <select class="js-select2 form-control" id="sel_taxonomy" name="sel_taxonomy" style="width: 100%;" data-placeholder="Choose one..">
+                            <select class="js-select2 form-control" id="sel_taxonomy" name="sel_taxonomy" data-placeholder="Choose one..">
 																@foreach($arr_taxonomy as $taxonomy)
                                 <option value="{{$taxonomy}}" <?php if($taxonomy == $f_genre){ echo 'selected'; }?>>{{$taxonomy}}</option>
 																@endforeach
