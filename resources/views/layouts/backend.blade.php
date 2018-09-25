@@ -278,6 +278,34 @@ $stream_set_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
                         </div>
                         <!-- END User Dropdown -->
 
+                        <!-- Notifications Dropdown -->
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-dual" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-fw fa-bell"></i>
+                                <span class="badge badge-secondary badge-pill">1</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="page-header-notifications-dropdown">
+                                <div class="bg-primary-darker rounded-top font-w600 text-white text-center p-3">
+                                    Notifications
+                                </div>
+                                <ul class="nav-items my-2">
+                                    <li>
+                                        <a class="text-dark media py-2" href="javascript:void(0)">
+                                            <div class="mx-3">
+                                                <i class="fa fa-fw fa-check-circle text-success"></i>
+                                            </div>
+                                            <div class="media-body font-size-sm pr-2">
+                                                <div class="font-w600"><a href="/pages/howtofix">How to fix when player stop ?</a></div>
+                                                <div class="text-muted font-italic">2018-09-26</div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END Notifications Dropdown -->
+
                         <!-- Toggle Side Overlay -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                         <button type="button" class="btn btn-dual" data-toggle="layout" data-action="side_overlay_toggle">
