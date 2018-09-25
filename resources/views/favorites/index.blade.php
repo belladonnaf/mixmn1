@@ -78,7 +78,7 @@ ul.target {
 			<div class="album-list-wrapper bg-white">
 		    <ul class="source connected">
 @foreach($arr_rs as $r)
-		      <li>{{$r->album_path}}</li>
+		      <li>{{$r->album_path}} <button type="button" class="btn btn-primary btn-sm" data-toggle="click-ripple">Lisen</button></li>
 @endforeach
 		    </ul>
 			</div>
@@ -110,6 +110,7 @@ ul.target {
   jQuery(function () {
     jQuery(".source, .target").sortable({
       connectWith: ".connected"
+      handle: '.handle'
     });
   });
 </script>
