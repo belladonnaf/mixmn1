@@ -86,16 +86,14 @@ class FavoritesController extends Controller
 			$str_ids = $request->get('ids');
 			$arr_ids = json_decode($str_ids);
 			$login_id = $request->session()->get("login_id");
-
-			$sql = " select ifnull(max(set_id)+1,1) max_set_id from mp3_stream_set where user_id = ? ";
-			$max_set_id = DB::select($sql,[$login_id])[0]->max_set_id;
-			$j=0;
+			$set_alias = $request->get('set_alias');
 
 			$sql = " select ifnull(max(list_order)+1,1) max_list_order from mp3_stream_set where user_id = ? ";
 			$max_list_order = DB::select($sql,[$login_id])[0]->max_list_order;
 		
-			$sql = " INSERT INTO mp3_stream_set (user_id, set_id, set_alias, list_order, reg_date) VALUES (?, ?, ?, ?, NOW() ); ";
-			DB::insert($sql,[$login_id,$max_set_id,$set_alias,$max_list_order]);
+			$sql = " INSERT INTO mp3_stream_set (user_id, set_alias, list_order, reg_date) VALUES (?, ?, ?, NOW() ); ";
+			DB::insert($sql,[$login_id,$set_alias,$max_list_order]);
+			$set_id = DB::getPdo()->lastInsertId();
 
 			foreach($arr_ids as $k=>$v){
 
@@ -106,7 +104,7 @@ class FavoritesController extends Controller
 				foreach($arr_track as $t){
 					$j=$j+1;
 					$sql = " INSERT INTO mp3_stream_set (user_id, set_id, list_order, album_id, track_id, is_hide ) VALUES ( ?, ?, ?, ?, ?, 0 );";
-					DB::insert($sql,[$login_id,$max_set_id,$j,$v,$t->track_id]);
+					DB::insert($sql,[$login_id,$set_id,$j,$v,$t->track_id]);
 				}
 
 			}						
@@ -121,8 +119,23 @@ class FavoritesController extends Controller
 
 			$login_id = $request->session()->get("login_id");
 
-			$sql = " select * from mp3_stream_set where user_id = ? ";
-      return view('favorites.index',compact('arr_rs','cnt_rs'));
+			$sql = " select * from mp3_stream_set where user_id = ? order by list_order asc ";
+			$arr_set = DB::select($sql,[$login_id]);
+			$str_set = json_encode($arr_set);
+			$arr_set = json_decode($str_set,1);
+			$cnt_set = count($arr_set);
+			
+			foreach($arr_set as $k=>$r){
+				
+				$sql = " select * from mp3_stream_set_detail where set_id = ? order by list_order asc ";
+				$arr_details = DB::select($sql,[$r['id']]);
+
+				$arr_set[$k]['details'] = $arr_details;
+				$arr_set[$k]['total_details'] = count($arr_details);
+				
+			}
+			
+      return view('favorites.stream-set',compact('arr_set','cnt_set'));
 			
 		}
 

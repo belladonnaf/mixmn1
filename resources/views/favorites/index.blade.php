@@ -164,18 +164,24 @@ ul.target {
 	});
 
 	jQuery("#btn-create-stream-set").click(function(){
-		
+
+		if(jQuery("#set_alias").val().length < 1){
+			Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'Name is required.'});
+			return;
+		}
+
 		jQuery("ul.target li").each(function(){
 			arr_stream_set.push( jQuery(this).attr("data-album-id") );
 		});
 
 		if(arr_stream_set.length < 1){
 			Dashmix.helpers('notify', {type: 'danger', icon: 'fa fa-times mr-1', message: 'At least one of albums is required.'});
+			return;
 		}
 
 		var api_url = 'http://mix.mn1.net/api/favorites/create-stream-set';
 		var str_stream_set = JSON.stringify(arr_stream_set); 
-	  axios.post(api_url,{ ids: str_stream_set }).then(response => {
+	  axios.post(api_url,{ ids: str_stream_set, set_alias : jQuery("#set_alias").val() }).then(response => {
 	
 			if( response.data == 'ok' ){
 				Dashmix.helpers('notify', {type: 'success', icon: 'fa fa-check mr-1', message: 'New stream set created.'});
