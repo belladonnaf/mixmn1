@@ -75,12 +75,11 @@
 				$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
 				$arr_css = randomize_css($arr_css,6);
 
-				$arr_page = range(0,count($arr_rs),20);
 ?>
 
           @foreach($arr_rs as $k=>$r)
 
-<?php			$page = floor(($arr_page-1)/20)+1; ?>
+<?php			$page = floor((count($arr_rs)-1)/20)+1; ?>
 
 					<div class="col-md-6 col-xl-6 page-{{$page}} <?php if($page == 1){ echo 'visible'; } else { echo 'invisible'; } ?>">
 					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/album/{{$r['album_id']}}" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
