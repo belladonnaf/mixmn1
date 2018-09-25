@@ -17,7 +17,7 @@ endsection
 			      <h3 class="block-title">Stream Set List</h3>
 			  </div>
 			  <div class="block-content">
-			      <p>Click the play icon to listen to the music and Click checkbox to edit the stream set in detail.</p>
+			      <p>Click play icon to listen to the music, Click checkbox to edit the stream set in detail.</p>
 			  </div>
 			</div>
                             
@@ -64,7 +64,7 @@ endsection
 
 			<div class="block block-bordered">
 			  <div class="block-header block-header-default">
-			      <h3 class="block-title">Browser</h3>
+			      <h3 class="block-title">Detail Browser</h3>
 			  </div>
 			  <div class="block-content">
 			      <p>You can queue multiple albums and listen in series.</p>
