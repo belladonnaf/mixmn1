@@ -118,12 +118,6 @@ class ArchivesController extends Controller
     public function show(Request $request,$album_id)
     {   
 
-			if($_SERVER['SERVER_PORT'] != 80){
-				var_dump($_SERVER['SERVER_PORT']);
-				exit;
-				return "<script>window.location.href='http://".$_SERVER['SERVER_NAME']."/".$_SERVER['REQUEST_URI']."';</script>";
-			}
-
 			if(!is_numeric($album_id)){
 				exit;
 			}
