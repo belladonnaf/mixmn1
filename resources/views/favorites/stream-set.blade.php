@@ -17,7 +17,7 @@ endsection
 			      <h3 class="block-title">Stream Set List</h3>
 			  </div>
 			  <div class="block-content">
-			      <p>Click the headset icon to listen to the music and Click the button to edit the stream set in detail.</p>
+			      <p>Click the play icon to listen to the music and Click checkbox to edit the stream set in detail.</p>
 			  </div>
 			</div>
                             
@@ -32,7 +32,7 @@ endsection
                   <tbody><tr>
                       <td class="text-center pr-0" style="width: 38px;">
                           <div class="js-task-status custom-control custom-checkbox custom-checkbox-rounded-circle custom-control-primary custom-control-lg">
-                              <input type="checkbox" class="custom-control-input" id="tasks-cb-id9" name="tasks-cb-id9">
+                              <input type="checkbox" class="custom-control-input" id="tasks-cb-id9" name="tasks-cb-id9" data-value="{{ json_encode($r['details']) }}">
                               <label class="custom-control-label" for="tasks-cb-id9"></label>
                           </div>
                       </td>
@@ -41,10 +41,7 @@ endsection
                       </td>
                       <td class="text-right" style="width: 100px;">
                           <button type="button" class="js-task-star btn btn-sm btn-link text-primary btn-play-music" data-id="{{$r['id']}}">
-                              <i class="far fa-headphones fa-w"></i>
-                          </button>
-                          <button type="button" class="js-task-star btn btn-sm btn-link text-warning btn-open-detail" data-value="{{ json_encode($r['details']) }}">
-                              <i class="far fa-folder-open fa-fw"></i>
+                              <i class="fas fa-play fa-fw"></i>
                           </button>
                           <button type="button" class="js-task-remove btn btn-sm btn-link text-danger" btn-delete-set" data-id="{{$r['id']}}">
                               <i class="fa fa-times fa-fw"></i>
