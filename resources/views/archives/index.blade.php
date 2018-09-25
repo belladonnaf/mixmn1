@@ -128,7 +128,7 @@
 jQuery(document).ready(function(){
 	jQuery(".load-more button").click(function(){
 			var cur_page = jQuery(this).attr("data-value");
-			var next_page = parseInt(cur_page)+1);
+			var next_page = parseInt(cur_page)+1;
 			jQuery(".page-"+next_page).removeClass('d-none').addClass('d-block');
 			jQuery(".load-more button").attr("data-value",next_page);
 	});
