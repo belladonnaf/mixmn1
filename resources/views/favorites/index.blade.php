@@ -78,7 +78,7 @@ ul.target {
 			<div class="album-list-wrapper bg-white">
 		    <ul class="source connected">
 @foreach($arr_rs as $r)
-		      <li>{{$r->album_path}} <button type="button" class="btn btn-primary btn-sm">Lisen</button></li>
+		      <li>{{$r->album_path}} <i class="fa fa-headphones"></i></li>
 @endforeach
 		    </ul>
 			</div>
