@@ -143,7 +143,18 @@
 <script src="/js/plugins/datatables/buttons/buttons.html5.min.js"></script>
 <script src="/js/plugins/datatables/buttons/buttons.flash.min.js"></script>
 <script src="/js/plugins/datatables/buttons/buttons.colVis.min.js"></script>
+
 @else
+
+<script src="assets/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<script src="assets/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+<script src="assets/js/plugins/select2/js/select2.full.min.js"></script>
+<script src="assets/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+<script src="assets/js/plugins/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+<script src="assets/js/plugins/dropzone/dropzone.min.js"></script>
+
+@endif
 <script>
 jQuery(document).ready(function(){
 	jQuery(".load-more button").click(function(){
