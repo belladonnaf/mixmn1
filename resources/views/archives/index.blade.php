@@ -80,9 +80,9 @@
                     <div class="form-row">
                        <div class="form-group col-xl-4">
 											    <div class="input-group col-sm-6">
-                            <input type="text" class="js-datepicker form-control" id="example-datepicker3" name="example-datepicker3" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+                            <input type="text" class="js-datepicker form-control" id="sel_date" name="sel_date" data-week-start="0" data-autoclose="true" data-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
 										        <div class="input-group-append">
-										            <button type="submit" class="btn btn-primary">Go</button>
+										            <button type="submit" class="btn btn-primary btn-go">Go</button>
 										        </div>
 													</div>
                         </div>
@@ -148,6 +148,9 @@ jQuery(document).ready(function(){
 			var next_page = parseInt(cur_page)+1;
 			jQuery(".page-"+next_page).removeClass('d-none').addClass('d-block');
 			jQuery(".load-more button").attr("data-value",next_page);
+	});
+	jQuery(".btn-go").click(function(){
+		window.location.href='/album/archives/index/' + jQuery("#sel_date");
 	});
 });
 </script>
