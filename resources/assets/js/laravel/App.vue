@@ -29,7 +29,7 @@ export default {
 	            obj.artist = response.data[k].artist;
 	            obj.url = response.data[k].mp3_path;
 	            obj.cover = response.data[k].img_url;
-	            obj.lrc = '[by:' + obj.artist + ']\n[00:00.00] Playtime ' + response.data[k].length_min + ':' + response.data[k].length_sec + ' Frequency ' + response.data[k].frequency + '\n';
+	            obj.lrc = '[MIXMn1]\n[00:00.00]Playtime ' + response.data[k].length_min + ':' + response.data[k].length_sec + ' Frequency ' + response.data[k].frequency;
 
 	//            if(k==0){
 	//	            this.audio = data[k];
