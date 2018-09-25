@@ -296,7 +296,7 @@ $stream_set_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
                                                 <i class="fa fa-fw fa-exclamation-circle text-warning"></i>
                                             </div>
                                             <div class="media-body font-size-sm pr-2">
-                                                <div class="font-w600">How to fix player.</div>
+                                                <div class="font-w600">How to fix player when stop ?</div>
                                                 <div class="text-muted font-italic">2018-09-26</div>
                                             </div>
                                         </a>
