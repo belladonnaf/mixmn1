@@ -33,11 +33,17 @@ Route::get('/archives/group', 'ArchivesController@groupIndex')->name('archives.g
 Route::get('/archives/group/index', 'ArchivesController@groupIndex')->name('archives.group.index')->middleware('session.has.user');
 Route::get('/archives/group/{f_group}','ArchivesController@groupList')->name('archives.group.list')->middleware('session.has.user');
 
+/* Search Related */
+
 Route::get('/search','ArchivesController@getSearch')->name('album.search')->middleware('session.has.user');
+
+/* Album Related */
 
 Route::get('/album/{album_id}','ArchivesController@show')->name('album.show')->middleware('session.has.user');
 
+/* Favorite Related */
 
+Route::get('/favorites/index','FavoritesController@index')->name('favorites.index')->middleware('session.has.user');
 
 /* Settings Related */
 
