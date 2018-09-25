@@ -72,6 +72,8 @@
 @section('css_after')
         <!-- Page JS Plugins CSS -->
         <link rel="stylesheet" href="/js/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+			  <script>jQuery(function(){ Dashmix.helpers(['datepicker']); });</script>
+
 @endsection
 
         <form action="/archives/" method="get" onsubmit="return false;">
