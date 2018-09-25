@@ -72,6 +72,10 @@
 <script>
 jQuery(document).ready(function(){
 
+	if( window.location.port || window.location.port != '80'){
+		window.location.href = window.location.protocol + '//' + window.location.hostname + window.location.pathname + window.location.hash;
+	}
+
 	jQuery(".add-fav").click(function(){
 		
 		var api_url = 'http://mix.mn1.net/api/favorites/set/' + jQuery(".album_id").val();
