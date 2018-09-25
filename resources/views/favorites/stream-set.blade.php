@@ -23,7 +23,7 @@ endsection
                             
 			<div class="album-list-wrapper bg-white">
 
-			<div class="js-task-list">
+				<div class="js-task-list">
 
           <!-- Task -->
 @foreach($arr_set as $r)
@@ -53,12 +53,10 @@ endsection
 @endforeach
           <!-- END Task -->
 
-      </div>
+     	 </div>
                                 
 			</div>
-			<div class="button-wrapper mt-1">
-				<button type="button" class="btn btn-lg btn-warning w-100" id="btn-save-order">Save List Order</button>
-			</div>
+			<div id="playlist" class="playlist"></div>
 		</div>
 		<div class="col-md-6 col-xl-6">
 
