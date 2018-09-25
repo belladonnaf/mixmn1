@@ -97,7 +97,7 @@ ul.target {
 			  </div>
 			</div>
 
-			<div class="input-group">
+			<div class="input-group mb-2">
 			    <div class="input-group-prepend">
 			        <span class="input-group-text">
 			            Name
