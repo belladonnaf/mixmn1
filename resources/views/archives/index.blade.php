@@ -76,10 +76,12 @@
 				$arr_css = randomize_css($arr_css,6);
 
 				$arr_page = range(0,count($arr_rs),20);
+?>
 
           @foreach($arr_rs as $k=>$r)
-						$page = floor(($arr_page-1)/20)+1;
-?>
+
+<?php			$page = floor(($arr_page-1)/20)+1; ?>
+
 					<div class="col-md-6 col-xl-6 page-{{$page}} <?php if($page == 1){ echo 'visible'; } else { echo 'invisible'; } ?>">
 					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/album/{{$r['album_id']}}" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
 					        <div class="block-content block-content-full {{$arr_css[($k%6)]}}">
