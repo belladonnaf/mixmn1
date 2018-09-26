@@ -264,7 +264,7 @@ $stream_set_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
 
                                     <!-- Toggle Side Overlay -->
                                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                    <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
+                                    <a class="dropdown-item" href="/settings/ui" data-toggle="layout" data-action="side_overlay_toggle">
                                         <i class="far fa-fw fa-building mr-1"></i> Settings
                                     </a>
                                     <!-- END Side Overlay -->
