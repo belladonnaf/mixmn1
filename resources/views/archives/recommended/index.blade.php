@@ -3,12 +3,12 @@
 
 @section('css_after')
 <style>
-	.item { width:64px; height:64px;}
+	div.item { width:64px !important; height:64px !important;}
 	span.rank {
     position: absolute;
     margin-left: -50px;
 	}	
-	span.album-info { 0.8rem;}
+	span.album-info { font-size:0.8rem;}
 </style>
 endsection
 
