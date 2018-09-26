@@ -2,7 +2,7 @@
 <!-- Page JS Plugins CSS -->
 
 @section('css_after')
-endsection
+@endsection
 
 @section('content')
 

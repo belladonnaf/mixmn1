@@ -16,7 +16,7 @@
 	}	
 	span.album-info { font-size:0.8rem;}
 </style>
-endsection
+@endsection
 
 @section('content')
 
