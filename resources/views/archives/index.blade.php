@@ -146,8 +146,8 @@
 <script src="/js/pages/be_comp_dialogs.min.js"></script>
 <script>
 	jQuery(".add-fav").click(function(){
-
-		var api_url = 'http://mix.mn1.net/api/favorites/set/' + jQuery(".album_id").val();
+		var album_id = jQuery(this).attr("data-id");
+		var api_url = 'http://mix.mn1.net/api/favorites/set/' + album_id;
     axios.get(api_url).then(response => {
 			console.log(response.data);
 		});
