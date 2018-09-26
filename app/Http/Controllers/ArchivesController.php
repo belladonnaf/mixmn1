@@ -425,21 +425,19 @@ class ArchivesController extends Controller
 
 			$sql = " select b.* from recommended_album_tbl a inner join album_info_tbl b on a.album_id = b.album_id order by a.seq asc ";
 			$obj_rs = DB::select($sql);
-			$str_rs = json_encode($obj_rs);
-			$arr_rs = json_decode($str_rs,1);
 
 			$new_rs = array();
 
-			foreach($arr_rs as $r){
+			foreach($obj_rs as $r){
 				
-				$sql = " call get_album_pic(".$r['album_id'].") ";
+				$sql = " call get_album_pic(".$r->album_id.") ";
 				$arr_rs2 = DB::select($sql);
 				$str_rs2 = json_encode($arr_rs2);
 				$arr_rs2 = json_decode($str_rs2,1);
 				$cnt_img = count($arr_rs2);
 				$arr_img = array();
 
-				$sql = " call get_img_path('".$r['album_id']."')";
+				$sql = " call get_img_path('".$r->album_id."')";
 				$row = DB::select($sql)[0];
 
 				if($row){
@@ -455,9 +453,9 @@ class ArchivesController extends Controller
 				}
 							
 				if($arr_img[0]['image']){
-					$r['image'] = $arr_img[0]['image'];
+					$r->image = $arr_img[0]['image'];
 				} else {
-					$r['image'] = '';	
+					$r->image = '';	
 				}
 				
 				$new_rs[] = $r;
