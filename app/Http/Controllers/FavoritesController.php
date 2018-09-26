@@ -158,8 +158,8 @@ class FavoritesController extends Controller
 					$sql = " select filename from track_tbl where track_id = ? ";
 					$filename = DB::select($sql,[$r2->track_id])[0]->filename;
 
-					$arr_details[$k2]['album_path'] = $album_path;
-					$arr_details[$k2]['filename'] = $filename;
+					$arr_details[$k2]->album_path = $album_path;
+					$arr_details[$k2]->filename = $filename;
 
 				}
 
