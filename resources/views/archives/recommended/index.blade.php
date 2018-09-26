@@ -24,7 +24,7 @@ endsection
 			                <div class="item">
 @if($r->image)
 													<img src="{{$row->image}}" width="64px" height="64px">
-@elseif
+@else
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 @endif
 			                </div>
@@ -55,7 +55,7 @@ endsection
 			                <div class="item">
 @if($r->image)
 													<img src="{{$row->image}}" width="64px" height="64px">
-@elseif
+@else
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 @endif
 			                </div>
@@ -86,7 +86,7 @@ endsection
 			                <div class="item">
 @if($r->image)
 													<img src="{{$row->image}}" width="64px" height="64px">
-@elseif
+@else
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 @endif
 			                </div>
