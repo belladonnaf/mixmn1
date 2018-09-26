@@ -21,15 +21,13 @@ endsection
 @foreach ($first_arr as $k=>$r)
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
-			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
+			                <div class="item">
 @if($r->image)
-			                <div class="item" style="background-image:url({{$r->image}});background-size: cover;">
-			                </div>
+													<img src="{{$r->image}}" width="64px" height="64px">
 @else
-											<div class="item">
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
-											</div>
 @endif
+			                </div>
 			                <div class="mr-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
 			                       <span class="rank rank-{{($k+1)}}">{{($k+1)}}</span> <span class="album-info">{{$r->album_path}}</span>
@@ -56,12 +54,9 @@ endsection
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
 @if($r->image)
-			                <div class="item" style="background-image:url({{$r->image}});background-size: cover;">
-			                </div>
+													<img src="{{$r->image}}" width="64px" height="64px">
 @else
-											<div class="item">
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
-											</div>
 @endif
 			                </div>
 			                <div class="mr-3">
@@ -90,12 +85,9 @@ endsection
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
 @if($r->image)
-			                <div class="item" style="background-image:url({{$r->image}});background-size: cover;">
-			                </div>
+													<img src="{{$r->image}}" width="64px" height="64px">
 @else
-											<div class="item">
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
-											</div>
 @endif
 			                </div>
 			                <div class="mr-3">
