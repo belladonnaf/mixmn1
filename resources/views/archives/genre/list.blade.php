@@ -29,6 +29,7 @@
 
 @section('css_after')
 <link rel="stylesheet" href="/js/plugins/datatables/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="/js/plugins/sweetalert2/sweetalert2.min.css">
 @endsection
 
             <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
@@ -143,6 +144,22 @@
 <script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="/js/pages/be_tables_datatables.min.js"></script>
+<!-- Page JS Plugins -->
+<script src="/js/plugins/es6-promise/es6-promise.auto.min.js"></script>
+<script src="/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<!-- Page JS Code -->
+<script src="/js/pages/be_comp_dialogs.min.js"></script>
+<script>
+	jQuery(".add-fav").click(function(){
+		var album_id = jQuery(this).attr("data-id");
+		var api_url = 'http://mix.mn1.net/api/favorites/set/' + album_id;
+    axios.get(api_url).then(response => {
+			console.log(response.data);
+		});
+
+	});
+</script>
 @else
 <script src="assets/js/plugins/select2/js/select2.full.min.js"></script>
 
