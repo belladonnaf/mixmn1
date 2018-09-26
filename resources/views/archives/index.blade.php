@@ -55,7 +55,7 @@
                            {{$r['file_cnt']}}F {{$r['file_size']}}M
                         </td>
                         <td class="d-none d-sm-table-cell">
-<span class="btn-group w-100 justify-content-center"><a href="#" id="btn_download" data-id="{{$r['album_id']}}"><span class="fa fa-floppy-o"></span></a> <a href="#" id="btn_phone" data-description="{{ htmlspecialchars($r['album_path']) }}" data-toggle="modal" data-target="#music_player" data-id="{{$r['album_id']}}"><span class="fa fa-volume-up"></span></a> <a href="#" id="btn_bookmark" class="btn_bookmark btn btn-warning add-fav js-swal-add-fav ml-3" data-description="{{ htmlspecialchars($r['album_path']) }}" data-field="album" data-id="{{$r['album_id']}}"><span class="fa fa-bookmark"></span></a></span>
+<span class="btn-group w-100 justify-content-center"><a href="#" id="btn_download" data-id="{{$r['album_id']}}"><span class="fa fa-floppy-o"></span></a> <a href="#" id="btn_phone" class="btn btn-warning" data-description="{{ htmlspecialchars($r['album_path']) }}" data-toggle="modal" data-target="#music_player" data-id="{{$r['album_id']}}"><span class="fa fa-volume-up"></span></a> <a href="#" id="btn_bookmark" class="btn_bookmark btn btn-warning add-fav js-swal-add-fav ml-0" data-description="{{ htmlspecialchars($r['album_path']) }}" data-field="album" data-id="{{$r['album_id']}}"><span class="fa fa-bookmark"></span></a></span>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <a href="/archives/group/{{urlencode($r['group_name'])}}">{{$r['group_name']}}</a>
