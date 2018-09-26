@@ -8,6 +8,7 @@
     position: absolute;
     margin-left: -50px;
 	}	
+	span.album-info { 0.8rem;}
 </style>
 endsection
 
