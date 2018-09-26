@@ -411,7 +411,7 @@ class ArchivesController extends Controller
 
 		}
 
-    public function recommendedIndex()
+    public function recommendedIndex(Request $request)
     {   
 
 			$login_id = $request->session()->get("login_id");
