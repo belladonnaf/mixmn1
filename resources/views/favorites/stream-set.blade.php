@@ -134,7 +134,7 @@
 	    ss = ss + '          <table class="table table-borderless table-vcenter mb-0">';
 	    ss = ss + '              <tbody><tr>';
 	    ss = ss + '                  <td class="js-task-content font-w600 pl-0">';
-	    ss = ss + '                  <span class="track-info">[' + obj.album_path + '] ' + obj.file_name + '</span>
+	    ss = ss + '                  <span class="track-info">[' + obj.album_path + '] ' + obj.filename + '</span>
 	    ss = ss + '                  </td>';
 	    ss = ss + '                  <td class="text-right" style="width: 100px;">';
 	    ss = ss + '                      <button type="button" class="js-task-star btn btn-sm btn-link text-primary btn-play-music" data-id="' + obj.id + '">';
