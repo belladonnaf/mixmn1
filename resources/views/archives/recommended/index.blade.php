@@ -33,7 +33,7 @@ endsection
 			            1 - 10 RANK
 			        </p>
 @foreach ($first_arr as $k=>$r)
-			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
+			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="/album/{{$r->album_id}}">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
 <span class="rank rank-{{($k+1)}}">{{($k+1)}}</span>
@@ -65,7 +65,7 @@ endsection
 			        </p>
 
 @foreach ($second_arr as $k=>$r)
-			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
+			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="/album/{{$r->album_id}}">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
 <span class="rank rank-{{($k+11)}}">{{($k+11)}}</span>
@@ -97,7 +97,7 @@ endsection
 			        </p>
 
 @foreach ($third_arr as $k=>$r)
-			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
+			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="/album/{{$r->album_id}}">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
 <span class="rank rank-{{($k+21)}}">{{($k+21)}}</span>
@@ -107,7 +107,7 @@ endsection
 			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
-			                <div class="ml-3">
+			                <div class="ml-3 w-100">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
 			                        <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
