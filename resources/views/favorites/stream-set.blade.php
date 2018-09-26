@@ -154,9 +154,8 @@
     });
 		jQuery(".js-task-remove").click(function(){
 			 ftask   = jQuery(this).closest('.js-task');
-			 console.log(ftask);
-			 ftaskId = ftask.attr('data-task-id');
-       jQuery('.js-task[data-task-id="' + taskId + '"]').remove();
+			 ftaskId = ftask.data('task-id');
+       jQuery('.js-task[data-task-id="' + ftaskId + '"]').remove();
 		});
 			
 	});
