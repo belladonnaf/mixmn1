@@ -93,7 +93,6 @@
 <script>jQuery(function(){ Dashmix.helpers('notify'); });</script>
 
 <script src="/js/plugins/html5sortable/jquery.sortable.min.js"></script>
-<script src="/js/pages/be_pages_projects_tasks.min.js"></script>
 
 <script type="text/javascript">
 	
@@ -153,6 +152,11 @@
 		jQuery(".target").append(ss);
     jQuery(".target").sortable({
     });
+		jQuery(".js-task-remove").click(function(){
+			 ftask   = jQuery(e.currentTarget).closest('.js-task');
+			 ftaskId = ftask.data('task-id');
+       jQuery('.js-task[data-task-id="' + taskId + '"]').remove();
+		});
 			
 	});
 	
