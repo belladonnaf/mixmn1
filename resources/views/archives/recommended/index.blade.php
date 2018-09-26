@@ -22,6 +22,7 @@ endsection
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
+{{var_dump($r->image)}}
 @if($r->image)
 													<img src="{{$row->image}}" width="64px" height="64px">
 @else
