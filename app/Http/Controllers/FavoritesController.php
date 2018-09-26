@@ -63,6 +63,25 @@ class FavoritesController extends Controller
 
 		}
 
+		public function delete(Request $request,$album_id)
+		{
+
+			if(!is_numeric($album_id)){
+				exit;
+			}
+
+			if(!$request->session()->get("login_id")){
+				exit;
+			}
+
+			$sql = " delete from mp3_favorite where user_id = ? and album_id = ? ";
+			
+			DB::delete($sql,[$request->session()->get("login_id"),$album_id]);
+		
+			return back();
+
+		}
+
 		public function reorder(Request $request)
 		{
 		
@@ -130,6 +149,19 @@ class FavoritesController extends Controller
 				
 				$sql = " select * from mp3_stream_set_detail where set_id = ? order by list_order asc ";
 				$arr_details = DB::select($sql,[$r['id']]);
+
+				foreach($arr_details as $k2=>$r2){
+
+					$sql = " select album_path from album_info_tbl where album_id = ? ";
+					$album_path = DB::select($sql,[$r2->album_id])[0]->album_path;
+	
+					$sql = " select file_name from track_tbl where track_id = ? ";
+					$file_name = DB::select($sql,[$r2->track_id])[0]->file_name;
+
+					$arr_details[$k2]['album_path'] = $album_path;
+					$arr_details[$k2]['file_name'] = $file_name;
+
+				}
 
 				$arr_set[$k]['details'] = $arr_details;
 				$arr_set[$k]['total_details'] = count($arr_details);

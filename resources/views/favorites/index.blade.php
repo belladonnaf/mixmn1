@@ -78,7 +78,7 @@ ul.target {
 			<div class="album-list-wrapper bg-white">
 		    <ul class="source connected">
 @foreach($arr_rs as $r)
-		      <li data-album-id="{{$r->album_id}}">{{$r->album_path}} <button type="button" class="btn btn-primary btn-sm" data-toggle="click-ripple" onclick="javascript:window.location.href='/album/{{$r->album_id}}';">Listen</button></li>
+		      <li data-album-id="{{$r->album_id}}">{{$r->album_path}} <button type="button" class="btn btn-primary btn-sm" data-toggle="click-ripple" onclick="javascript:window.location.href='/album/{{$r->album_id}}';">Listen</button> <button type="button" class="btn btn-primary btn-sm" data-toggle="click-ripple" onclick="javascript:window.location.href='/favorites/del/{{$r->album_id}}';">Delete</button></li>
 @endforeach
 		    </ul>
 			</div>

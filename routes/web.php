@@ -44,6 +44,7 @@ Route::get('/album/{album_id}','ArchivesController@show')->name('album.show')->m
 /* Favorite Related */
 
 Route::get('/favorites/index','FavoritesController@index')->name('favorites.index')->middleware('session.has.user');
+Route::get('/favorites/del/{album_id}','FavoritesController@delete')->name('favorites.delete')->middleware('session.has.user');
 Route::get('/stream-sets/index','FavoritesController@streamSet')->name('favorites.stream-set')->middleware('session.has.user');
 
 Route::get('/recommended/index','ArchivesController@recommendedIndex')->name('recommended.index')->middleware('session.has.user');
@@ -66,6 +67,8 @@ Route::get('/api/settings/mygenre/set/{genre_group_id}','SettingsController@setM
 Route::get('/api/search/{keyword}/{page?}','ArchivesController@searchJson');
 Route::post('/api/favorites/reorder','FavoritesController@reorder');
 Route::post('/api/favorites/create-stream-set','FavoritesController@createStreamset');
+
+Route::view('/pages/how-to-fix-player', 'pages/howtofixplayer');
 
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');

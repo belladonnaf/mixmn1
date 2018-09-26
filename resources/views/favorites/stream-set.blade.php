@@ -125,7 +125,31 @@
 
 		var details = jQuery(this).attr("data-value");
 		var obj_details = JSON.parse(details);
-		console.log(obj_details);
+	
+		jQuery(".target").html('');
+	
+		var ss = '';
+		jQuery.each(obj_details, function(i,obj){
+	    ss = ss + '      <div class="js-task block block-rounded block-fx-pop block-fx-pop mb-2 animated fadeIn" data-task-id="9" data-task-completed="false" data-task-starred="false">';
+	    ss = ss + '          <table class="table table-borderless table-vcenter mb-0">';
+	    ss = ss + '              <tbody><tr>';
+	    ss = ss + '                  <td class="js-task-content font-w600 pl-0">';
+	    ss = ss + '                  <span class="track-info">[' + obj.album_path + '] ' + obj.file_name + '</span>
+	    ss = ss + '                  </td>';
+	    ss = ss + '                  <td class="text-right" style="width: 100px;">';
+	    ss = ss + '                      <button type="button" class="js-task-star btn btn-sm btn-link text-primary btn-play-music" data-id="' + obj.id + '">';
+	    ss = ss + '                          <i class="fas fa-play fa-fw"></i>';
+	    ss = ss + '                      </button>';
+	    ss = ss + '                      <button type="button" class="js-task-remove btn btn-sm btn-link text-danger" btn-delete-set" data-id="' + obj.id + '" data-set-id="' + obj.set_id + '">';
+	    ss = ss + '                          <i class="fa fa-times fa-fw"></i>';
+	    ss = ss + '                      </button>';
+	    ss = ss + '                  </td>';
+	    ss = ss + '              </tr>';
+	    ss = ss + '          </tbody></table>';
+	    ss = ss + '      </div>';
+		});
+
+		jQuery(".target").append(ss);
 			
 	});
 	
