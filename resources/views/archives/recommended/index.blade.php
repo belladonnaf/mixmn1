@@ -33,7 +33,7 @@ endsection
 @if($r->image)
 													<img src="{{$r->image}}" width="64px" height="64px">
 @else
-			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
+			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
 			                <div class="ml-3">
@@ -64,7 +64,7 @@ endsection
 @if($r->image)
 													<img src="{{$r->image}}" width="64px" height="64px">
 @else
-			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
+			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
 			                <div class="ml-3">
@@ -95,7 +95,7 @@ endsection
 @if($r->image)
 													<img src="{{$r->image}}" width="64px" height="64px">
 @else
-			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
+			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
 			                <div class="ml-3">
