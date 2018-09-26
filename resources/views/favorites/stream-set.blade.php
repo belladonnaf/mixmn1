@@ -43,7 +43,7 @@
                           <button type="button" class="js-task-star btn btn-sm btn-link text-primary btn-play-music" data-id="{{$r['id']}}">
                               <i class="fas fa-play fa-fw"></i>
                           </button>
-                          <button type="button" class="js-task-remove btn btn-sm btn-link text-danger" btn-delete-set" data-id="{{$r['id']}}">
+                          <button type="button" class="js-task-remove btn btn-sm btn-link text-danger btn-delete-set" data-id="{{$r['id']}}">
                               <i class="fa fa-times fa-fw"></i>
                           </button>
                       </td>
@@ -93,6 +93,7 @@
 <script>jQuery(function(){ Dashmix.helpers('notify'); });</script>
 
 <script src="/js/plugins/html5sortable/jquery.sortable.min.js"></script>
+<script src="/js/pages/be_pages_projects_tasks.min.js"></script>
 
 <script type="text/javascript">
 	
@@ -140,7 +141,7 @@
 	    ss = ss + '                      <button type="button" class="js-task-star btn btn-sm btn-link text-primary btn-play-music" data-id="' + obj.id + '">';
 	    ss = ss + '                          <i class="fas fa-play fa-fw"></i>';
 	    ss = ss + '                      </button>';
-	    ss = ss + '                      <button type="button" class="js-task-remove btn btn-sm btn-link text-danger" btn-delete-set" data-id="' + obj.id + '" data-set-id="' + obj.set_id + '">';
+	    ss = ss + '                      <button type="button" class="js-task-remove btn btn-sm btn-link text-danger btn-delete-id" data-id="' + obj.id + '" data-set-id="' + obj.set_id + '">';
 	    ss = ss + '                          <i class="fa fa-times fa-fw"></i>';
 	    ss = ss + '                      </button>';
 	    ss = ss + '                  </td>';
