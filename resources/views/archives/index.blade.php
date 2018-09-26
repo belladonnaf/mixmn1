@@ -55,9 +55,7 @@
                            {{$r['file_cnt']}}F {{$r['file_size']}}M
                         </td>
                         <td class="d-none d-sm-table-cell">
-
-<span class="btn-group mr-auto"><a href="#" id="btn_download" data-id="{{$r['album_id']}}"><span class="fa fa-floppy-o"></span></a> <a href="#" id="btn_phone" data-description="{{ htmlspecialchars($r['album_path']) }}" data-toggle="modal" data-target="#music_player" data-id="{{$r['album_id']}}"><span class="fa fa-volume-up"></span></a> <a href="#" id="btn_bookmark" class="btn_bookmark js-swal-add-fav push" data-description="{{ htmlspecialchars($r['album_path']) }}" data-field="album" data-id="{{$r['album_id']}}"><span class="fa fa-bookmark"></span></a></span>
-
+<span class="btn-group w-100 justify-content-center"><a href="#" id="btn_download" data-id="{{$r['album_id']}}"><span class="fa fa-floppy-o"></span></a> <a href="#" id="btn_phone" data-description="{{ htmlspecialchars($r['album_path']) }}" data-toggle="modal" data-target="#music_player" data-id="{{$r['album_id']}}"><span class="fa fa-volume-up"></span></a> <a href="#" id="btn_bookmark" class="btn_bookmark add-fav js-swal-add-fav ml-3" data-description="{{ htmlspecialchars($r['album_path']) }}" data-field="album" data-id="{{$r['album_id']}}"><span class="fa fa-bookmark"></span></a></span>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <a href="/archives/group/{{urlencode($r['group_name'])}}">{{$r['group_name']}}</a>
@@ -163,7 +161,7 @@ jQuery(document).ready(function(){
 	jQuery(".btn-go").click(function(){
 		window.location.href='/archives/index/' + jQuery("#sel_date").val();
 	});
-	jQuery(".btn_bookmark").click(function(){
+	jQuery(".add-fav").click(function(){
 
 		var api_url = 'http://mix.mn1.net/api/favorites/set/' + jQuery(".album_id").val();
     axios.get(api_url).then(response => {
