@@ -19,7 +19,8 @@ endsection
 			            1 - 10 RANK
 			        </p>
 <?php
-
+var_dump($first_arr);
+exit;
 ?>
 @foreach ($first_arr as $k=>$row)
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
