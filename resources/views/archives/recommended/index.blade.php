@@ -44,7 +44,7 @@
 @endif
 			                </div>
 			                <div class="ml-3 w-100">
-			                    <p class="text-white font-size-h3 font-w300 mb-0">
+			                    <p class="text-white font-w300 mb-0">
 			                        <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
 			                </div>
@@ -76,7 +76,7 @@
 @endif
 			                </div>
 			                <div class="ml-3 w-100">
-			                    <p class="text-white font-size-h3 font-w300 mb-0">
+			                    <p class="text-white font-w300 mb-0">
 			                       <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
 			                </div>
@@ -108,7 +108,7 @@
 @endif
 			                </div>
 			                <div class="ml-3 w-100">
-			                    <p class="text-white font-size-h3 font-w300 mb-0">
+			                    <p class="text-white font-w300 mb-0">
 			                        <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
 			                </div>
