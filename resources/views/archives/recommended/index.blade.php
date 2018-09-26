@@ -57,7 +57,7 @@ endsection
 			            11 - 20 RANK
 			        </p>
 
-@foreach ($second_arr as $k=>$row)
+@foreach ($second_arr as $k=>$r)
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
@@ -88,7 +88,7 @@ endsection
 			           21 - 30 RANK
 			        </p>
 
-@foreach ($third_arr as $k=>$row)
+@foreach ($third_arr as $k=>$r)
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
