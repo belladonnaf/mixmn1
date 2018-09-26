@@ -6,7 +6,8 @@
 	div.item { width:64px !important; height:64px !important;}
 	span.rank {
     position: absolute;
-    margin-left: -50px;
+    top:15px;
+    left:15px;
 	}	
 	span.album-info { font-size:0.8rem;}
 </style>
@@ -30,15 +31,16 @@ endsection
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
+<span class="rank rank-{{($k+1)}}">{{($k+1)}}</span>
 @if($r->image)
-													<img src="{{$r->image}}" width="64px" height="64px">
+													<img src="{{$r->image}}" width="64px" height="64px" onerror="this.src='/media/images/eee.jpg';">
 @else
 			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
 			                <div class="ml-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
-			                       <span class="rank rank-{{($k+1)}}">{{($k+1)}}</span> <span class="album-info">{{$r->album_path}}</span>
+			                        <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
 			                </div>
 			            </div>
@@ -61,15 +63,16 @@ endsection
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
+<span class="rank rank-{{($k+11)}}">{{($k+11)}}</span>
 @if($r->image)
-													<img src="{{$r->image}}" width="64px" height="64px">
+													<img src="{{$r->image}}" width="64px" height="64px" onerror="this.src='/media/images/eee.jpg';">
 @else
 			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
 			                <div class="ml-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
-			                       <span class="rank rank-{{($k+11)}}">{{($k+11)}}</span> <span class="album-info">{{$r->album_path}}</span>
+			                       <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
 			                </div>
 			            </div>
@@ -92,15 +95,16 @@ endsection
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
+<span class="rank rank-{{($k+21)}}">{{($k+21)}}</span>
 @if($r->image)
-													<img src="{{$r->image}}" width="64px" height="64px">
+													<img src="{{$r->image}}" width="64px" height="64px" onerror="this.src='/media/images/eee.jpg';">
 @else
 			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
 			                <div class="ml-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
-			                       <span class="rank rank-{{($k+21)}}">{{($k+21)}}</span> <span class="album-info">{{$r->album_path}}</span>
+			                        <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
 			                </div>
 			            </div>
