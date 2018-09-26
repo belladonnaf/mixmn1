@@ -20,14 +20,17 @@ endsection
 			        </p>
 
 @foreach ($first_arr as $k=>$row)
+<?php var_dump($row); ?>
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
+  {{--
 	@if( $row['image'] > '' )
 													<img src="{{$row['image']}}" width="64px" height="64px">
 	@else
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 	@endif			                
+  --}}			                
 			                </div>
 			                <div class="mr-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
@@ -54,11 +57,13 @@ endsection
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
-	@if( $row['image'] > '' )
+  {{--
+  @if( $row['image'] > '' )
 													<img src="{{$row['image']}}" width="64px" height="64px">
 	@else
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 	@endif			                
+  --}}			                
 			                </div>
 			                <div class="mr-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
@@ -85,11 +90,13 @@ endsection
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
+  {{--
 	@if( $row['image'] > '' )
 													<img src="{{$row['image']}}" width="64px" height="64px">
 	@else
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 	@endif			                
+  --}}			                
 			                </div>
 			                <div class="mr-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
