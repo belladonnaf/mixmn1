@@ -27,7 +27,7 @@
 
           <!-- Task -->
 @foreach($arr_set as $r)
-          <div class="js-task block block-rounded block-fx-pop block-fx-pop mb-2 animated fadeIn" data-task-id="9" data-task-completed="false" data-task-starred="false">
+          <div class="js-task block block-rounded block-fx-pop block-fx-pop mb-2 animated fadeIn" data-set-id="{{$r['id']}}" data-task-completed="false" data-task-starred="false">
               <table class="table table-borderless table-vcenter mb-0">
                   <tbody><tr>
                       <td class="text-center pr-0" style="width: 38px;">
@@ -130,7 +130,7 @@
 	
 		var ss = '';
 		jQuery.each(obj_details, function(i,obj){
-	    ss = ss + '      <div class="js-task block block-rounded block-fx-pop block-fx-pop mb-2 animated fadeIn" data-task-id="9" data-task-completed="false" data-task-starred="false">';
+	    ss = ss + '      <div class="js-task block block-rounded block-fx-pop block-fx-pop mb-2 animated fadeIn" data-detail-id="' + obj.id + '" data-task-completed="false" data-task-starred="false">';
 	    ss = ss + '          <table class="table table-borderless table-vcenter mb-0">';
 	    ss = ss + '              <tbody><tr>';
 	    ss = ss + '                  <td class="js-task-content font-w600">';
@@ -154,8 +154,8 @@
     });
 		jQuery(".js-task-remove").click(function(){
 			 ftask   = jQuery(this).closest('.js-task');
-			 ftaskId = ftask.data('task-id');
-       jQuery('.js-task[data-task-id="' + ftaskId + '"]').remove();
+			 ftaskId = ftask.data('detail-id');
+       jQuery('.js-task[data-detail-id="' + ftaskId + '"]').remove();
 		});
 			
 	});
