@@ -2,6 +2,13 @@
 <!-- Page JS Plugins CSS -->
 
 @section('css_after')
+<style>
+	.item { width:64px; height:64px;}
+	span.rank {
+    position: absolute;
+    margin-left: -50px;
+	}	
+</style>
 endsection
 
 @section('content')
@@ -28,7 +35,7 @@ endsection
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 @endif
 			                </div>
-			                <div class="mr-3">
+			                <div class="ml-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
 			                       <span class="rank rank-{{($k+1)}}">{{($k+1)}}</span> <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
@@ -59,7 +66,7 @@ endsection
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 @endif
 			                </div>
-			                <div class="mr-3">
+			                <div class="ml-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
 			                       <span class="rank rank-{{($k+11)}}">{{($k+11)}}</span> <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
@@ -90,7 +97,7 @@ endsection
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
 @endif
 			                </div>
-			                <div class="mr-3">
+			                <div class="ml-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
 			                       <span class="rank rank-{{($k+21)}}">{{($k+21)}}</span> <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
