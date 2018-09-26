@@ -121,7 +121,7 @@
                 <div class="content-side content-side-full">
                     <ul class="nav-main">
                         <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
+                            <a class="nav-main-link{{ request()->is('/recommended/index') ? ' active' : '' }}" href="/recommended/index">
                                 <i class="nav-main-link-icon si si-cursor"></i>
                                 <span class="nav-main-link-name">Recommended</span>
                                 <span class="nav-main-link-badge badge badge-pill badge-success">30</span>
