@@ -18,19 +18,15 @@ endsection
 			        <p class="text-white text-uppercase font-size-sm font-w700 text-center mt-2 mb-4">
 			            1 - 10 RANK
 			        </p>
-<?php
-var_dump($first_arr);
-exit;
-?>
 @foreach ($first_arr as $k=>$row)
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
-	@if( $row['image'] > '' )
+	<?php if( $row['image'] > '' ) { ?>
 													<img src="{{$row['image']}}" width="64px" height="64px">
-	@else
+	<?php } else { ?>
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
-	@endif			                
+	<?php } ?>
 			                </div>
 			                <div class="mr-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
@@ -57,11 +53,11 @@ exit;
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
-  @if( $row['image'] > '' )
+	<?php if( $row['image'] > '' ) { ?>
 													<img src="{{$row['image']}}" width="64px" height="64px">
-	@else
+	<?php } else { ?>
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
-	@endif			                
+	<?php } ?>
 			                </div>
 			                <div class="mr-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
@@ -88,11 +84,11 @@ exit;
 			        <a class="block block-rounded block-link-rotate bg-black-10 mb-2" href="javascript:void(0)">
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 			                <div class="item">
-	@if( $row['image'] > '' )
+	<?php if( $row['image'] > '' ) { ?>
 													<img src="{{$row['image']}}" width="64px" height="64px">
-	@else
+	<?php } else { ?>
 			                    <i class="fa fa-2x fa-film text-primary-lighter"></i>
-	@endif			                
+	<?php } ?>
 			                </div>
 			                <div class="mr-3">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
