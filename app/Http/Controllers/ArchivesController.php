@@ -411,6 +411,31 @@ class ArchivesController extends Controller
 
 		}
 
+    public function recommendedIndex()
+    {   
+
+			$login_id = $request->session()->get("login_id");
+
+			$sql = " select favor_genre from members where user_pk = ? ";
+			$favor_genre = DB::select($sql,[$login_id])[0]->favor_genre;
+
+			if($favor_genre == 0){
+				$favor_genre = 1;				
+			}
+
+			$sql = " select b.* from recommended_album_tbl a inner join album_info_tbl b on a.album_id = b.album_id order by a.seq asc ";
+			$obj_rs = DB::select($sql);
+			$str_rs = json_encode($obj_rs);
+			$arr_rs = json_decode($str_rs,1);
+
+			$first_arr = array_slice($arr_rs,0,10);
+			$second_arr = array_slice($arr_rs,10,10);
+			$third_arr = array_slice($arr_rs,20,10);
+      
+      return view('archives.recommended.index',compact('arr_rs','first_arr','second_arr','third_arr'));
+				
+    }
+
 }
 
 
