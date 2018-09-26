@@ -29,6 +29,7 @@
 
 @section('css_after')
 <link rel="stylesheet" href="/js/plugins/datatables/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="/js/plugins/sweetalert2/sweetalert2.min.css">
 @endsection
 
             <!-- DataTables init on table by adding .js-dataTable-full-pagination class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
@@ -55,7 +56,7 @@
                         </td>
                         <td class="d-none d-sm-table-cell">
 
-<a href="#" id="btn_download" data-id="{{$r['album_id']}}"><span class="fa fa-floppy-o"></span></a> <a href="#" id="btn_phone" data-description="{{ htmlspecialchars($r['album_path']) }}" data-toggle="modal" data-target="#music_player" data-id="{{$r['album_id']}}"><span class="fa fa-volume-up"></span></a> <a href="#" id="btn_bookmark" data-description="{{ htmlspecialchars($r['album_path']) }}" data-field="album" data-id="{{$r['album_id']}}"><span class="fa fa-bookmark"></span></a>
+<span class="btn-group mr-auto"><a href="#" id="btn_download" data-id="{{$r['album_id']}}"><span class="fa fa-floppy-o"></span></a> <a href="#" id="btn_phone" data-description="{{ htmlspecialchars($r['album_path']) }}" data-toggle="modal" data-target="#music_player" data-id="{{$r['album_id']}}"><span class="fa fa-volume-up"></span></a> <a href="#" id="btn_bookmark" class="btn_bookmark js-swal-add-fav push" data-description="{{ htmlspecialchars($r['album_path']) }}" data-field="album" data-id="{{$r['album_id']}}"><span class="fa fa-bookmark"></span></a></span>
 
                         </td>
                         <td class="d-none d-sm-table-cell">
@@ -138,7 +139,16 @@
 <script src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="/js/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="/js/pages/be_tables_datatables.min.js"></script>
+
+<!-- Page JS Plugins -->
+<script src="/js/plugins/es6-promise/es6-promise.auto.min.js"></script>
+<script src="/js/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<!-- Page JS Code -->
+<script src="/js/pages/be_comp_dialogs.min.js"></script>
+
 @else
+
 <script src="/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
 <script>
@@ -152,6 +162,14 @@ jQuery(document).ready(function(){
 	});
 	jQuery(".btn-go").click(function(){
 		window.location.href='/archives/index/' + jQuery("#sel_date").val();
+	});
+	jQuery(".btn_bookmark").click(function(){
+
+		var api_url = 'http://mix.mn1.net/api/favorites/set/' + jQuery(".album_id").val();
+    axios.get(api_url).then(response => {
+			console.log(response.data);
+		});
+
 	});
 });
 </script>

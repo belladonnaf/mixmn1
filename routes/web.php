@@ -73,5 +73,3 @@ Route::view('/pages/how-to-fix-player', 'pages/howtofixplayer');
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');
 Route::view('/examples/blank', 'examples.blank');
-
-
