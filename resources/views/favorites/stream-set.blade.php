@@ -153,7 +153,7 @@
     jQuery(".target").sortable({
     });
 		jQuery(".js-task-remove").click(function(){
-			 ftask   = jQuery(e.currentTarget).closest('.js-task');
+			 ftask   = jQuery(this).closest('.js-task');
 			 ftaskId = ftask.data('task-id');
        jQuery('.js-task[data-task-id="' + taskId + '"]').remove();
 		});
