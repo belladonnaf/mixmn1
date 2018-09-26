@@ -456,6 +456,8 @@ class ArchivesController extends Controller
 							
 				if($arr_img[0]['image']){
 					$r['image'] = $arr_img[0]['image'];
+				} else {
+					$r['image'] = '';	
 				}
 				
 				$new_rs[] = $r;
