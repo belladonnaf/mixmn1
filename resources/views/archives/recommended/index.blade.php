@@ -3,11 +3,16 @@
 
 @section('css_after')
 <style>
-	div.item { width:64px !important; height:64px !important;}
+	div.item { width:64px !important; height:64px !important; position:relative;}
 	span.rank {
     position: absolute;
-    top:15px;
-    left:15px;
+    top: 0px;
+    left: 0;
+    width: 24px;
+    background-color: black;
+    color: white;
+    height: 24px;
+    text-align: center;
 	}	
 	span.album-info { font-size:0.8rem;}
 </style>
@@ -38,7 +43,7 @@ endsection
 			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
-			                <div class="ml-3">
+			                <div class="ml-3 w-100">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
 			                        <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
@@ -70,7 +75,7 @@ endsection
 			                    <div style="background-color:#eeeeee;width:64px;height:64px;"></div>
 @endif
 			                </div>
-			                <div class="ml-3">
+			                <div class="ml-3 w-100">
 			                    <p class="text-white font-size-h3 font-w300 mb-0">
 			                       <span class="album-info">{{$r->album_path}}</span>
 			                    </p>
