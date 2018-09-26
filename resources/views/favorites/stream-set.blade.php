@@ -70,7 +70,7 @@
 			</div>
 
 			<div class="play-list-wrapper bg-white">
-		    <ul class="target">
+		    <ul class="target p-0">
 
 		    </ul>
 			</div>
@@ -133,7 +133,7 @@
 	    ss = ss + '      <div class="js-task block block-rounded block-fx-pop block-fx-pop mb-2 animated fadeIn" data-task-id="9" data-task-completed="false" data-task-starred="false">';
 	    ss = ss + '          <table class="table table-borderless table-vcenter mb-0">';
 	    ss = ss + '              <tbody><tr>';
-	    ss = ss + '                  <td class="js-task-content font-w600 pl-0">';
+	    ss = ss + '                  <td class="js-task-content font-w600">';
 	    ss = ss + '                  <span class="track-info">[' + obj.album_path + '] ' + obj.filename + '</span>';
 	    ss = ss + '                  </td>';
 	    ss = ss + '                  <td class="text-right" style="width: 100px;">';
@@ -150,6 +150,8 @@
 		});
 
 		jQuery(".target").append(ss);
+    jQuery(".target").sortable({
+    });
 			
 	});
 	
