@@ -24,7 +24,6 @@ endsection
 			            <div class="block-content block-content-sm block-content-full d-flex align-items-center justify-content-between">
 @if($r->image)
 			                <div class="item" style="background-image:url({{$r->image}});background-size: cover;">
-													<img src="{{$r->image}}" width="64px" height="64px">
 			                </div>
 @else
 											<div class="item">
@@ -58,7 +57,6 @@ endsection
 			                <div class="item">
 @if($r->image)
 			                <div class="item" style="background-image:url({{$r->image}});background-size: cover;">
-													<img src="{{$r->image}}" width="64px" height="64px">
 			                </div>
 @else
 											<div class="item">
