@@ -154,7 +154,8 @@
     });
 		jQuery(".js-task-remove").click(function(){
 			 ftask   = jQuery(this).closest('.js-task');
-			 ftaskId = ftask.data('task-id');
+			 console.log(ftask);
+			 ftaskId = ftask.attr('data-task-id');
        jQuery('.js-task[data-task-id="' + taskId + '"]').remove();
 		});
 			
