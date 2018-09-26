@@ -24,13 +24,15 @@
     padding: 5px;
 }
 
-ol.aplayer-list {
-    height: 100% !important;
+.aplayer ol.aplayer-list {
+  height: 100% !important;
+	display:block !important;
 }
 
 .aplayer {
 	margin:0px !important;
 }
+
 
 span.add-fav {
     position: absolute;
