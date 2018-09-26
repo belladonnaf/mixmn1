@@ -428,9 +428,43 @@ class ArchivesController extends Controller
 			$str_rs = json_encode($obj_rs);
 			$arr_rs = json_decode($str_rs,1);
 
-			$first_arr = array_slice($arr_rs,0,10);
-			$second_arr = array_slice($arr_rs,10,10);
-			$third_arr = array_slice($arr_rs,20,10);
+			$new_rs = array();
+
+			foreach($arr_rs as $r){
+				
+				$sql = " call get_album_pic(".$r['album_id'].") ";
+				$arr_rs2 = DB::select($sql);
+				$str_rs2 = json_encode($arr_rs2);
+				$arr_rs2 = json_decode($str_rs2,1);
+				$cnt_img = count($arr_rs2);
+				$arr_img = array();
+
+				$sql = " call get_img_path('".$r['album_id']."')";
+				$row = DB::select($sql)[0];
+
+				if($row){
+					$img_path = $row->img_path;
+				}
+							
+				if($arr_rs2) {
+					foreach($arr_rs2 as $k=> $row2) { 
+						$url = $img_path."/".$row2['filename'];
+						$row2['image'] = $url;
+						$arr_img[] = $row2;
+					}
+				}
+							
+				if($arr_img[0]['image']){
+					$r['image'] = $arr_img[0]['image'];
+				}
+				
+				$new_rs[] = $r;
+				
+			}
+
+			$first_arr = array_slice($new_rs,0,10);
+			$second_arr = array_slice($new_rs,10,10);
+			$third_arr = array_slice($new_rs,20,10);
       
       return view('archives.recommended.index',compact('arr_rs','first_arr','second_arr','third_arr'));
 				
