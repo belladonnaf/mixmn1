@@ -67,6 +67,7 @@ Route::get('/api/settings/mygenre/set/{genre_group_id}','SettingsController@setM
 Route::get('/api/search/{keyword}/{page?}','ArchivesController@searchJson');
 Route::post('/api/favorites/reorder','FavoritesController@reorder');
 Route::post('/api/favorites/create-stream-set','FavoritesController@createStreamset');
+Route::post('/api/favorites/delete-stream-detail','FavoritesController@deleteStreamDetail');
 
 Route::view('/pages/how-to-fix-player', 'pages/howtofixplayer');
 

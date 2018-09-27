@@ -152,10 +152,25 @@
 		jQuery(".target").append(ss);
     jQuery(".target").sortable({
     });
+
 		jQuery(".js-task-remove").click(function(){
+		
 			 ftask   = jQuery(this).closest('.js-task');
 			 ftaskId = ftask.data('detail-id');
+
        jQuery('.js-task[data-detail-id="' + ftaskId + '"]').remove();
+			 var set_id = jQuery(this).data('set-id');
+
+			 var api_url = 'http://mix.mn1.net/api/favorites/delete-stream-detail';
+
+		   axios.post(api_url,{ detail_id: ftaskId, set_id : set_id }).then(response => {
+		
+			  if( response.data == 'ok' ){
+				  Dashmix.helpers('notify', {type: 'success', icon: 'fa fa-check mr-1', message: 'Stream track removed.'});
+			  }
+	
+			 });
+
 		});
 			
 	});

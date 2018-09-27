@@ -172,6 +172,21 @@ class FavoritesController extends Controller
 			
 		}
 		
+		public function deleteStreamDetail(Request $request)
+		{
+
+			$detail_id = $request->get('detail_id');
+			$set_id = $request->get('set_id');
+			$login_id = $request->session()->get("login_id");
+
+			$sql = " delete from mp3_stream_set_detail where user_id = ? and set_id = ? and id = ? ";
+			DB::delete($sql,[$login_id,$set_id,$detail_id]);
+
+			$msg = "ok";
+			return response()->json($msg,200);
+
+		}
+
 		public function getStreamSetJson(Request $request,$set_id){
 			
 
