@@ -31,7 +31,7 @@
 				<div class="row">
 @foreach($arr_rs as $k=>$r)
 					<div class="col-md-12">
-					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/stream-set/{{$r->set_id}}" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
+					    <a class="block block-rounded block-transparent d-md-flex align-items-md-stretch bg-black-75 js-click-ripple-enabled" href="/stream-set/{{$r->id}}" data-toggle="click-ripple" style="overflow: hidden; position: relative; z-index: 1;">
 					        <div class="block-content block-content-full {{$arr_css[$k]}}">
 					            <div>
 					                <h6 class="font-w700 text-white mb-1">{{$r->set_alias}}</h3>

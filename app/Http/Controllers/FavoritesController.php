@@ -187,7 +187,7 @@ class FavoritesController extends Controller
 			$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
 			$arr_css = randomize_css($arr_css,6);
 			
-      return view('favorites.show-stream-set',compact('row','stream_set_id','arr_rs'));
+      return view('favorites.show-stream-set',compact('row','stream_set_id','arr_rs','arr_css'));
 			
 		}
 				
