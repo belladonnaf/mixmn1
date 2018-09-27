@@ -282,7 +282,7 @@ $stream_set_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-dual" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-fw fa-bell"></i>
-                                <span class="badge badge-secondary badge-pill">1</span>
+                                <span class="badge badge-secondary badge-pill">2</span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="page-header-notifications-dropdown">
                                 <div class="bg-primary-darker rounded-top font-w600 text-white text-center p-3">
