@@ -70,13 +70,13 @@
 			</div>
 
 			<div class="play-list-wrapper bg-white">
-		    <ul class="target p-0">
+		    <ul class="target p-0 list-group">
 
 		    </ul>
 			</div>
 
 			<div class="button-wrapper mt-1">
-				<button type="button" class="btn btn-lg btn-success w-100" id="btn-create-stream-set">Save Stream Set</button>
+				<button type="button" class="btn btn-lg btn-success w-100" id="btn-save-stream-set">Save Stream Set</button>
 			</div>
 
 		</div>
@@ -130,7 +130,7 @@
 	
 		var ss = '';
 		jQuery.each(obj_details, function(i,obj){
-	    ss = ss + '      <li data-track-id="' + obj.track_id + '"><div class="js-task block block-rounded block-fx-pop block-fx-pop mb-2 animated fadeIn" data-detail-id="' + obj.id + '" data-task-completed="false" data-task-starred="false">';
+	    ss = ss + '      <li data-track-id="list-group-item ' + obj.track_id + '"><div class="js-task block block-rounded block-fx-pop block-fx-pop mb-2 animated fadeIn" data-detail-id="' + obj.id + '" data-task-completed="false" data-task-starred="false">';
 	    ss = ss + '          <table class="table table-borderless table-vcenter mb-0">';
 	    ss = ss + '              <tbody><tr>';
 	    ss = ss + '                  <td class="js-task-content font-w600">';
