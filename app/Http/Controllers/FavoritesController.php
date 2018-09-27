@@ -172,6 +172,19 @@ class FavoritesController extends Controller
 			
 		}
 		
+
+		public function showStreamSet(Request $request,$stream_set_id)
+		{
+
+			$login_id = $request->session()->get("login_id");
+
+			$sql = " select * from mp3_stream_set where user_id = ? and stream_set_id = ?";
+			$row = DB::select($sql,[$login_id,$stream_set_id])[0];
+			
+      return view('favorites.show-stream-set',compact('row','stream_set_id'));
+			
+		}
+				
 		public function deleteStreamDetail(Request $request)
 		{
 

@@ -46,6 +46,7 @@ Route::get('/album/{album_id}','ArchivesController@show')->name('album.show')->m
 Route::get('/favorites/index','FavoritesController@index')->name('favorites.index')->middleware('session.has.user');
 Route::get('/favorites/del/{album_id}','FavoritesController@delete')->name('favorites.delete')->middleware('session.has.user');
 Route::get('/stream-sets/index','FavoritesController@streamSet')->name('favorites.stream-set')->middleware('session.has.user');
+Route::get('/stream-set/{stream_set_id}','FavoritesController@showStreamSet')->name('favorites.show-stream-set')->middleware('session.has.user');
 
 Route::get('/recommended/index','ArchivesController@recommendedIndex')->name('recommended.index')->middleware('session.has.user');
 

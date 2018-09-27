@@ -104,7 +104,9 @@
   });
 
 	jQuery(".btn-play-music").click(function(){
-			
+
+		window.location.href='/stream-set/' + jQuery(this).attr("data-id");
+/*
 		var set_id = jQuery(this).attr("data-id");
 		var api_url = 'http://mix.mn1.net/api/stream-set/' + set_id;
 
@@ -115,6 +117,7 @@
 			}
 
 		});
+*/
 
 	});
 	
