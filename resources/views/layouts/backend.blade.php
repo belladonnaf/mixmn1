@@ -303,6 +303,21 @@ $stream_set_cnt=DB::select($sql,[(int)$login_id])[0]->cnt;
                                     </li>
 
                                 </ul>
+                                <ul class="nav-items my-2">
+
+                                    <li>
+                                        <a class="text-dark media py-2" href="/pages/apk-installation">
+                                            <div class="mx-3">
+                                                <i class="fa fa-fw fa-exclamation-circle text-warning"></i>
+                                            </div>
+                                            <div class="media-body font-size-sm pr-2">
+                                                <div class="font-w600">APK installation</div>
+                                                <div class="text-muted font-italic">2018-09-27</div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
                             </div>
                         </div>
                         <!-- END Notifications Dropdown -->

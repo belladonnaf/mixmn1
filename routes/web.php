@@ -72,6 +72,7 @@ Route::post('/api/favorites/save-stream-set','FavoritesController@saveStreamset'
 Route::post('/api/favorites/delete-stream-detail','FavoritesController@deleteStreamDetail');
 
 Route::view('/pages/how-to-fix-player', 'pages/howtofixplayer');
+Route::view('/pages/apk-installation', 'pages/apkinstallation');
 
 Route::view('/dashboard', 'dashboard');
 Route::view('/examples/plugin', 'examples.plugin');
