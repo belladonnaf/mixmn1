@@ -70,7 +70,7 @@
 			</div>
 
 			<div class="play-list-wrapper bg-white">
-		    <ul class="target p-0 list-group">
+		    <ul class="target p-0 list-group list-unstyled">
 
 		    </ul>
 			</div>
