@@ -186,6 +186,24 @@ class FavoritesController extends Controller
 			return response()->json($msg,200);
 
 		}
+		
+
+		public function saveStreamset(Request $request)
+		{
+		
+			$str_ids = $request->get('ids');
+			$arr_ids = json_decode($str_ids);
+			$login_id = $request->session()->get("login_id");
+
+			foreach($arr_ids as $k=>$v){
+				$sql = " update mp3_stream_set_detail set list_order = ? where user_id = ? and track_id = ? ";
+				DB::update($sql,[($k+1),$login_id,$v]);
+			}
+
+			$msg = "ok";
+			return response()->json($msg,200);
+	
+		}		
 
 		public function getStreamSetJson(Request $request,$set_id){
 			
