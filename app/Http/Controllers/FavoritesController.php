@@ -181,7 +181,7 @@ class FavoritesController extends Controller
 			$sql = " select * from mp3_stream_set where user_id = ? and id = ?";
 			$row = DB::select($sql,[$login_id,$stream_set_id])[0];
 
-			$sql = " select * from mp3_stream_set where uwer_id = ? ";
+			$sql = " select * from mp3_stream_set where user_id = ? ";
 			$arr_rs = DB::select($sql,[$login_id]);
 
 			$arr_css = ['bg-gd-primary','bg-gd-dusk','bg-gd-fruit','bg-gd-aqua','bg-gd-sublime','bg-gd-sea','bg-gd-leaf','bg-gd-lake','bg-gd-sun','bg-gd-dusk-op','bg-gd-fruit-op','bg-gd-aqua-op','bg-gd-sublime-op','bg-gd-sea-op','bg-gd-leaf-op','bg-gd-lake-op','bg-gd-sun-op'];
