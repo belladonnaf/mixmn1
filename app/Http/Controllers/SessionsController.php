@@ -92,14 +92,14 @@ class SessionsController extends Controller
 				$login_id = $request->session()->get("login_id");
 
         $this->validate(request(), [
+            'cur_password' => 'required',
             'password' => 'required',
-            'new_password' => 'required',
-            'new_password_confirm' => 'required|confirmed'
+            'password_confirmation' => 'required|confirmed'
         ]);
 
-				$password = $request->get('password');
-				$new_password = $request->get('new_password');
-				$new_password_confirm = $request->get('new_password_confirm');
+				$password = $request->get('cur_password');
+				$new_password = $request->get('password');
+				$new_password_confirm = $request->get('password_confirmation');
 
 				$sql = " select count(*) cnt from members where user_pk = ? and password = ? ";
 				$check_cnt = DB::select($sql,[$login_id,$password])[0]->cnt;
@@ -107,10 +107,6 @@ class SessionsController extends Controller
 				if($check_cnt == 0){
             return back()->withErrors([
                 'message' => 'You need input correct password'
-            ]);
-				} else if($new_password != $new_password_confirm){
-            return back()->withErrors([
-                'message' => 'Password confirmation need check'
             ]);
 				} else {
 					$sql = " update members set password = ? where user_pk = ? ";

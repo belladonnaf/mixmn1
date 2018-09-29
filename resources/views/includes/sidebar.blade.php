@@ -207,15 +207,15 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                             <div class="block-content block-content-full">
                                 <div class="form-group">
                                     <label for="so-profile-password">Current Password</label>
-                                    <input type="password" class="form-control" id="password" name="password">
+                                    <input type="password" class="form-control" id="cur_password" name="cur_password">
                                 </div>
                                 <div class="form-group">
                                     <label for="so-profile-new-password">New Password</label>
-                                    <input type="password" class="form-control" id="new_password" name="new_password">
+                                    <input type="password" class="form-control" id="password" name="password">
                                 </div>
                                 <div class="form-group">
                                     <label for="so-profile-new-password-confirm">Confirm New Password</label>
-                                    <input type="password" class="form-control" id="new_password_confirm" name="new_password_confirm">
+                                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
                                 </div>
                             </div>
                             <!-- END Password Update -->
