@@ -110,7 +110,7 @@ class SessionsController extends Controller
 				} else {
 					$sql = " update members set password = ? where user_pk = ? ";
 					DB::update($sql,[$new_password,$login_id]);
-          return back()->with('success',['message' => 'Password has been updated.']);
+          return back()->with('success','Password has been updated.');
 				}
 
 		}
