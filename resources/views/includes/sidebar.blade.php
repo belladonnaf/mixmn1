@@ -162,7 +162,7 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
 
                 <!-- Profile -->
                 <div class="tab-pane pull-x fade fade-up" id="so-profile" role="tabpanel">
-                    <form action="be_pages_dashboard.html" method="post" onsubmit="return false;">
+                    <form action="/api/profile/update" method="post" onsubmit="return false;">
                         <div class="block mb-0">
                             <!-- Personal -->
                             <div class="block-content block-content-sm block-content-full bg-body">
@@ -180,26 +180,38 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
                             <div class="block-content block-content-sm block-content-full bg-body">
                                 <span class="text-uppercase font-size-sm font-w700">Password Update</span>
                             </div>
+														<div>
+  @if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div><br />
+	@else 
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div><br />
+    @endif
+  @endif
+														</div>
                             <div class="block-content block-content-full">
                                 <div class="form-group">
                                     <label for="so-profile-password">Current Password</label>
-                                    <input type="password" class="form-control" id="so-profile-password" name="so-profile-password">
+                                    <input type="password" class="form-control" id="password" name="password">
                                 </div>
                                 <div class="form-group">
                                     <label for="so-profile-new-password">New Password</label>
-                                    <input type="password" class="form-control" id="so-profile-new-password" name="so-profile-new-password">
+                                    <input type="password" class="form-control" id="new_password" name="new_password">
                                 </div>
                                 <div class="form-group">
                                     <label for="so-profile-new-password-confirm">Confirm New Password</label>
-                                    <input type="password" class="form-control" id="so-profile-new-password-confirm" name="so-profile-new-password-confirm">
+                                    <input type="password" class="form-control" id="new_password_confirm" name="new_password_confirm">
                                 </div>
                             </div>
                             <!-- END Password Update -->
-
-                            <!-- Options -->
-                            <div class="block-content block-content-sm block-content-full bg-body">
-                                <span class="text-uppercase font-size-sm font-w700">Options</span>
-                            </div>
 
                             <!-- Submit -->
                             <div class="block-content row justify-content-center border-top">

@@ -19,6 +19,7 @@ Route::get('/', 'SessionsController@create')->name('login');
 
 Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy')->name('logout');
+Route::post('/profile/update','SessionsController@updateProfile');
 
 /* Archives Related */
 

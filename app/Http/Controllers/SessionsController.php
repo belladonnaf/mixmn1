@@ -45,10 +45,10 @@ class SessionsController extends Controller
     public function store(Request $request)
     {   
 				
-				$sql = " select user_pk as cnt from members where useremailid = ".esc_sql($request->get('email'))." and password = ".esc_sql($request->get('password'))." and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
+				$sql = " select user_pk as cnt from members where useremailid = ? and password = ? and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
 
 				if(DB::select($sql)[0]){
-					$user_pk = DB::select($sql)[0]->cnt;
+					$user_pk = DB::select($sql,[$request->get('email'),$request->get('password')])[0]->cnt;
 				}
 	
         if (!$user_pk) {
@@ -87,7 +87,37 @@ class SessionsController extends Controller
         return redirect()->to('/');
     }
 
+    public function updateProfile(Request $request)
+    {   
+				$login_id = $request->session()->get("login_id");
+
+        $this->validate(request(), [
+            'password' => 'required',
+            'new_password' => 'required',
+            'new_password_confirm' => 'required|confirmed'
+        ]);
+
+				$password = $request->get('password')
+				$new_password = $request->get('new_password')
+				$new_password_confirm = $request->get('new_password_confirm');
+
+				$sql = " select count(*) cnt from members where user_pk = ? and password = ? ";
+				$check_cnt = DB::select($sql,[$login_id,$password])[0]->cnt;
+				
+				if($check_cnt == 0){
+            return back()->withErrors([
+                'message' => 'You need input correct password'
+            ]);
+				} else if($new_password != $new_password_confirm){
+            return back()->withErrors([
+                'message' => 'Password confirmation need check'
+            ]);
+				} else {
+					$sql = " update members set password = ? where user_pk = ? ";
+					DB::update($sql,[$new_password,$login_id]);
+          return back()->with('success',['message' => 'Password has been updated.']);
+				}
+
+		}
     //
 }
-
-
