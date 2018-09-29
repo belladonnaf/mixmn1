@@ -187,7 +187,7 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
       {{ session()->get('success') }}  
     </div><br />
 @section('js_after')
-<script>Dashmix.layout('side_overlay_open');</script>
+<script>jQuery(document).ready(function(){Dashmix.layout('side_overlay_open');});	</script>
 @overwrite
 	@else 
     @if ($errors->any())
@@ -199,7 +199,7 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
         </ul>
       </div><br />
 @section('js_after')
-<script>Dashmix.layout('side_overlay_open');</script>
+<script>jQuery(document).ready(function(){Dashmix.layout('side_overlay_open');});	</script>
 @overwrite
     @endif
   @endif
