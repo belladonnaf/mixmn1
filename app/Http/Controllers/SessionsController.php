@@ -93,8 +93,7 @@ class SessionsController extends Controller
 
         $this->validate(request(), [
             'cur_password' => 'required',
-            'password' => 'required',
-            'password_confirmation' => 'required|confirmed'
+            'password' => 'required|confirmed'
         ]);
 
 				$password = $request->get('cur_password');
