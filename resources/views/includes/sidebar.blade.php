@@ -186,6 +186,9 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
     <div class="alert alert-success">
       {{ session()->get('success') }}  
     </div><br />
+@section('js_after')
+<script>Dashmix.layout('side_overlay_open');</script>
+@endsection
 	@else 
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -195,6 +198,9 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
             @endforeach
         </ul>
       </div><br />
+@section('js_after')
+<script>Dashmix.layout('side_overlay_open');</script>
+@endsection
     @endif
   @endif
 														</div>
