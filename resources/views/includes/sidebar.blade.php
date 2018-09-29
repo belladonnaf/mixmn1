@@ -162,7 +162,7 @@ $arr_log = DB::select($sql,[Request()->session()->get("login_id")]);
 
                 <!-- Profile -->
                 <div class="tab-pane pull-x fade fade-up" id="so-profile" role="tabpanel">
-                    <form action="/api/profile/update" method="post" onsubmit="return false;">
+                    <form action="/api/profile/update" method="post">
                         <div class="block mb-0">
                             <!-- Personal -->
                             <div class="block-content block-content-sm block-content-full bg-body">
