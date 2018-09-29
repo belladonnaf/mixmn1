@@ -97,8 +97,8 @@ class SessionsController extends Controller
             'new_password_confirm' => 'required|confirmed'
         ]);
 
-				$password = $request->get('password')
-				$new_password = $request->get('new_password')
+				$password = $request->get('password');
+				$new_password = $request->get('new_password');
 				$new_password_confirm = $request->get('new_password_confirm');
 
 				$sql = " select count(*) cnt from members where user_pk = ? and password = ? ";
