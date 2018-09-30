@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>MIX MN1 - Nusic Network One</title>
+        <title>MIX MN1 - Music Network One</title>
 
         <meta name="description" content="MIX MN1 - Nusic Network One">
         <meta name="author" content="mixmix">
