@@ -47,7 +47,7 @@ class SessionsController extends Controller
 				
 				$sql = " select user_pk as cnt from members where useremailid = ? and password = ? and service_enddate > NOW() and status = 1 and level > 1 limit 0,1";
 
-				if(DB::select($sql)[0]){
+				if(DB::select($sql,[$request->get('email'),$request->get('password')])[0]){
 					$user_pk = DB::select($sql,[$request->get('email'),$request->get('password')])[0]->cnt;
 				}
 	
