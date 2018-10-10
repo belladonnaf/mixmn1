@@ -156,7 +156,7 @@
                             </a>
                             <ul class="nav-main-submenu">
 <?php 
-	$arr_genre = array('Trance','House','Electronic','R&B','Pop','Club-House','Hardcore','Dance','Rap','Hip-Hop','Techno','Drum & Bass','Lo-Fi','Psychadelic','Classical','Soul','Jazz','Latin','Alternative','Metal','Country','Indie','Ambient','Jpop','Blues','Reggae','Goa','Ethnic','Soundtrack','Punk');
+	$arr_genre = array('Top 40','Trance','House','Electronic','R&B','Pop','Club-House','Hardcore','Dance','Rap','Hip-Hop','Techno','Drum & Bass','Lo-Fi','Psychadelic','Classical','Soul','Jazz','Latin','Alternative','Metal','Country','Indie','Ambient','Jpop','Blues','Reggae','Goa','Ethnic','Soundtrack');
 ?>
 															@foreach($arr_genre as $the_genre)
                                 <li class="nav-main-item">
