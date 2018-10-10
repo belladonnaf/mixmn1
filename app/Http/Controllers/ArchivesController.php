@@ -67,7 +67,7 @@ class ArchivesController extends Controller
 				$RecordCount = 0;
 			}
 
-			$arr_taxonomy = array('Trance','House','Electronic','R&B','Pop','Club-House','Hardcore','Dance','Rap','Hip-Hop','Techno','Drum & Bass','Lo-Fi','Psychadelic','Classical','Soul','Jazz','Latin','Alternative','Metal','Country','Indie','Ambient','Jpop','Blues','Reggae','Goa','Ethnic','Soundtrack','Punk');
+			$arr_taxonomy = array('Top 40','Trance','House','Electronic','R&B','Pop','Club-House','Hardcore','Dance','Rap','Hip-Hop','Techno','Drum & Bass','Lo-Fi','Psychadelic','Classical','Soul','Jazz','Latin','Alternative','Metal','Country','Indie','Ambient','Jpop','Blues','Reggae','Goa','Ethnic','Soundtrack');
 	
 			$sql = " call get_record(' DATE_FORMAT(release_date,\'%Y-%m-%d\') as release_date, album_id, album_path, genre, group_name, file_size, file_cnt, is_online, DATE_FORMAT(uploaded_time,\'%H:%i\') as uploaded_time','album_info_tbl',' genre = \'$f_genre\' ',' release_date desc ',0,2000)";
 			$obj_rs = DB::select($sql);
